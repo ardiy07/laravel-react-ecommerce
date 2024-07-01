@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Menunggu Konfirmasi",
+        "image": "5e972574.svg",
+        "url": "#"
+    },
+    {
+        "title": "Pesanan Diproses",
+        "image": "7764102f.svg",
+        "url": "#"
+    },
+    {
+        "title": "Sedang Dikirim",
+        "image": "a39f2a72.svg",
+        "url": "#"
+    },
+    {
+        "title": "Sampai Tujuan",
+        "image": "b590a65c.svg",
+        "url": "#"
+    }
+]

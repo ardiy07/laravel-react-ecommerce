@@ -1,0 +1,52 @@
+[
+    {
+        "title": "Beli",
+        "style": "row-span-1",
+        "children": [
+            {
+                "title": "Tagihan & Top Up",
+                "href": "#"
+            },
+            {
+                "title": "Tokopedia COD",
+                "href": "#"
+            },
+            {
+                "title": "Bebas Ongkir",
+                "href": "#"
+            }
+        ]
+    },
+    {
+        "title": "Jual",
+        "style": "row-span-1 my-auto",
+        "children": [
+            {
+                "title": "Pusat Edukasi Seller",
+                "href": "#"
+            },
+            {
+                "title": "Daftar Official Store",
+                "href": "#"
+            }
+        ]
+    },
+    {
+        "title": "Bantuan dan Panduan",
+        "style": "row-span-2",
+        "children": [
+            {
+                "title": "Tokopedia Care",
+                "href": "#"
+            },
+            {
+                "title": "Syarat dan Ketentuan",
+                "href": "#"
+            },
+            {
+                "title": "Kebijakan Privasi",
+                "href": "#"
+            }
+        ]
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "image": "9cf46f35-3921-4062-b318-e01896227243.jpg.webp?ect=4g",
+        "url": "#",
+        "title": "Banner 1"
+    },
+    {
+        "id": 2,
+        "image": "9f3b6a7f-9558-4197-8cc9-446e8d293e78.jpg.webp?ect=4g",
+        "url": "#",
+        "title": "Banner 2"
+    },
+    {
+        "id": 3,
+        "image": "77f42f89-1b51-426d-b436-89e63ddee43f.jpg.webp?ect=4g",
+        "url": "#",
+        "title": "Banner 3"
+    },
+    {
+        "id": 4,
+        "image": "46a444dc-6539-4b1e-80bd-2906d85748a8.jpg.webp?ect=4g",
+        "url": "#",
+        "title": "Banner 4"
+    }
+
+]

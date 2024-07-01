@@ -1,0 +1,17 @@
+.next-button{
+    background-image: url('../../../assets/icons/next.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.back-button{
+    background-image: url('../../../assets/icons/back.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+}
