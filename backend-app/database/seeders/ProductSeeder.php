@@ -26,8 +26,9 @@ class ProductSeeder extends Seeder
             $stocks = rand(100, 250);
             $price = $item1['price']['number'];
             $order = rand(10, 10000);
-            $rating = $item1['rating'];
+            $rating = !empty($item1['rating']) ? $item1['rating'] : 0;
             $categorie_id = $item1['category']['id'];
+            $image = $item1['mediaURL']['image'];
             Product::create([
                 'shope_id' => $shope_id,
                 'name' => $name,
@@ -37,6 +38,7 @@ class ProductSeeder extends Seeder
                 'order' => $order,
                 'rating' => $rating,
                 'categorie_id' => $categorie_id,
+                'image' => $image
             ]);
         }
     }

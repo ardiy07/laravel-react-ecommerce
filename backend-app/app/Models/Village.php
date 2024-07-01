@@ -9,9 +9,17 @@ class Village extends Model
 {
     use HasFactory;
 
+    protected $table = 'villages';
+    protected $guarded = ['id'];
+
     public function distric()
     {
         return $this->belongsTo(District::class);
+    }
+
+    public function users()
+    {
+        return $this->hasMany(User::class, 'village_id');
     }
     
 }

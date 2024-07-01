@@ -14,16 +14,10 @@ const useAuth = () => {
     });
 
     const idUser = useSelector((state) => state.auth.idUser);
-    const dispatch = useDispatch();
-
-    const handleLogout = () => {
-        dispatch(logout());
-    };
 
     return {
         isLogin,
-        idUser,
-        handleLogout
+        idUser
     }
 }
 

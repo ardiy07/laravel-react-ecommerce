@@ -1,0 +1,8 @@
+.icon-search {
+    background-image: url(../../../assets/icons/search.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+}

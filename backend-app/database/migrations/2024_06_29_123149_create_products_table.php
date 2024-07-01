@@ -19,16 +19,19 @@ return new class extends Migration
             $table->enum('status', ['habis', 'tersedia'])->default('tersedia');
             $table->integer('stocks')->default(1);
             $table->integer('price');
+            $table->integer('price_sale')->default(0);
             $table->float('berat')->nullable();
             $table->float('panjang')->nullable();
             $table->float('lebar')->nullable();
+            $table->json('sytle')->nullable();
+            $table->json('imageUrl')->nullable();
             $table->string('image', 255)->nullable();
             $table->integer('order')->default(0);
             $table->float('rating')->default(0);
             $table->unsignedBigInteger('categorie_id');
             $table->timestamps();
 
-            $table->foreign('shope_id')->references('id')->on('shops')->onDelete('cascade');
+            $table->foreign('shope_id')->references('id')->on('shopes')->onDelete('cascade');
             $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }

@@ -15,7 +15,7 @@ class ShopSeeder extends Seeder
     {
         //
         $shopes = [];
-        $user_id = 17; // Mulai dari user_id 5
+        $user_id = 3; // Mulai dari user_id 5
 
         for ($i = 1; $i <= 10; $i++) {
             $shopes[] = [
@@ -29,6 +29,6 @@ class ShopSeeder extends Seeder
         }
 
         // Masukkan data ke dalam tabel shopes
-        DB::table('shops')->insert($shopes);
+        DB::table('shopes')->insert($shopes);
     }
 }

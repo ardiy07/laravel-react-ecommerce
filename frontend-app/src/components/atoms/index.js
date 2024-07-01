@@ -8,5 +8,7 @@ const AuthButton = lazy(() => import("./button/AuthButton"));
 const InputSearch = lazy(() => import("./input/InputSearch"));
 const Input = lazy(() => import("./input/Input"));
 const Dropdown = lazy(() => import("./input/Dropdown"));
+const LinkSearch = lazy(() => import("./link/LinkSearch"));
+const LinkStorePopuler = lazy(() => import("./link/LinkStorePopuler"));
 
-export { BackButton, NextButton, TopUpButton, FallbackButton, AuthButton, InputSearch, Input, Dropdown };
+export { LinkStorePopuler, BackButton, NextButton, TopUpButton, FallbackButton, AuthButton, InputSearch, Input, Dropdown, LinkSearch };

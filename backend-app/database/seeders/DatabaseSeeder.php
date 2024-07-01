@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             // DistrictSeeder::class,
             // VillageSeeder::class,
             // UserSeeder::class,
-            // ShopSeeder::class
+            // ShopSeeder::class,
             ProductSeeder::class
         ]);
 

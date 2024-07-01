@@ -10,15 +10,8 @@ const Links = {
         )
     },
     BottonHeader: (props) => {
-        return(
-            <Link to={props.href} className='text-slate-500 my-auto hover:text-green-600 text-sm font-medium tracking-tight capitalize'>
-                {props.children}
-            </Link>
-        )
-    },
-    Search: (props) => {
         return (
-            <Link to={props.href} className='my-auto font-semibold tracking-tight capitalize hover:bg-gray-100 rounded-lg'>
+            <Link to={props.href} className='text-slate-500 my-auto hover:text-green-600 text-sm font-medium tracking-tight capitalize'>
                 {props.children}
             </Link>
         )
@@ -29,8 +22,8 @@ const Links = {
                 {props.title}
             </li>
         )
-    }
-    
+    },
+
 }
 
 export default Links

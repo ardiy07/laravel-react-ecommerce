@@ -1,31 +1,66 @@
-import React, { Suspense, useState } from 'react'
-import { InputSearch } from '../../atoms'
-import DataPopuler from '../../../components/molecules/search/DataPopuler'
-import Links from '../../atoms/Links'
-import { getAssetIcons } from '../../../utils/pathUtils'
-import ButtonLazy from '../../atoms/button/ButtonLazy'
+import React, { Suspense, useState, useEffect } from 'react';
+import { InputSearch, LinkSearch, LinkStorePopuler } from '../../atoms';
+import DataPopuler from '../../../components/molecules/search/DataPopuler';
+import { getAssetIcons } from '../../../utils/pathUtils';
+import ButtonLazy from '../../atoms/button/ButtonLazy';
+import { useDispatch, useSelector } from 'react-redux';
+import { fecthSearchProduct } from '../../../features/home/services/productHomeThunks'; // Perbaikan typo 'fecth' menjadi 'fetch'
 
 function Search({ onOpen, onClose }) {
-    const [search, setSearch] = useState('')
-    const [isFocus, setIsFocus] = useState(false)
+    const [search, setSearch] = useState('');
+    const [isFocus, setIsFocus] = useState(false);
+    const [typingTimer, setTypingTimer] = useState(null);
+    const [loadingSearch, setLoadingSearch] = useState(false);
 
-    const [loadingSearch, setLoadingSearch] = useState(false)
-    const [productResult, setProductResult] = useState([])
+    const dispatch = useDispatch();
+    const typingTimeout = 500;
+
+    const { dataSearch, statusSearch } = useSelector((state) => state.productHome);
 
     const onSearch = () => {
-        setIsFocus(true)
-        onOpen()
-    }
+        setIsFocus(true);
+        onOpen();
+    };
 
     const onSearchClose = () => {
-        setIsFocus(false)
-        onClose()
-    }
+        setIsFocus(false);
+        onClose();
+    };
 
-    const handleSearch = (event) => {
-        setSearch(event.target.value)
-    }
+    const handleSearch = (e) => {
+        const newSearch = e.target.value;
+        setSearch(newSearch);
 
+        if (typingTimer) {
+            clearTimeout(typingTimer);
+        }
+
+        if (newSearch.length > 1) {
+            const timer = setTimeout(() => {
+                setLoadingSearch(true);
+                dispatch(fecthSearchProduct(newSearch)).finally(() => {
+                    setLoadingSearch(false);
+                });
+            }, typingTimeout);
+
+            setTypingTimer(timer);
+        } else {
+            setLoadingSearch(true);
+            dispatch(fecthSearchProduct(newSearch)).finally(() => {
+                setLoadingSearch(false);
+            });
+        }
+    };
+
+    useEffect(() => {
+        return () => {
+            if (typingTimer) {
+                clearTimeout(typingTimer);
+            }
+        };
+    }, [typingTimer]);
+
+    console.log(dataSearch, statusSearch, search);
 
     return (
         <div className='relative'>
@@ -39,55 +74,55 @@ function Search({ onOpen, onClose }) {
                 />
             </Suspense>
             <div className='absolute inset-y-0 left-0 flex items-center pl-2'>
-                <img src={getAssetIcons('search.svg')} />
+                <img src={getAssetIcons('search.svg')} alt="search icon" />
             </div>
 
             {/* Result */}
             <div className={`absolute px-4 h-auto z-10 mt-1 bg-white border border-gray-300 rounded-md shadow-md w-full ${isFocus ? 'block' : 'hidden'}`}>
-                {/* {loadingSearch && <LoadingSpinner />} */}
-                {/* Data Populer */}
                 {search === '' ? (
-                    <div className={`rounded-md px-1 my-4`}>
+                    <div className='rounded-md px-1 my-4'>
                         <h1 className='font-bold text-lg'>Paling Populer</h1>
                         <div className='grid grid-cols-2 gap-3 my-2'>
                             {DataPopuler.map((dataItem, index) => (
-                                <Links.Search href="#" key={index}>
-                                    <div className='flex py-2'>
-                                        <div className='my-auto px-2'>
-                                            <img src="./vite.svg" alt="coba logo" />
-                                        </div>
-                                        <div className='flex-grow px-2'>
-                                            <h5 className='font-semibold line-clamp-1'>{dataItem.judul}</h5>
-                                            <p className='text-sm text-gray-600 font-medium'>{dataItem.title}</p>
-                                        </div>
-                                    </div>
-                                </Links.Search>
+                                <LinkStorePopuler href="#" key={index} judul={dataItem.judul} title={dataItem.title} />
                             ))}
                         </div>
                     </div>
                 ) : (
                     // Result Search
-                    <div className="max-h-52 py-3">
-                        {loadingSearch === false && productResult.length === 0 || search.length > 1 ? (
-                            <span className=' min-h-28 my-48'>Data Tidak Ada</span>
+                    <div className="h-auto py-3 overflow-y-auto">
+                        {loadingSearch ? (
+                            <span className='min-h-28 my-48'>Loading...</span>
                         ) : (
-                            productResult.map((product, index) => (
-                                <Links.Search href='#'>
-                                    <p className="py-2 px-3 rounded-md hover:bg-gray-100">
-                                        {/* <Icon.Search icon={faSearch} /> */}
-                                        <span className='pl-3 text-gray-600'>
-                                            Product
-                                        </span>
-                                    </p>
-                                </Links.Search>
-                            ))
+                            <>
+                                {dataSearch.products.length === 0 && dataSearch.shops.length === 0 ? (
+                                    <span className='min-h-28 my-48'>Data Tidak Ada</span>
+                                ) : (
+                                    <>
+                                        {dataSearch.products.length > 0 && (
+                                            <div className="mb-2">
+                                                {dataSearch.products.map((product, index) => (
+                                                    <LinkSearch href='#' key={index} name={product.name} search={search} />
+                                                ))}
+                                            </div>
+                                        )}
+                                        {dataSearch.shops.length > 0 && (
+                                            <div>
+                                                <h1 className='font-bold text-lg'>Toko</h1>
+                                                {dataSearch.shops.map((shop, index) => (
+                                                    <LinkSearch href='#' key={index} name={shop.name} search={search} />
+                                                ))}
+                                            </div>
+                                        )}
+                                    </>
+                                )}
+                            </>
                         )}
                     </div>
                 )}
             </div>
-
         </div>
-    )
+    );
 }
 
-export default Search
+export default Search;

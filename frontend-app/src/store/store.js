@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authSlice from "../features/authentication/services/authSlice";
 import { APP_DEBUG } from "../config/env";
+import productHomeSlice from "../features/home/services/productHomeSlice";
 
 const checkIsLoginMiddleware = store => next => action => {
     const previousIsLogin = store.getState().auth.isLogin;
@@ -21,7 +22,8 @@ const checkIsLoginMiddleware = store => next => action => {
 
 const store = configureStore({
     reducer: {
-        auth: authSlice
+        auth: authSlice,
+        productHome: productHomeSlice
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(checkIsLoginMiddleware),
     devTools: APP_DEBUG,

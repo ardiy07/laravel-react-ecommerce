@@ -42,4 +42,14 @@ class User extends Authenticatable
         ];
     }
 
+    public function shop()
+    {
+        return $this->hasOne(Shope::class, 'user_id');
+    }
+
+    public function village()
+    {
+        return $this->belongsTo(Village::class, 'village_id');
+    }
+
 }
