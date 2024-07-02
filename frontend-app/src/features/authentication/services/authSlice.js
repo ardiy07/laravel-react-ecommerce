@@ -46,7 +46,7 @@ const authSlice = createSlice({
         state.status = 'failed';
         state.error = true;
         state.message = action.payload;
-      });
+      })
   },
 });
 

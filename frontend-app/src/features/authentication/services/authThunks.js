@@ -15,8 +15,8 @@ export const fetchAuthLogin = createAsyncThunk(
         expired,
         status
       }));
-
       return response.data;
+      
     } catch (error) {
       if (error.response && error.response.data) {
         return rejectWithValue(error.response.data);
@@ -30,13 +30,8 @@ export const fetchAuthLogout = createAsyncThunk(
   'auth/fetchAuthLogout',
   async (_, { rejectWithValue }) => {
       try {
-          // Contoh permintaan logout ke server
           const response = await axiosInstance.post('/logout');
-
-          // Hapus data autentikasi dari localStorage
-          localStorage.removeItem('authData');
-          localStorage.removeItem('isLogin');
-
+          localStorage.clear();
           return response.data;
       } catch (error) {
           if (error.response && error.response.data) {

@@ -5,7 +5,6 @@ const useAuth = () => {
     const isLogin = useSelector((state) => {
         const authData = localStorage.getItem('authData');
         if (!authData) {
-            // Jika tidak ada data autentikasi, hapus semua data localStorage
             localStorage.clear();
             return false;
         }
@@ -13,11 +12,11 @@ const useAuth = () => {
         return authService.tokenAuth !== null;
     });
 
-    const idUser = useSelector((state) => state.auth.idUser);
+    const dataUser = useSelector((state) => state.auth.dataUser);
 
     return {
         isLogin,
-        idUser
+        dataUser
     }
 }
 

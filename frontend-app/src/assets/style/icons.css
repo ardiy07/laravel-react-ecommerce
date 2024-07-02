@@ -1,0 +1,134 @@
+
+.icon-phone {
+    width: 24px;
+    height: 24px;
+    background-image: url('../icons/icons.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 60% 60%;
+    display: inline-block;
+}
+
+.icon-search {
+    background-image: url('../icons/search.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.icon-located {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url('../icons/location.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.icon-down {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('../icons/icons.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    display: inline-block;
+}
+
+.icon-message {
+    width: 24px;
+    height: 24px;
+    background-image: url("../icons/icons.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 20% 20%;
+}
+
+.icon-notif {
+    width: 24px;
+    height: 24px;
+    background-image: url('../icons/icons.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 40% 40%;
+}
+
+.icon-setting {
+    width: 24px;
+    height: 24px;
+    background-image: url('../icons/icons.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 80% 80%;
+}
+
+.icon-market {
+    width: 24px;
+    height: 24px;
+    background-image: url('../icons/icons.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+}
+
+.icon-close{
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url('../icons/close.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.logout{
+    background: url('../icons/logout.svg') no-repeat;
+    display: inline-block;
+    background-size: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.saldo{
+    background: url('../icons/6414abf1.svg') no-repeat;
+    display: inline-block;
+    background-size: 100%;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.body-icon-header{
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.costum-scroll-notf::-webkit-scrollbar {
+    width: 2px;
+}
+
+.costum-scroll-notf::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.5);
+}
+
+.costum-scroll-notf::-webkit-scrollbar-track {
+    background-color: rgba(209, 213, 219, 0.5);
+}
+
+
+

@@ -1,0 +1,44 @@
+.modif {
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.header-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('../../../assets/icons/icons.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 60% 60%;
+}
+
+.header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-width: 168px;
+    margin-right: 16px;
+}

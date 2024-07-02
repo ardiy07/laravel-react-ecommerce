@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\user\MeResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -31,8 +32,7 @@ class AuthController extends Controller
         return response()->json([
             'authService' => [
                 'tokenAuth' => $token,
-                'userID' => $user->id,
-                'expired' => config('sanctum.expiration', 86400) // Menampilkan waktu kedaluwarsa default dari konfigurasi Sanctum (opsional)
+                'expired' => config('sanctum.expiration', 86400) 
             ],
             'expired' => config('sanctum.expiration', 86400),
             'status' => 'conencted'
@@ -54,5 +54,11 @@ class AuthController extends Controller
         } catch (\Exception $e) {
             return response()->json(['message' => 'Failed to logout'], 500);
         }
+    }
+
+    public function me(Request $request)
+    {
+        $user = $request->user()->load(['shop']);
+        return new MeResource($user);
     }
 }

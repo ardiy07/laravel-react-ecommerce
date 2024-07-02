@@ -4,6 +4,7 @@ import App from './App.jsx'
 import { Provider } from 'react-redux'
 import stores from './store/store'
 import './index.css'
+import './assets/style/icons.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
