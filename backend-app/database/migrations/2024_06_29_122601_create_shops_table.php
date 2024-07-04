@@ -15,11 +15,15 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('name', 100)->unique();
+            $table->string('image', 255)->nullable();
+            $table->string('slug');
+            $table->unsignedBigInteger('type_shope_id');
             $table->float('ratings')->default(0);
             $table->integer('followers')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('type_shope_id')->references('id')->on('type_shopes')->onDelete('cascade');
         });
     }
 

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
@@ -13,13 +15,18 @@ class Product extends Model
     protected $guarded = ['id'];
 
 
-    public function categorie()
+    public function categorie(): BelongsTo
     {
         return $this->belongsTo(Categorie::class, 'categorie_id');
     }
 
-    public function shope()
+    public function shope(): BelongsTo
     {
         return $this->belongsTo(Shope::class, 'shope_id');
+    }
+
+    public function detailPromotions(): HasMany
+    {
+        return $this->hasMany(DetailPromotion::class, 'product_id');
     }
 }

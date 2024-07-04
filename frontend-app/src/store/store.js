@@ -1,35 +1,24 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authSlice from "../features/authentication/services/authSlice";
 import { APP_DEBUG } from "../config/env";
-import productHomeSlice from "../features/home/services/productHomeSlice";
 import { searchSlice } from "../features/templates";
 import { shopeSlice } from "../features/shope";
+import { profileSlice } from "../features/profile";
+import { loginSlice, logoutSlice } from "../features/authentication";
+import localStorageMonitor from "../middleware/localStorageMonitor";
+import { promotionProductSlice, productHomeSlice } from "../features/home";
 
-const checkIsLoginMiddleware = store => next => action => {
-    const previousIsLogin = store.getState().auth.isLogin;
-    next(action); // Lanjutkan eksekusi aksi
-  
-    const currentIsLogin = store.getState().auth.isLogin;
-    if (previousIsLogin !== currentIsLogin) {
-        // Deteksi perubahan isLogin
-        const storedIsLogin = localStorage.getItem('isLogin');
-        if (storedIsLogin !== String(currentIsLogin)) {
-            // Jika isLogin diubah secara manual, atur ulang atau hapus localStorage lainnya
-            localStorage.removeItem('authData'); // Contoh atur ulang localStorage lainnya
-        }
-        // Update localStorage dengan nilai isLogin yang sah
-        localStorage.setItem('isLogin', String(currentIsLogin));
-    }
-};
 
 const store = configureStore({
     reducer: {
-        auth: authSlice,
+        login: loginSlice,
+        logout: logoutSlice,
         productHome: productHomeSlice,
         search: searchSlice,
-        shope: shopeSlice
+        shope: shopeSlice,
+        profile: profileSlice,
+        promotionProduct: promotionProductSlice
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(checkIsLoginMiddleware),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(localStorageMonitor),
     devTools: APP_DEBUG,
 });
 

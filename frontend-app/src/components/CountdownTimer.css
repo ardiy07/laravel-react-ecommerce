@@ -1,0 +1,11 @@
+/* CountdownTimer.css */
+.countdown-animate {
+    /* transition: transform 0.3s ease-in-out; */
+    transform: translateY(50%);
+    /* Awalnya posisi normal */
+}
+
+.countdown-animate.unfold {
+    transform: translateY(-50%);
+    /* Menggeser elemen ke atas */
+}

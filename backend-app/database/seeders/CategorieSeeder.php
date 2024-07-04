@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Categorie;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+use Stringable;
 
 class CategorieSeeder extends Seeder
 {
@@ -23,6 +25,7 @@ class CategorieSeeder extends Seeder
             Categorie::create([
                 'id' => $item1['id'],
                 'name' => $item1['name'],
+                'slug' => Str::slug($item1['name']),
             ]);
         }
     }

@@ -1,20 +1,10 @@
 import React from 'react'
-import { Link,  useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { getAssetImages } from '../../../utils/pathUtils'
-import { useSelector } from 'react-redux'
-import BodyLogin from '../components/organisms/BodyLogin';
+import { BodyLogin } from '../components'
 
 
 function LoginPage() {
-    const navigate = useNavigate();
-    const { error, status } = useSelector((state) => state.auth);
-
-
-    if(!error && status !== 'idle' && status !== 'pending') {
-        navigate('/')
-    }
-
-
     return (
         <div className='flex flex-col items-center py-5 mx-32'>
             <div className='mb-16 flex justify-center'>

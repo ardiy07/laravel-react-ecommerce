@@ -19,8 +19,11 @@ class ShopSeeder extends Seeder
 
         for ($i = 1; $i <= 10; $i++) {
             $shopes[] = [
+                'id' => $i,
                 'user_id' => $user_id++,
                 'name' => 'Toko ' . $i,
+                'slug' => 'toko-' . $i,
+                'type_shope_id' => rand(1, 2),
                 'ratings' => 0,
                 'followers' => 0,
                 'created_at' => now(),

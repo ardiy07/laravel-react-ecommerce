@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('shope_id');
             $table->string('name', 255);
+            $table->string('slug');
             $table->text('deskripsi');
             $table->enum('status', ['habis', 'tersedia'])->default('tersedia');
             $table->integer('stocks')->default(1);

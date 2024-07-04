@@ -33,8 +33,12 @@ axiosInstance.interceptors.response.use(
     },
     (error) => {
         if (error.response && error.response.status === 401) {
-            localStorage.removeItem('authData');
+            localStorage.clear();
             window.location.href = '/login';
+        } else if(error.response && error.response.status === 422) {
+            console.log('Unauthorization');
+        } else if(error.response && error.response.status === 500) {
+            console.log('Internal Server Error');
         }
         return Promise.reject(error);
     }

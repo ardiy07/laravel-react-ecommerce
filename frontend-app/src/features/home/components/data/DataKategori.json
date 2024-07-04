@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Wanita",
+        "image": "wanita.webp",
+        "url": "#"
+    },
+    {
+        "title": "Toples",
+        "image": "toples.webp",
+        "url": "#"
+    },
+    {
+        "title": "Flashdisk",
+        "image": "harddisk.webp",
+        "url": "#"
+    },
+    {
+        "title": "Makanan",
+        "image": "makana.webp",
+        "url": "#"
+    },
+    {
+        "title": "Figure",
+        "image": "figure.webp",
+        "url": "#"
+    },
+    {
+        "title": "Pria",
+        "image": "pria.webp",
+        "url": "#"
+    }
+]

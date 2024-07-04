@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getAssetImages } from '../../../../utils/pathUtils'
-import { useDispatch } from 'react-redux'
-import { fetchAuthLogout } from '../../../authentication/services/authThunks'
+import useAuth from '../../../../hooks/useAuth'
+import useDataUser from '../../../../hooks/useDataUser'
+import { LoadingLazzy } from '../../../../components'
 
 function ModalProfil({ onOpen, onClose }) {
     const [profile, setProfile] = useState(false)
-    const dispatch = useDispatch()
-    const dataUser = null
+    const { handleLogout } = useAuth();
+    const { dataUser, statusProfile } = useDataUser();
     const profileOpen = () => {
         setProfile(true)
         onOpen()
@@ -18,24 +19,23 @@ function ModalProfil({ onOpen, onClose }) {
         onClose()
     }
 
-    const handleLogout = () => {
-        dispatch(fetchAuthLogout());
-    }
     return (
         <div className='realative w-full' onMouseEnter={profileOpen} onMouseLeave={profileClose}>
-            <button className={`flex items-center gap-1 w-full hover:bg-gray-100 px-2 py-1 rounded-md ${profile ? 'bg-gray-100' : ''}`}>
-                <img src={getAssetImages('default/default_v3-usrnophoto1.png')} className='rounded-full w-8' />
-                <p className='font-medium text-gray-500 tracking-tight line-clamp-1 text-sm'>{dataUser?.name || 'Name'}</p>
-            </button>
+            {statusProfile === 'pending' ? (<LoadingLazzy />) :
+                <button className={`flex items-center gap-1 w-full hover:bg-gray-100 px-2 py-1 rounded-md ${profile ? 'bg-gray-100' : ''}`}>
+                    <img src={getAssetImages('default/default_v3-usrnophoto1.png')} className='rounded-full w-8' />
+                    <p className='font-medium text-gray-500 tracking-tight line-clamp-1 text-sm'>{dataUser?.data?.name || 'name'}</p>
+                </button>
+            }
             {profile && (
                 <div className='absolute mt-1 z-10 w-[27rem] tracking-tight bg-white shadow-2xl rounded-md right-0 border mx-10 flex flex-col px-3 py-1'>
                     <div className='px-5 gap-3 flex border shadow py-2 items-center rounded-lg'>
                         <img src={getAssetImages('default/default_v3-usrnophoto1.png')} className='rounded-full w-10 shadow' />
                         <div className='flex flex-col'>
-                            <p className='font-semibold'>Ardi</p>
+                            <p className='font-semibold'>{dataUser?.data?.fullName || 'null'}</p>
                             <Link to='#' className='text-gray-500 text-base font-normal flex gap-1 items-center'>
                                 <img src={getAssetImages('default/pakai_promo_member_silver.png')} className='w-5' />
-                                <p className='tracking-tight'>Member Silver</p>
+                                <p className='tracking-tight'>{dataUser?.data?.member || 'null'}</p>
                                 <span className='next-button'></span>
                             </Link>
                         </div>

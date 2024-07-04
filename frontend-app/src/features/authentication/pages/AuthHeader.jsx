@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import ButtonLogin from '../components/atoms/ButtonLogin'
 import { Link } from 'react-router-dom'
-import ModalLogin from '../components/organisms/ModalLogin'
+import { ModalLogin } from '../components';
+import { LoadingLazzy } from '../../../components';
 
 function AuthHeader() {
     const [showLogin, setShowLogin] = useState(false);
@@ -25,7 +26,11 @@ function AuthHeader() {
                     </Link>
                 </div>
             </div>
-            {showLogin && <ModalLogin close={handleCloseModal} />}
+            {showLogin &&
+                <Suspense>
+                    <ModalLogin close={handleCloseModal} />
+                </Suspense >
+            }
         </>
     )
 }

@@ -22,6 +22,9 @@ class ShopController extends Controller
             $user = auth()->user();
             $shop = $user->shop;
 
+            if (is_null($shop)) {
+                return false;
+            }
             return new ShopeHeaderResource($shop);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Unauthorized'], 401);

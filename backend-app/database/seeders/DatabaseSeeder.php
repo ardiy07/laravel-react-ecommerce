@@ -16,14 +16,17 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $this->call([
-            // CategorieSeeder::class,
-            // ProvinceSeeder::class,
-            // RegencieSeeder::class,
-            // DistrictSeeder::class,
-            // VillageSeeder::class,
-            // UserSeeder::class,
-            // ShopSeeder::class,
-            ProductSeeder::class
+            PromotionSeeder::class,
+            TypeShopeSeeder::class,
+            CategorieSeeder::class,
+            ProvinceSeeder::class,
+            RegencieSeeder::class,
+            DistrictSeeder::class,
+            VillageSeeder::class,
+            UserSeeder::class,
+            ShopSeeder::class,
+            ProductSeeder::class,
+            DetailPromotionSeeder::class
         ]);
 
 

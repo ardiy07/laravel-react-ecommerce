@@ -1,17 +1,15 @@
 import React from 'react'
 import MainTamplates from '../../templates/pages/MainTamplates'
-// import MainTamplate from '../../../components/templates/MainTamplate'
-// import BannerHome from '../components/banner/BannerHome'
-// import TopUpHome from '../components/topUp/TopUpHome'
-// import KuponHome from '../components/kupon/KuponHome'
-// import PenggunaBaruHome from '../components/penggunaBaru/PenggunaBaruHome'
-// import DiskonHome from '../components/diskon/DiskonHome'
-// import TrendingHome from '../components/trending/TrendingHome'
-// import NavbarProductHome from '../components/navbarProduct/NavbarProductHome'
+import { Banner, TopUp } from '../components'
+import PenggunaBaru from '../components/organisms/PenggunaBaru'
 
 function HomePage() {
   return (
     <MainTamplates>
+      <Banner />
+      <TopUp />
+      <PenggunaBaru />
+      <PenggunaBaru />
         {/* <BannerHome />
         <TopUpHome />
         <KuponHome />

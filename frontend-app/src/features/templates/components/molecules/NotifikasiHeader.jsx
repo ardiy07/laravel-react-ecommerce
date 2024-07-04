@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import IconHeader from '../atoms/IconHeader';
 import { Link } from 'react-router-dom';
-import LinkPageNotif from '../atoms/LinkPageNotif';
 import DataNotifikasi from '../data/DataNotifikasi.json';
 import { getAssetImages } from '../../../../utils/pathUtils';
+import { LinkPage } from '../../../../components';
 
 function NotifikasiHeader({onClose, onOpen}) {
   const [isOpen, setIsOpen] = useState(false)
@@ -41,8 +41,8 @@ function NotifikasiHeader({onClose, onOpen}) {
             </div>
             <div className='text-center cursor-pointer'>
               <ul className='grid grid-flow-col w-full text-gray-500'>
-                <LinkPageNotif onClick={() => handleClick("Transaksi")} currentPage={currentPage} title="Transaksi" />
-                <LinkPageNotif onClick={() => handleClick("Update")} currentPage={currentPage} title="Update" />
+                <LinkPage onClick={() => handleClick("Transaksi")} currentPage={currentPage} title="Transaksi" />
+                <LinkPage onClick={() => handleClick("Update")} currentPage={currentPage} title="Update" />
               </ul>
             </div>
           </div>

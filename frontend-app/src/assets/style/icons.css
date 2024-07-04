@@ -98,6 +98,24 @@
     height: 1.5rem;
 }
 
+.next-button{
+    background-image: url('../icons/next.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.back-button{
+    background-image: url('../icons/back.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
 .body-icon-header{
     width: 40px;
     height: 40px;

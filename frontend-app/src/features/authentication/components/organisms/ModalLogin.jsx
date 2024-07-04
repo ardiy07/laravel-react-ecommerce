@@ -4,13 +4,6 @@ import { Link } from 'react-router-dom'
 import FormLogin from '../molecules/FormLogin';
 
 function ModalLogin(props) {
-    const { error, status, isLogin } = useSelector((state) => state.auth);
-
-    if (!error && isLogin && status !== 'idle' && status !== 'pending') {
-        window.location.reload();
-    }
-
-
     return (
         <div className='fixed inset-0 bg-slate-700 bg-opacity-70 z-50 w-screen h-screen flex items-center justify-center'>
             <div className=' bg-white border shadow w-96 h-[30rem] rounded-xl py-3 px-5'>

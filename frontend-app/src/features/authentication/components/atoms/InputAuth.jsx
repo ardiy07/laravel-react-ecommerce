@@ -11,7 +11,6 @@ function InputAuth(props) {
                 onChange={props.onChange}
                 placeholder={props.placeholder || ''}
                 name={props.name || ''}
-                id={props.id || ''}
                 autoComplete={props.autoComplete || 'off'}
                 required
             />

@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Suspense } from "react"
 import { LoginPage } from "./features/authentication"
 import { HomePage } from "./features/home"
-import { NotFoundPage } from "./features/notFound"
+import { NotFoundPage } from "./features/error"
 
 
 function App() {

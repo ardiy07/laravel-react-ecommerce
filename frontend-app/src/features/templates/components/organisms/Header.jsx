@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import TopHeader from '../molecules/TopHeader';
 import '../index.css';
 import LogoHeader from '../molecules/LogoHeader';
@@ -9,8 +9,9 @@ import MarketHeader from '../molecules/MarketHeader';
 import AuthHeader from '../../../authentication/pages/AuthHeader';
 import useAuth from '../../../../hooks/useAuth';
 import ModalShope from '../../../shope/components/organisms/ModalShope';
-import ModalProfil from '../../../profile/components/organisms/ModalProfil';
 import LinkButton from '../atoms/LinkButton';
+import { ModalProfile } from '../../../profile/components';
+import { LoadingLazzy } from '../../../../components';
 
 function Header(props) {
     const [style, setStyle] = useState('');
@@ -40,16 +41,16 @@ function Header(props) {
                 {/* Logo */}
                 <LogoHeader to={'/'} />
                 {/* Kategori */}
-                <div className='flex mr-3 px-2 py-2 rounded-lg hover:bg-gray-200 items-center'>Kategori</div>
+                <div className='flex mr-3 px-2 py-2 text-sm rounded-lg hover:bg-gray-200 items-center'>Kategori</div>
                 {/* Search */}
                 <div className='w-6/12 mr-5'>
-                    <SearchHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose}/>
+                    <SearchHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} />
                 </div>
                 {/* Icon */}
                 <div className='mr-1 flex gap-1'>
                     {isLogin ? (
                         <>
-                            <MarketHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} auth={props.auth} count={3} />
+                            <MarketHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} auth={isLogin} count={0} />
                             <NotifikasiHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} />
                             <MessageHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} />
                         </>
@@ -66,8 +67,12 @@ function Header(props) {
                 <div className='w-48'>
                     {isLogin ? (
                         <div className='flex gap-1 justify-between w-full'>
-                            <ModalShope onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} />
-                            <ModalProfil onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} />
+                            <Suspense fallback={<LoadingLazzy />}>
+                                <ModalShope onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} />
+                            </Suspense>
+                            <Suspense fallback={<LoadingLazzy />}>
+                                <ModalProfile onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} />
+                            </Suspense>
                         </div>
                     ) : (
                         <AuthHeader />

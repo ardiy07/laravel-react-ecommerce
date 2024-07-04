@@ -61,8 +61,6 @@ function SearchHeader({ onOpen, onClose }) {
     };
   }, [typingTimer]);
 
-  console.log(dataSearch, statusSearch, search);
-
   return (
     <div className='relative'>
       <InputSearch

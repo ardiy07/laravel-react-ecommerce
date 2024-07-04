@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { getAssetImages } from '../../../../utils/pathUtils'
-import { useDispatch, useSelector } from 'react-redux'
-import { fecthShopeHeader } from '../../services/thunk/shopeThunks'
 import { Link } from 'react-router-dom'
+import useDataUser from '../../../../hooks/useDataUser'
+import { LoadingLazzy } from '../../../../components'
 
-function ModalShope({onOpen, onClose}) {
+function ModalShope({ onOpen, onClose }) {
     const [isOpen, setIsOpen] = useState(false)
-    const dataShope = localStorage.getItem('ShopeUser') ? JSON.parse(localStorage.getItem('ShopeUser')) : null
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(fecthShopeHeader())
-    }, [dispatch])
-
-    console.log(dataShope)
-
+    const { dataShope, statusShope} = useDataUser()
     const storeOpen = () => {
         setIsOpen(true)
         onOpen()
@@ -24,12 +16,15 @@ function ModalShope({onOpen, onClose}) {
         setIsOpen(false)
         onClose()
     }
+
     return (
         <div className='relative w-full' onMouseEnter={storeOpen} onMouseLeave={storeClose}>
-            <button className={`flex items-center gap-1 w-full hover:bg-gray-100 px-2 py-1 rounded-md ${isOpen ? 'bg-gray-100' : ''}`}>
-                <img src={getAssetImages('default/default_v3-shopnophoto.png')} className='rounded-full w-8' />
-                <p className='font-medium text-gray-500 tracking-tight line-clamp-1 text-sm'>{dataShope?.data?.name || 'Toko'}</p>
-            </button>
+            {statusShope === 'pending' ? (<LoadingLazzy />) :
+                <button className={`flex items-center gap-1 w-full hover:bg-gray-100 px-2 py-1 rounded-md ${isOpen ? 'bg-gray-100' : ''}`}>
+                    <img src={getAssetImages('default/default_v3-shopnophoto.png')} className='rounded-full w-8' />
+                    <p className='font-medium text-gray-500 tracking-tight line-clamp-1 text-sm'>{dataShope?.data?.name || 'Toko'}</p>
+                </button>
+            }
             {isOpen && (
                 <div className='mt-1 absolute z-10 w-72 tracking-tight bg-white shadow-2xl rounded-md right-0 border -mx-20 flex gap-4 flex-col items-center px-3 py-6'>
                     {dataShope && dataShope !== null ? (
