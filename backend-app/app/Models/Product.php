@@ -29,4 +29,9 @@ class Product extends Model
     {
         return $this->hasMany(DetailPromotion::class, 'product_id');
     }
+
+    public function shopping(): HasMany
+    {
+        return $this->hasMany(Shopping::class);
+    }
 }

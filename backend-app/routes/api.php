@@ -37,6 +37,4 @@ Route::prefix('v1')->group(function () {
         Route::get('/product/{slug}', 'show')->name('product.show');
         Route::get('/product-promotion', 'promotion')->name('product.promotion');
     });
-
 });
-

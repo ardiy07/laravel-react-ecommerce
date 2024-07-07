@@ -61,4 +61,55 @@ class AuthController extends Controller
         $user = $request->user()->load(['shop']);
         return new MeResource($user);
     }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255', 'min:4'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'password' => ['required', 'string', 'min:8'],
+            'gender' => ['required', 'enum:perempuan,pria'],
+            'addres' => ['required', 'string'],
+            'no_telp' => ['required', 'string', 'max:12'],
+            'profile' => ['image', 'mimes:jpeg,png,jpg', 'file', 'max:2048'],
+            'village' => ['required'],
+        ]);
+
+
+        // Ambil Request
+        $name = $request->name;
+        $email = $request->email;
+        $password = Hash::make($request->password);
+        $gender = $request->gender;
+        $addres = $request->addres;
+        $no_telp = $request->no_telp;
+        $profile = $request->file('profile');
+        $username = $request->name + uniqid();
+        $village = $request->village;
+
+        // Upload Gambar
+        if(isset($profile)) {
+            $name = $profile->hashName();
+            $ekstension = $profile->extension();
+            $generateName = $name . '_' . uniqid() . '.' . $ekstension;
+            $profile = $profile->storeAs('public/profile', $generateName);
+        } else{
+            $profile = 'public/profile/default-user.png';
+        }
+
+
+        $user = User::create([
+            'name' => $name,
+            'username' => $username,
+            'email' => $email,
+            'password' => $password,
+            'gender' => $gender,
+            'addres' => $addres,
+            'no_telp' => $no_telp,
+            'profile' => $profile,
+            'village_id' => $village
+        ]);
+
+        return response()->json($user);
+    }
 }

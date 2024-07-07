@@ -11,4 +11,10 @@ class SlugHelper
         $nameWithShopId = $name . '-' . $shopId;
         return Str::slug($nameWithShopId);
     }
+
+    public static function slugUsername($name)
+    {
+        $username = $name + uniqid();
+        return Str::slug($username);
+    }
 }

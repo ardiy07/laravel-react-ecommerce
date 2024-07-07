@@ -20,14 +20,12 @@ class DetailPromotionSeeder extends Seeder
         $limitedData = array_slice($data, 0, 23);
 
         foreach($limitedData as $item1) {
-            $id = $item1['id'];
             $promotion_id = 1;
             $price_sale = 1000;
             $stock = 5;
             $order = rand(0, 3);
             $product_id = $item1['id'];
             DetailPromotion::create([
-                'id' => $id,
                 'price_sale' => $price_sale,
                 'stocks' => $stock,
                 'order' => $order,

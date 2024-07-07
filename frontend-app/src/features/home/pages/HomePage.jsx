@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import MainTamplates from '../../templates/pages/MainTamplates'
-import { Banner, TopUp } from '../components'
-import PenggunaBaru from '../components/organisms/PenggunaBaru'
+import { Banner, TopUp, PenggunaBaru } from '../components'
 
 function HomePage() {
   return (
     <MainTamplates>
-      <Banner />
-      <TopUp />
-      <PenggunaBaru />
-      <PenggunaBaru />
-        {/* <BannerHome />
+      <Suspense fallback={<div>Loading.....</div>}>
+        <Banner />
+        <TopUp />
+        <PenggunaBaru />
+        <PenggunaBaru />
+      </Suspense>
+      {/* <BannerHome />
         <TopUpHome />
         <KuponHome />
         <PenggunaBaruHome />
