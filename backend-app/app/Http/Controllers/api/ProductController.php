@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\product\ProductCollection;
+use App\Http\Resources\product\ProductCollecton;
 use App\Http\Resources\product\ProductPromotionCollection;
 use App\Http\Resources\product\ProductPromotionResource;
 use App\Http\Resources\product\ProductSearchResource;
@@ -16,12 +17,31 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
         //
-        $products = Product::with('categorie', 'shope')->get();
+        $categorie = $request->categorie;
+        $limit = $request->limit ?? 15; // Nilai default limit jika tidak disediakan
+        $page = $request->page ?? 1; // Nilai default page jika tidak disediakan
+        
+        $query = Product::query();
+        
+        if ($categorie) {
+            $query->whereHas('categorie', function ($query) use ($categorie) {
+                $query->where('slug', $categorie);
+            });
+        }
+        
+        $products = $query->with([
+            'shope',
+            'categorie',
+            'detailPromotions.promotion',
+            'shope.addres.village.distric.regencie' // pastikan nama metode relasi benar
+        ])->paginate($limit, ['*'], 'page', $page);
+        
+        return new ProductCollection($products);
+        
 
-        // return new ProductCollection($products);
         return response()->json($products);
     }
 
@@ -66,6 +86,5 @@ class ProductController extends Controller
         }
 
         return new ProductPromotionCollection($products, $promotions);
-        // return response()->json($products, $promotions);
     }
 }

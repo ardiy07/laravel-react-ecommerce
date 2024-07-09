@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { getAssetIcons, getAssetImages } from '../../../utils/pathUtils'
-import { Input } from '../../../components/atoms'
+import { Input } from '../../../components'
 
 function RegisterPage() {
   return (
     <div className='flex flex-col py-5 mx-32'>
-      <div className='mb-16 flex justify-center'>
+      <div className='mb-6 flex justify-center'>
         <Link to={'/'}>
           <img src={getAssetImages("e5b8438b.svg")} alt="Logo" className=' w-38' />
         </Link>
@@ -23,6 +23,7 @@ function RegisterPage() {
           </div>
           <div className=''>
             <form className='flex flex-col gap-4'>
+              <Input label={'Nama'} type={'text'} name={'nama'} placeholder={'Masukkan nama'} />
               <Input label={'Email'} type={'email'} name={'email'} placeholder={'Masukkan email'} />
               <Input label={'Password'} type={'password'} name={'password'} placeholder={'Masukkan password'} />
               <button className='w-full bg-green-600 py-2 rounded-lg text-white font-bold text-base' >Daftar</button>

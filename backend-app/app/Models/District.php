@@ -12,15 +12,15 @@ class District extends Model
     use HasFactory;
 
     protected $table = 'districts';
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
     public function regencie(): BelongsTo
     {
-        return $this->belongsTo(Regencie::class);
+        return $this->belongsTo(Regencie::class, 'regencie_id');
     }
 
     public function village(): HasMany
     {
-        return $this->hasMany(Village::class);
+        return $this->hasMany(Village::class, 'district_id');
     }
 }

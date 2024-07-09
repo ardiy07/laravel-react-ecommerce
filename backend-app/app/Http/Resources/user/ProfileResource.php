@@ -18,11 +18,11 @@ class ProfileResource extends JsonResource
             'id' => $this->id,
             'name' => explode(' ', trim($this->name))[0],
             'fullName' => $this->name,
-            'gender' => $this->gender,
-            'profile' => $this->profile,
             'email' => $this->email,
-            'phone' => $this->no_telp,
-            'member' => $this->type_member,
+            'phone' => $this->profile->phone,
+            'gender' => $this->profile->gender,
+            'profile' => $this->profile->profile,
+            'member' => $this->userMembership->membership->name,
             'isLogin' => $this->is_login
         ];
     }

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name', 255);
             $table->string('slug');
             $table->text('deskripsi');
-            $table->enum('status', ['habis', 'tersedia'])->default('tersedia');
             $table->integer('stocks')->default(1);
             $table->integer('price');
             $table->integer('price_sale')->default(0);

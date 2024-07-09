@@ -6,7 +6,7 @@ import useSlider from '../../../../hooks/useSlider'
 import { BackSlider, CardProductPromo, NextSlider } from '../../../../components'
 import { getAssetImages } from '../../../../utils/pathUtils'
 import {APP_DEBUG} from '../../../../config/env'
-import { discountPercentage, getStockStatus, orderPercentage } from '../../../../utils/formatCurency'
+import { discountPercentage, getStockStatus, orderPercentage } from '../../../../utils/formatUtils'
 
 function SliderPenggunaBaru({data}) {
     const [open, setOpen] = useState(false);
@@ -31,9 +31,9 @@ function SliderPenggunaBaru({data}) {
         prevArrow: <BackSlider onOpen={open} onHidden={shouldHidePrevArrow}/>,
         beforeChange: (current, next) => updateCurrentSlide(next),
     };
-    
+
     if(APP_DEBUG){
-        console.log(currentSlide)
+        console.log('Data Pengguna Baru', data);
     }
 
     return (

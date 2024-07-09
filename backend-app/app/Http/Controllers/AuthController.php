@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\user\MeResource;
+use App\Helpers\SlugHelper;
+use App\Models\Profile;
 use App\Models\User;
+use App\Models\UserMembership;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
@@ -23,19 +27,20 @@ class AuthController extends Controller
 
         if (!$user || !Hash::check($request->password, $user->password)) {
             throw ValidationException::withMessages([
-                'email' => ['The provided credentials are incorrect.'],
+                'message' => ['Email atau Password Salah'],
             ]);
         }
+
+        DB::table('users')->where('id', $user->id)->update(['is_login' => true]);
 
         $token = $user->createToken('my-app')->plainTextToken;
 
         return response()->json([
-            'authService' => [
+            'data' => [
                 'tokenAuth' => $token,
-                'expired' => config('sanctum.expiration', 86400) 
-            ],
-            'expired' => config('sanctum.expiration', 86400),
-            'status' => 'conencted'
+                'id' => $user->id,
+                'email' => $user->email
+            ]
         ]);
     }
 
@@ -43,73 +48,82 @@ class AuthController extends Controller
     {
         try {
             $user = $request->user();
-
             if ($user) {
                 $user->setRememberToken(null);
                 $user->save();
             }
             $user->tokens()->delete();
+            DB::table('users')->where('id', $user->id)->update(['is_login' => false]);
 
-            return response()->json(['message' => 'Logged out successfully']);
+            return response()->json(['message' => 'Logout Berhasil'], 200);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Failed to logout'], 500);
+            return response()->json(['message' => 'Logout Gagal'], 500);
         }
     }
 
     public function me(Request $request)
     {
-        $user = $request->user()->load(['shop']);
-        return new MeResource($user);
+        $user = $request->user();
+        return response()->json($user);
     }
 
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255', 'min:4'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
-            'password' => ['required', 'string', 'min:8'],
-            'gender' => ['required', 'enum:perempuan,pria'],
-            'addres' => ['required', 'string'],
-            'no_telp' => ['required', 'string', 'max:12'],
-            'profile' => ['image', 'mimes:jpeg,png,jpg', 'file', 'max:2048'],
-            'village' => ['required'],
-        ]);
+        try {
+            $request->validate([
+                'name' => ['required', 'string', 'max:255', 'min:4'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+                'password' => ['required', 'string', 'min:8'],
+                // 'gender' => ['required', 'in:perempuan,pria'],
+                // 'phone' => ['required', 'string', 'max:12'],
+                // 'profile' => ['image', 'mimes:jpeg,png,jpg', 'file', 'max:2048']
+            ]);
 
+            
+            // Ambil Request
+            $name = $request->name;
+            $email = $request->email;
+            $password = Hash::make($request->password);
+            // $gender = $request->gender;
+            // $phone = $request->phone;
+            // $profile = $request->file('profile');
+            
+            // Upload Gambar
+            // if ($request->file('profile')) {
+            //     $nameImg = $profile->hashName();
+            //     $request->file('profile')->storeAs('public/images/profile', $nameImg);
+            //     $pathImgProfile = Storage::url('public/images/profile/' . $nameImg);
+            //     $profile = $pathImgProfile;
+            // } else {
+            //     $profile = 'images/profile/default-user.png';
+            // }
+            
+            DB::beginTransaction();
 
-        // Ambil Request
-        $name = $request->name;
-        $email = $request->email;
-        $password = Hash::make($request->password);
-        $gender = $request->gender;
-        $addres = $request->addres;
-        $no_telp = $request->no_telp;
-        $profile = $request->file('profile');
-        $username = $request->name + uniqid();
-        $village = $request->village;
+            $user = User::create([
+                'name' => $name,
+                'email' => $email,
+                'password' => $password
+            ]);
 
-        // Upload Gambar
-        if(isset($profile)) {
-            $name = $profile->hashName();
-            $ekstension = $profile->extension();
-            $generateName = $name . '_' . uniqid() . '.' . $ekstension;
-            $profile = $profile->storeAs('public/profile', $generateName);
-        } else{
-            $profile = 'public/profile/default-user.png';
+            // $profile = Profile::create([
+            //     'user_id' => $user->id,
+            //     'username' => SlugHelper::slugUsername($name, $user->id),
+            //     'gender' => $gender,
+            //     'phone' => $phone,
+            //     'profile' => $profile,
+            // ]);
+
+            DB::commit();
+
+            return response()->json(['message' => 'Registrasi Berhasil'], 201);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            if('APP_DEBUG')
+            {
+                return response()->json(['message' => $e->getMessage()], 500);
+            }
+            return response()->json(['message' => 'Registrasi Gagal'], 500);
         }
-
-
-        $user = User::create([
-            'name' => $name,
-            'username' => $username,
-            'email' => $email,
-            'password' => $password,
-            'gender' => $gender,
-            'addres' => $addres,
-            'no_telp' => $no_telp,
-            'profile' => $profile,
-            'village_id' => $village
-        ]);
-
-        return response()->json($user);
     }
 }

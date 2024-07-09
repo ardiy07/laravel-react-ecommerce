@@ -11,7 +11,7 @@ class TypeShope extends Model
     use HasFactory;
 
     protected $table = 'type_shopes';
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
     public function shope(): HasMany
     {

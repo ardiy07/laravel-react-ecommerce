@@ -12,9 +12,10 @@ class SlugHelper
         return Str::slug($nameWithShopId);
     }
 
-    public static function slugUsername($name)
+    public static function slugUsername($name, $id)
     {
-        $username = $name + uniqid();
+        $firstName = explode(' ', $name)[0];
+        $username = $firstName . $id;
         return Str::slug($username);
     }
 }

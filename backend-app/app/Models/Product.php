@@ -12,7 +12,7 @@ class Product extends Model
     use HasFactory;
 
     protected $table = 'products';
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
 
     public function categorie(): BelongsTo
@@ -30,8 +30,8 @@ class Product extends Model
         return $this->hasMany(DetailPromotion::class, 'product_id');
     }
 
-    public function shopping(): HasMany
+    public function card(): HasMany
     {
-        return $this->hasMany(Shopping::class);
+        return $this->hasMany(Card::class);
     }
 }

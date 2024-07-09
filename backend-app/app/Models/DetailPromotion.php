@@ -10,11 +10,16 @@ class DetailPromotion extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
     protected $table = 'detail_promotions';
 
     public function promotion(): BelongsTo
     {
-        return $this->belongsTo(Promotion::class, 'promotion_id');
+        return $this->belongsTo(Promotion::class);
+    }
+
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(Product::class);
     }
 }

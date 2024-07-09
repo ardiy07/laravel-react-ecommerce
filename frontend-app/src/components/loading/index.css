@@ -1,0 +1,29 @@
+.animate-loading-page-up{
+    animation: loadingup 2s infinite;
+}
+
+.animate-loading-page-down{
+    animation: loadingdown 2s infinite;
+}
+
+@keyframes loadingup {
+    0%, 100% {
+        transform: translateY(-50%);
+        opacity: 95%;
+    }
+    50% {
+        transform: translateY(10%);
+        opacity: 90%;
+    }
+}
+
+@keyframes loadingdown {
+    0%, 100% {
+        transform: translateY(-30%);
+        opacity: 95%;
+    }
+    50% {
+        transform: translateY(-150%);
+        opacity: 90%;
+    }
+}

@@ -30,9 +30,9 @@ const loginSlice = createSlice({
                 state.error = false;
                 state.message = '';
                 state.isLogin = true;
-                state.token = action.payload;
+                state.token = action.payload.data;
                 setItemLocalStorage('isLogin', true);
-                setItemLocalStorage('authData', action.payload);
+                setItemLocalStorage('authData', action.payload.data);
             })
             .addCase(fetchAuthLogin.rejected, (state, action) => {
                 state.status = 'failed';

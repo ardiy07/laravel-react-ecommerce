@@ -11,9 +11,9 @@ class Categorie extends Model
     use HasFactory;
 
     protected $table = 'categories';
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
-    public function products(): HasMany
+    public function product(): HasMany
     {
         return $this->hasMany(Product::class, 'categorie_id');
     }

@@ -35,9 +35,9 @@ function SliderTopUpButton() {
         beforeChange: (current, next) => updateCurrentSlide(next)
     };
     
-    if(APP_DEBUG) {
-        console.log({shouldHideNextArrow, shouldHidePrevArrow, updateCurrentSlide, currentSlide});
-    }
+    // if(APP_DEBUG) {
+    //     console.log({shouldHideNextArrow, shouldHidePrevArrow, updateCurrentSlide, currentSlide});
+    // }
 
     return (
         <div className='col-span-2 pt-6 pb-2 overflow-hidden' onMouseEnter={onOpen} onMouseLeave={onClose}>

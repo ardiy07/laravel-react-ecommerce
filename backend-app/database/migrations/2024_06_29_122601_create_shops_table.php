@@ -25,6 +25,15 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('type_shope_id')->references('id')->on('type_shopes')->onDelete('cascade');
         });
+
+        Schema::create('addres_shope', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('shope_id');
+            $table->unsignedBigInteger('village_id');
+            $table->timestamps();
+            $table->foreign('shope_id')->references('id')->on('shopes')->onDelete('cascade');
+            $table->foreign('village_id')->references('id')->on('villages')->onDelete('cascade'); 
+        });
     }
 
     /**
@@ -33,5 +42,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('shops');
+        Schema::dropIfExists('addres_shope');
     }
 };

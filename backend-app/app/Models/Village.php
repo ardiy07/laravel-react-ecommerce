@@ -12,16 +12,21 @@ class Village extends Model
     use HasFactory;
 
     protected $table = 'villages';
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
     public function distric(): BelongsTo
     {
-        return $this->belongsTo(District::class);
+        return $this->belongsTo(District::class, 'district_id');
     }
 
-    public function users(): HasMany
+    public function addresShope(): HasMany
     {
-        return $this->hasMany(User::class, 'village_id');
+        return $this->hasMany(AddresShope::class);
     }
+
+    // public function users(): HasMany
+    // {
+    //     return $this->hasMany(User::class, 'village_id');
+    // }
     
 }

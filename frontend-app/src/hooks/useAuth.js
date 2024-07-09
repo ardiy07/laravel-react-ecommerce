@@ -20,7 +20,7 @@ const useAuth = () => {
             localStorage.clear();
             return false;
         }
-        const authService = JSON.parse(authData).authService;
+        const authService = JSON.parse(authData);
         return authService.tokenAuth !== null;
     });
 

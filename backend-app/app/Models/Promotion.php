@@ -10,11 +10,11 @@ class Promotion extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
     protected $table = 'promotions';
 
-    public function detailPromotions(): HasMany
+    public function detailPromotion(): HasMany
     {
-        return $this->hasMany(DetailPromotion::class, 'promotion_id');
+        return $this->hasMany(DetailPromotion::class);
     }
 }

@@ -21,6 +21,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     // protected $guarded = ['id'];
+    protected $table = 'users';
 
     /**
      * The attributes that should be hidden for serialization.
@@ -45,19 +46,37 @@ class User extends Authenticatable
         ];
     }
 
+    public function profile(): HasOne
+    {
+        return $this->hasOne(Profile::class, 'user_id');
+    }
+
+    public function role(): BelongsTo
+    {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
+
+    public function addres(): HasMany
+    {
+        return $this->hasMany(Addres::class);
+    }
+
+    public function userMembership(): HasOne
+    {
+        return $this->hasOne(UserMembership::class);
+    }
+
+
     public function shop(): HasOne
     {
         return $this->hasOne(Shope::class, 'user_id');
     }
 
-    public function village(): BelongsTo
-    {
-        return $this->belongsTo(Village::class, 'village_id');
-    }
+    
 
-    public function shopping(): HasMany
+    public function card(): HasMany
     {
-        return $this->hasMany(Shopping::class);
+        return $this->hasMany(Card::class);
     }
 
 }

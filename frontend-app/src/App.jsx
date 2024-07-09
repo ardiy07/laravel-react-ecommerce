@@ -5,19 +5,20 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 // import LoginPage from "./features/authentication/pages/LoginPage"
 // import MainTamplate from "./components/templates/MainTamplate"
 import { Suspense } from "react"
-import { LoginPage } from "./features/authentication"
+import { LoginPage, RegisterPage } from "./features/authentication"
 import { HomePage } from "./features/home"
 import { NotFoundPage } from "./features/error"
+import LoadingPage from "./components/loading/LoadingPage"
 
 
 function App() {
   return (
     <Router>
-      <Suspense>
+      <Suspense fallback={<LoadingPage />}>
         <Routes>
-          <Route path="/*" element={<NotFoundPage />} />
+          <Route  path="/*" element={<NotFoundPage />} />
           <Route path="/" element={<HomePage />} />
-          {/* <Route path="/register" element={<RegisterPage />} /> */}
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Suspense>

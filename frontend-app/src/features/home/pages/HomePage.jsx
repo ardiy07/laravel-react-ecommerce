@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import MainTamplates from '../../templates/pages/MainTamplates'
-import { Banner, TopUp, PenggunaBaru } from '../components'
+import { Banner, TopUp, PenggunaBaru, Kupon } from '../components'
 
 function HomePage() {
   return (
@@ -8,6 +8,7 @@ function HomePage() {
       <Suspense fallback={<div>Loading.....</div>}>
         <Banner />
         <TopUp />
+        <Kupon />
         <PenggunaBaru />
         <PenggunaBaru />
       </Suspense>

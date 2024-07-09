@@ -14,7 +14,7 @@ axiosInstance.interceptors.request.use(
         const authData = localStorage.getItem('authData');
         if (authData) {
             const serviceData = JSON.parse(authData);
-            const token = serviceData.authService.tokenAuth;
+            const token = serviceData.tokenAuth;
             
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;

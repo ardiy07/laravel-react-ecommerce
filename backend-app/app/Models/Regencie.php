@@ -12,7 +12,7 @@ class Regencie extends Model
     use HasFactory;
 
     protected $table = 'regencies';
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
     public function province(): BelongsTo
     {

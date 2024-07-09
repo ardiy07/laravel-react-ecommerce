@@ -149,4 +149,47 @@
 }
 
 
+.toko-lokal{
+    background-image: url('../images/shopes/power_merchant_badge.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.toko-official{
+    background-image: url('../images/shopes/official_store_badge.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.power-mirchant{
+    background-image: url('../images/shopes/power_merchant.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.tokopedia{
+    background-image: url('../images/shopes/DilayaniTokopedia_Icon.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.stars-icon{
+    background-image: url('../icons/star.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 1rem;
+    height: 1rem;
+}
+
+
+
+
 

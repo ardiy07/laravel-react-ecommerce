@@ -1,11 +1,12 @@
-import LoadingLazzy from "./LoadingLazzy";
-import NextSlider from "./NextSlider";
-import BackSlider from "./BackSlider";
-import LinkPage from "./LinkPage";
-import Input from "./Input";
-import Dropdown from "./Dropdown";
-import CardProductPromo from "./CardProductPromo";
+import LoadingLazzy from "./loading/LoadingLazzy";
+import NextSlider from "./button/NextSlider";
+import BackSlider from "./button/BackSlider";
+import LinkPage from "./link/LinkPage";
+import Input from "./input/Input";
+import Dropdown from "./input/Dropdown";
+import CardProductPromo from "./card/CardProductPromo";
 import CountDownTimer from "./CountDownTimer";
+import CardProduct from "./card/CardProduct";
 
 export { 
     LoadingLazzy, 
@@ -15,5 +16,6 @@ export {
     Input,
     Dropdown,
     CardProductPromo,
-    CountDownTimer
+    CountDownTimer,
+    CardProduct
 }

@@ -18,92 +18,92 @@ class RegencieSeeder extends Seeder
     {
         "id": "1101",
         "province_id": "11",
-        "name": "KABUPATEN ACEH SELATAN"
+        "name": "KAB. ACEH SELATAN"
     },
     {
         "id": "1102",
         "province_id": "11",
-        "name": "KABUPATEN ACEH TENGGARA"
+        "name": "KAB. ACEH TENGGARA"
     },
     {
         "id": "1103",
         "province_id": "11",
-        "name": "KABUPATEN ACEH TIMUR"
+        "name": "KAB. ACEH TIMUR"
     },
     {
         "id": "1104",
         "province_id": "11",
-        "name": "KABUPATEN ACEH TENGAH"
+        "name": "KAB. ACEH TENGAH"
     },
     {
         "id": "1105",
         "province_id": "11",
-        "name": "KABUPATEN ACEH BARAT"
+        "name": "KAB. ACEH BARAT"
     },
     {
         "id": "1106",
         "province_id": "11",
-        "name": "KABUPATEN ACEH BESAR"
+        "name": "KAB. ACEH BESAR"
     },
     {
         "id": "1107",
         "province_id": "11",
-        "name": "KABUPATEN PIDIE"
+        "name": "KAB. PIDIE"
     },
     {
         "id": "1108",
         "province_id": "11",
-        "name": "KABUPATEN ACEH UTARA"
+        "name": "KAB. ACEH UTARA"
     },
     {
         "id": "1109",
         "province_id": "11",
-        "name": "KABUPATEN SIMEULUE"
+        "name": "KAB. SIMEULUE"
     },
     {
         "id": "1110",
         "province_id": "11",
-        "name": "KABUPATEN ACEH SINGKIL"
+        "name": "KAB. ACEH SINGKIL"
     },
     {
         "id": "1111",
         "province_id": "11",
-        "name": "KABUPATEN BIREUEN"
+        "name": "KAB. BIREUEN"
     },
     {
         "id": "1112",
         "province_id": "11",
-        "name": "KABUPATEN ACEH BARAT DAYA"
+        "name": "KAB. ACEH BARAT DAYA"
     },
     {
         "id": "1113",
         "province_id": "11",
-        "name": "KABUPATEN GAYO LUES"
+        "name": "KAB. GAYO LUES"
     },
     {
         "id": "1114",
         "province_id": "11",
-        "name": "KABUPATEN ACEH JAYA"
+        "name": "KAB. ACEH JAYA"
     },
     {
         "id": "1115",
         "province_id": "11",
-        "name": "KABUPATEN NAGAN RAYA"
+        "name": "KAB. NAGAN RAYA"
     },
     {
         "id": "1116",
         "province_id": "11",
-        "name": "KABUPATEN ACEH TAMIANG"
+        "name": "KAB. ACEH TAMIANG"
     },
     {
         "id": "1117",
         "province_id": "11",
-        "name": "KABUPATEN BENER MERIAH"
+        "name": "KAB. BENER MERIAH"
     },
     {
         "id": "1118",
         "province_id": "11",
-        "name": "KABUPATEN PIDIE JAYA"
+        "name": "KAB. PIDIE JAYA"
     },
     {
         "id": "1171",
@@ -133,127 +133,127 @@ class RegencieSeeder extends Seeder
     {
         "id": "1201",
         "province_id": "12",
-        "name": "KABUPATEN TAPANULI TENGAH"
+        "name": "KAB. TAPANULI TENGAH"
     },
     {
         "id": "1202",
         "province_id": "12",
-        "name": "KABUPATEN TAPANULI UTARA"
+        "name": "KAB. TAPANULI UTARA"
     },
     {
         "id": "1203",
         "province_id": "12",
-        "name": "KABUPATEN TAPANULI SELATAN"
+        "name": "KAB. TAPANULI SELATAN"
     },
     {
         "id": "1204",
         "province_id": "12",
-        "name": "KABUPATEN NIAS"
+        "name": "KAB. NIAS"
     },
     {
         "id": "1205",
         "province_id": "12",
-        "name": "KABUPATEN LANGKAT"
+        "name": "KAB. LANGKAT"
     },
     {
         "id": "1206",
         "province_id": "12",
-        "name": "KABUPATEN KARO"
+        "name": "KAB. KARO"
     },
     {
         "id": "1207",
         "province_id": "12",
-        "name": "KABUPATEN DELI SERDANG"
+        "name": "KAB. DELI SERDANG"
     },
     {
         "id": "1208",
         "province_id": "12",
-        "name": "KABUPATEN SIMALUNGUN"
+        "name": "KAB. SIMALUNGUN"
     },
     {
         "id": "1209",
         "province_id": "12",
-        "name": "KABUPATEN ASAHAN"
+        "name": "KAB. ASAHAN"
     },
     {
         "id": "1210",
         "province_id": "12",
-        "name": "KABUPATEN LABUHANBATU"
+        "name": "KAB. LABUHANBATU"
     },
     {
         "id": "1211",
         "province_id": "12",
-        "name": "KABUPATEN DAIRI"
+        "name": "KAB. DAIRI"
     },
     {
         "id": "1212",
         "province_id": "12",
-        "name": "KABUPATEN TOBA"
+        "name": "KAB. TOBA"
     },
     {
         "id": "1213",
         "province_id": "12",
-        "name": "KABUPATEN MANDAILING NATAL"
+        "name": "KAB. MANDAILING NATAL"
     },
     {
         "id": "1214",
         "province_id": "12",
-        "name": "KABUPATEN NIAS SELATAN"
+        "name": "KAB. NIAS SELATAN"
     },
     {
         "id": "1215",
         "province_id": "12",
-        "name": "KABUPATEN PAKPAK BHARAT"
+        "name": "KAB. PAKPAK BHARAT"
     },
     {
         "id": "1216",
         "province_id": "12",
-        "name": "KABUPATEN HUMBANG HASUNDUTAN"
+        "name": "KAB. HUMBANG HASUNDUTAN"
     },
     {
         "id": "1217",
         "province_id": "12",
-        "name": "KABUPATEN SAMOSIR"
+        "name": "KAB. SAMOSIR"
     },
     {
         "id": "1218",
         "province_id": "12",
-        "name": "KABUPATEN SERDANG BEDAGAI"
+        "name": "KAB. SERDANG BEDAGAI"
     },
     {
         "id": "1219",
         "province_id": "12",
-        "name": "KABUPATEN BATU BARA"
+        "name": "KAB. BATU BARA"
     },
     {
         "id": "1220",
         "province_id": "12",
-        "name": "KABUPATEN PADANG LAWAS UTARA"
+        "name": "KAB. PADANG LAWAS UTARA"
     },
     {
         "id": "1221",
         "province_id": "12",
-        "name": "KABUPATEN PADANG LAWAS"
+        "name": "KAB. PADANG LAWAS"
     },
     {
         "id": "1222",
         "province_id": "12",
-        "name": "KABUPATEN LABUHANBATU SELATAN"
+        "name": "KAB. LABUHANBATU SELATAN"
     },
     {
         "id": "1223",
         "province_id": "12",
-        "name": "KABUPATEN LABUHANBATU UTARA"
+        "name": "KAB. LABUHANBATU UTARA"
     },
     {
         "id": "1224",
         "province_id": "12",
-        "name": "KABUPATEN NIAS UTARA"
+        "name": "KAB. NIAS UTARA"
     },
     {
         "id": "1225",
         "province_id": "12",
-        "name": "KABUPATEN NIAS BARAT"
+        "name": "KAB. NIAS BARAT"
     },
     {
         "id": "1271",
@@ -298,62 +298,62 @@ class RegencieSeeder extends Seeder
     {
         "id": "1301",
         "province_id": "13",
-        "name": "KABUPATEN PESISIR SELATAN"
+        "name": "KAB. PESISIR SELATAN"
     },
     {
         "id": "1302",
         "province_id": "13",
-        "name": "KABUPATEN SOLOK"
+        "name": "KAB. SOLOK"
     },
     {
         "id": "1303",
         "province_id": "13",
-        "name": "KABUPATEN SIJUNJUNG"
+        "name": "KAB. SIJUNJUNG"
     },
     {
         "id": "1304",
         "province_id": "13",
-        "name": "KABUPATEN TANAH DATAR"
+        "name": "KAB. TANAH DATAR"
     },
     {
         "id": "1305",
         "province_id": "13",
-        "name": "KABUPATEN PADANG PARIAMAN"
+        "name": "KAB. PADANG PARIAMAN"
     },
     {
         "id": "1306",
         "province_id": "13",
-        "name": "KABUPATEN AGAM"
+        "name": "KAB. AGAM"
     },
     {
         "id": "1307",
         "province_id": "13",
-        "name": "KABUPATEN LIMA PULUH KOTA"
+        "name": "KAB. LIMA PULUH KOTA"
     },
     {
         "id": "1308",
         "province_id": "13",
-        "name": "KABUPATEN PASAMAN"
+        "name": "KAB. PASAMAN"
     },
     {
         "id": "1309",
         "province_id": "13",
-        "name": "KABUPATEN KEPULAUAN MENTAWAI"
+        "name": "KAB. KEPULAUAN MENTAWAI"
     },
     {
         "id": "1310",
         "province_id": "13",
-        "name": "KABUPATEN DHARMASRAYA"
+        "name": "KAB. DHARMASRAYA"
     },
     {
         "id": "1311",
         "province_id": "13",
-        "name": "KABUPATEN SOLOK SELATAN"
+        "name": "KAB. SOLOK SELATAN"
     },
     {
         "id": "1312",
         "province_id": "13",
-        "name": "KABUPATEN PASAMAN BARAT"
+        "name": "KAB. PASAMAN BARAT"
     },
     {
         "id": "1371",
@@ -393,52 +393,52 @@ class RegencieSeeder extends Seeder
     {
         "id": "1401",
         "province_id": "14",
-        "name": "KABUPATEN KAMPAR"
+        "name": "KAB. KAMPAR"
     },
     {
         "id": "1402",
         "province_id": "14",
-        "name": "KABUPATEN INDRAGIRI HULU"
+        "name": "KAB. INDRAGIRI HULU"
     },
     {
         "id": "1403",
         "province_id": "14",
-        "name": "KABUPATEN BENGKALIS"
+        "name": "KAB. BENGKALIS"
     },
     {
         "id": "1404",
         "province_id": "14",
-        "name": "KABUPATEN INDRAGIRI HILIR"
+        "name": "KAB. INDRAGIRI HILIR"
     },
     {
         "id": "1405",
         "province_id": "14",
-        "name": "KABUPATEN PELALAWAN"
+        "name": "KAB. PELALAWAN"
     },
     {
         "id": "1406",
         "province_id": "14",
-        "name": "KABUPATEN ROKAN HULU"
+        "name": "KAB. ROKAN HULU"
     },
     {
         "id": "1407",
         "province_id": "14",
-        "name": "KABUPATEN ROKAN HILIR"
+        "name": "KAB. ROKAN HILIR"
     },
     {
         "id": "1408",
         "province_id": "14",
-        "name": "KABUPATEN SIAK"
+        "name": "KAB. SIAK"
     },
     {
         "id": "1409",
         "province_id": "14",
-        "name": "KABUPATEN KUANTAN SINGINGI"
+        "name": "KAB. KUANTAN SINGINGI"
     },
     {
         "id": "1410",
         "province_id": "14",
-        "name": "KABUPATEN KEPULAUAN MERANTI"
+        "name": "KAB. KEPULAUAN MERANTI"
     },
     {
         "id": "1471",
@@ -453,47 +453,47 @@ class RegencieSeeder extends Seeder
     {
         "id": "1501",
         "province_id": "15",
-        "name": "KABUPATEN KERINCI"
+        "name": "KAB. KERINCI"
     },
     {
         "id": "1502",
         "province_id": "15",
-        "name": "KABUPATEN MERANGIN"
+        "name": "KAB. MERANGIN"
     },
     {
         "id": "1503",
         "province_id": "15",
-        "name": "KABUPATEN SAROLANGUN"
+        "name": "KAB. SAROLANGUN"
     },
     {
         "id": "1504",
         "province_id": "15",
-        "name": "KABUPATEN BATANGHARI"
+        "name": "KAB. BATANGHARI"
     },
     {
         "id": "1505",
         "province_id": "15",
-        "name": "KABUPATEN MUARO JAMBI"
+        "name": "KAB. MUARO JAMBI"
     },
     {
         "id": "1506",
         "province_id": "15",
-        "name": "KABUPATEN TANJUNG JABUNG BARAT"
+        "name": "KAB. TANJUNG JABUNG BARAT"
     },
     {
         "id": "1507",
         "province_id": "15",
-        "name": "KABUPATEN TANJUNG JABUNG TIMUR"
+        "name": "KAB. TANJUNG JABUNG TIMUR"
     },
     {
         "id": "1508",
         "province_id": "15",
-        "name": "KABUPATEN BUNGO"
+        "name": "KAB. BUNGO"
     },
     {
         "id": "1509",
         "province_id": "15",
-        "name": "KABUPATEN TEBO"
+        "name": "KAB. TEBO"
     },
     {
         "id": "1571",
@@ -508,67 +508,67 @@ class RegencieSeeder extends Seeder
     {
         "id": "1601",
         "province_id": "16",
-        "name": "KABUPATEN OGAN KOMERING ULU"
+        "name": "KAB. OGAN KOMERING ULU"
     },
     {
         "id": "1602",
         "province_id": "16",
-        "name": "KABUPATEN OGAN KOMERING ILIR"
+        "name": "KAB. OGAN KOMERING ILIR"
     },
     {
         "id": "1603",
         "province_id": "16",
-        "name": "KABUPATEN MUARA ENIM"
+        "name": "KAB. MUARA ENIM"
     },
     {
         "id": "1604",
         "province_id": "16",
-        "name": "KABUPATEN LAHAT"
+        "name": "KAB. LAHAT"
     },
     {
         "id": "1605",
         "province_id": "16",
-        "name": "KABUPATEN MUSI RAWAS"
+        "name": "KAB. MUSI RAWAS"
     },
     {
         "id": "1606",
         "province_id": "16",
-        "name": "KABUPATEN MUSI BANYUASIN"
+        "name": "KAB. MUSI BANYUASIN"
     },
     {
         "id": "1607",
         "province_id": "16",
-        "name": "KABUPATEN BANYUASIN"
+        "name": "KAB. BANYUASIN"
     },
     {
         "id": "1608",
         "province_id": "16",
-        "name": "KABUPATEN OGAN KOMERING ULU TIMUR"
+        "name": "KAB. OGAN KOMERING ULU TIMUR"
     },
     {
         "id": "1609",
         "province_id": "16",
-        "name": "KABUPATEN OGAN KOMERING ULU SELATAN"
+        "name": "KAB. OGAN KOMERING ULU SELATAN"
     },
     {
         "id": "1610",
         "province_id": "16",
-        "name": "KABUPATEN OGAN ILIR"
+        "name": "KAB. OGAN ILIR"
     },
     {
         "id": "1611",
         "province_id": "16",
-        "name": "KABUPATEN EMPAT LAWANG"
+        "name": "KAB. EMPAT LAWANG"
     },
     {
         "id": "1612",
         "province_id": "16",
-        "name": "KABUPATEN PENUKAL ABAB LEMATANG ILIR"
+        "name": "KAB. PENUKAL ABAB LEMATANG ILIR"
     },
     {
         "id": "1613",
         "province_id": "16",
-        "name": "KABUPATEN MUSI RAWAS UTARA"
+        "name": "KAB. MUSI RAWAS UTARA"
     },
     {
         "id": "1671",
@@ -593,47 +593,47 @@ class RegencieSeeder extends Seeder
     {
         "id": "1701",
         "province_id": "17",
-        "name": "KABUPATEN BENGKULU SELATAN"
+        "name": "KAB. BENGKULU SELATAN"
     },
     {
         "id": "1702",
         "province_id": "17",
-        "name": "KABUPATEN REJANG LEBONG"
+        "name": "KAB. REJANG LEBONG"
     },
     {
         "id": "1703",
         "province_id": "17",
-        "name": "KABUPATEN BENGKULU UTARA"
+        "name": "KAB. BENGKULU UTARA"
     },
     {
         "id": "1704",
         "province_id": "17",
-        "name": "KABUPATEN KAUR"
+        "name": "KAB. KAUR"
     },
     {
         "id": "1705",
         "province_id": "17",
-        "name": "KABUPATEN SELUMA"
+        "name": "KAB. SELUMA"
     },
     {
         "id": "1706",
         "province_id": "17",
-        "name": "KABUPATEN MUKO MUKO"
+        "name": "KAB. MUKO MUKO"
     },
     {
         "id": "1707",
         "province_id": "17",
-        "name": "KABUPATEN LEBONG"
+        "name": "KAB. LEBONG"
     },
     {
         "id": "1708",
         "province_id": "17",
-        "name": "KABUPATEN KEPAHIANG"
+        "name": "KAB. KEPAHIANG"
     },
     {
         "id": "1709",
         "province_id": "17",
-        "name": "KABUPATEN BENGKULU TENGAH"
+        "name": "KAB. BENGKULU TENGAH"
     },
     {
         "id": "1771",
@@ -643,67 +643,67 @@ class RegencieSeeder extends Seeder
     {
         "id": "1801",
         "province_id": "18",
-        "name": "KABUPATEN LAMPUNG SELATAN"
+        "name": "KAB. LAMPUNG SELATAN"
     },
     {
         "id": "1802",
         "province_id": "18",
-        "name": "KABUPATEN LAMPUNG TENGAH"
+        "name": "KAB. LAMPUNG TENGAH"
     },
     {
         "id": "1803",
         "province_id": "18",
-        "name": "KABUPATEN LAMPUNG UTARA"
+        "name": "KAB. LAMPUNG UTARA"
     },
     {
         "id": "1804",
         "province_id": "18",
-        "name": "KABUPATEN LAMPUNG BARAT"
+        "name": "KAB. LAMPUNG BARAT"
     },
     {
         "id": "1805",
         "province_id": "18",
-        "name": "KABUPATEN TULANG BAWANG"
+        "name": "KAB. TULANG BAWANG"
     },
     {
         "id": "1806",
         "province_id": "18",
-        "name": "KABUPATEN TANGGAMUS"
+        "name": "KAB. TANGGAMUS"
     },
     {
         "id": "1807",
         "province_id": "18",
-        "name": "KABUPATEN LAMPUNG TIMUR"
+        "name": "KAB. LAMPUNG TIMUR"
     },
     {
         "id": "1808",
         "province_id": "18",
-        "name": "KABUPATEN WAY KANAN"
+        "name": "KAB. WAY KANAN"
     },
     {
         "id": "1809",
         "province_id": "18",
-        "name": "KABUPATEN PESAWARAN"
+        "name": "KAB. PESAWARAN"
     },
     {
         "id": "1810",
         "province_id": "18",
-        "name": "KABUPATEN PRINGSEWU"
+        "name": "KAB. PRINGSEWU"
     },
     {
         "id": "1811",
         "province_id": "18",
-        "name": "KABUPATEN MESUJI"
+        "name": "KAB. MESUJI"
     },
     {
         "id": "1812",
         "province_id": "18",
-        "name": "KABUPATEN TULANG BAWANG BARAT"
+        "name": "KAB. TULANG BAWANG BARAT"
     },
     {
         "id": "1813",
         "province_id": "18",
-        "name": "KABUPATEN PESISIR BARAT"
+        "name": "KAB. PESISIR BARAT"
     },
     {
         "id": "1871",
@@ -718,32 +718,32 @@ class RegencieSeeder extends Seeder
     {
         "id": "1901",
         "province_id": "19",
-        "name": "KABUPATEN BANGKA"
+        "name": "KAB. BANGKA"
     },
     {
         "id": "1902",
         "province_id": "19",
-        "name": "KABUPATEN BELITUNG"
+        "name": "KAB. BELITUNG"
     },
     {
         "id": "1903",
         "province_id": "19",
-        "name": "KABUPATEN BANGKA SELATAN"
+        "name": "KAB. BANGKA SELATAN"
     },
     {
         "id": "1904",
         "province_id": "19",
-        "name": "KABUPATEN BANGKA TENGAH"
+        "name": "KAB. BANGKA TENGAH"
     },
     {
         "id": "1905",
         "province_id": "19",
-        "name": "KABUPATEN BANGKA BARAT"
+        "name": "KAB. BANGKA BARAT"
     },
     {
         "id": "1906",
         "province_id": "19",
-        "name": "KABUPATEN BELITUNG TIMUR"
+        "name": "KAB. BELITUNG TIMUR"
     },
     {
         "id": "1971",
@@ -753,27 +753,27 @@ class RegencieSeeder extends Seeder
     {
         "id": "2101",
         "province_id": "21",
-        "name": "KABUPATEN BINTAN"
+        "name": "KAB. BINTAN"
     },
     {
         "id": "2102",
         "province_id": "21",
-        "name": "KABUPATEN KARIMUN"
+        "name": "KAB. KARIMUN"
     },
     {
         "id": "2103",
         "province_id": "21",
-        "name": "KABUPATEN NATUNA"
+        "name": "KAB. NATUNA"
     },
     {
         "id": "2104",
         "province_id": "21",
-        "name": "KABUPATEN LINGGA"
+        "name": "KAB. LINGGA"
     },
     {
         "id": "2105",
         "province_id": "21",
-        "name": "KABUPATEN KEPULAUAN ANAMBAS"
+        "name": "KAB. KEPULAUAN ANAMBAS"
     },
     {
         "id": "2171",
@@ -788,122 +788,122 @@ class RegencieSeeder extends Seeder
     {
         "id": "3101",
         "province_id": "31",
-        "name": "KABUPATEN ADM. KEP. SERIBU"
+        "name": "KAB. KEP. SERIBU"
     },
     {
         "id": "3171",
         "province_id": "31",
-        "name": "KOTA ADM. JAKARTA PUSAT"
+        "name": "JAKARTA PUSAT"
     },
     {
         "id": "3172",
         "province_id": "31",
-        "name": "KOTA ADM. JAKARTA UTARA"
+        "name": "JAKARTA UTARA"
     },
     {
         "id": "3173",
         "province_id": "31",
-        "name": "KOTA ADM. JAKARTA BARAT"
+        "name": "JAKARTA BARAT"
     },
     {
         "id": "3174",
         "province_id": "31",
-        "name": "KOTA ADM. JAKARTA SELATAN"
+        "name": "JAKARTA SELATAN"
     },
     {
         "id": "3175",
         "province_id": "31",
-        "name": "KOTA ADM. JAKARTA TIMUR"
+        "name": "JAKARTA TIMUR"
     },
     {
         "id": "3201",
         "province_id": "32",
-        "name": "KABUPATEN BOGOR"
+        "name": "KAB. BOGOR"
     },
     {
         "id": "3202",
         "province_id": "32",
-        "name": "KABUPATEN SUKABUMI"
+        "name": "KAB. SUKABUMI"
     },
     {
         "id": "3203",
         "province_id": "32",
-        "name": "KABUPATEN CIANJUR"
+        "name": "KAB. CIANJUR"
     },
     {
         "id": "3204",
         "province_id": "32",
-        "name": "KABUPATEN BANDUNG"
+        "name": "KAB. BANDUNG"
     },
     {
         "id": "3205",
         "province_id": "32",
-        "name": "KABUPATEN GARUT"
+        "name": "KAB. GARUT"
     },
     {
         "id": "3206",
         "province_id": "32",
-        "name": "KABUPATEN TASIKMALAYA"
+        "name": "KAB. TASIKMALAYA"
     },
     {
         "id": "3207",
         "province_id": "32",
-        "name": "KABUPATEN CIAMIS"
+        "name": "KAB. CIAMIS"
     },
     {
         "id": "3208",
         "province_id": "32",
-        "name": "KABUPATEN KUNINGAN"
+        "name": "KAB. KUNINGAN"
     },
     {
         "id": "3209",
         "province_id": "32",
-        "name": "KABUPATEN CIREBON"
+        "name": "KAB. CIREBON"
     },
     {
         "id": "3210",
         "province_id": "32",
-        "name": "KABUPATEN MAJALENGKA"
+        "name": "KAB. MAJALENGKA"
     },
     {
         "id": "3211",
         "province_id": "32",
-        "name": "KABUPATEN SUMEDANG"
+        "name": "KAB. SUMEDANG"
     },
     {
         "id": "3212",
         "province_id": "32",
-        "name": "KABUPATEN INDRAMAYU"
+        "name": "KAB. INDRAMAYU"
     },
     {
         "id": "3213",
         "province_id": "32",
-        "name": "KABUPATEN SUBANG"
+        "name": "KAB. SUBANG"
     },
     {
         "id": "3214",
         "province_id": "32",
-        "name": "KABUPATEN PURWAKARTA"
+        "name": "KAB. PURWAKARTA"
     },
     {
         "id": "3215",
         "province_id": "32",
-        "name": "KABUPATEN KARAWANG"
+        "name": "KAB. KARAWANG"
     },
     {
         "id": "3216",
         "province_id": "32",
-        "name": "KABUPATEN BEKASI"
+        "name": "KAB. BEKASI"
     },
     {
         "id": "3217",
         "province_id": "32",
-        "name": "KABUPATEN BANDUNG BARAT"
+        "name": "KAB. BANDUNG BARAT"
     },
     {
         "id": "3218",
         "province_id": "32",
-        "name": "KABUPATEN PANGANDARAN"
+        "name": "KAB. PANGANDARAN"
     },
     {
         "id": "3271",
@@ -953,147 +953,147 @@ class RegencieSeeder extends Seeder
     {
         "id": "3301",
         "province_id": "33",
-        "name": "KABUPATEN CILACAP"
+        "name": "KAB. CILACAP"
     },
     {
         "id": "3302",
         "province_id": "33",
-        "name": "KABUPATEN BANYUMAS"
+        "name": "KAB. BANYUMAS"
     },
     {
         "id": "3303",
         "province_id": "33",
-        "name": "KABUPATEN PURBALINGGA"
+        "name": "KAB. PURBALINGGA"
     },
     {
         "id": "3304",
         "province_id": "33",
-        "name": "KABUPATEN BANJARNEGARA"
+        "name": "KAB. BANJARNEGARA"
     },
     {
         "id": "3305",
         "province_id": "33",
-        "name": "KABUPATEN KEBUMEN"
+        "name": "KAB. KEBUMEN"
     },
     {
         "id": "3306",
         "province_id": "33",
-        "name": "KABUPATEN PURWOREJO"
+        "name": "KAB. PURWOREJO"
     },
     {
         "id": "3307",
         "province_id": "33",
-        "name": "KABUPATEN WONOSOBO"
+        "name": "KAB. WONOSOBO"
     },
     {
         "id": "3308",
         "province_id": "33",
-        "name": "KABUPATEN MAGELANG"
+        "name": "KAB. MAGELANG"
     },
     {
         "id": "3309",
         "province_id": "33",
-        "name": "KABUPATEN BOYOLALI"
+        "name": "KAB. BOYOLALI"
     },
     {
         "id": "3310",
         "province_id": "33",
-        "name": "KABUPATEN KLATEN"
+        "name": "KAB. KLATEN"
     },
     {
         "id": "3311",
         "province_id": "33",
-        "name": "KABUPATEN SUKOHARJO"
+        "name": "KAB. SUKOHARJO"
     },
     {
         "id": "3312",
         "province_id": "33",
-        "name": "KABUPATEN WONOGIRI"
+        "name": "KAB. WONOGIRI"
     },
     {
         "id": "3313",
         "province_id": "33",
-        "name": "KABUPATEN KARANGANYAR"
+        "name": "KAB. KARANGANYAR"
     },
     {
         "id": "3314",
         "province_id": "33",
-        "name": "KABUPATEN SRAGEN"
+        "name": "KAB. SRAGEN"
     },
     {
         "id": "3315",
         "province_id": "33",
-        "name": "KABUPATEN GROBOGAN"
+        "name": "KAB. GROBOGAN"
     },
     {
         "id": "3316",
         "province_id": "33",
-        "name": "KABUPATEN BLORA"
+        "name": "KAB. BLORA"
     },
     {
         "id": "3317",
         "province_id": "33",
-        "name": "KABUPATEN REMBANG"
+        "name": "KAB. REMBANG"
     },
     {
         "id": "3318",
         "province_id": "33",
-        "name": "KABUPATEN PATI"
+        "name": "KAB. PATI"
     },
     {
         "id": "3319",
         "province_id": "33",
-        "name": "KABUPATEN KUDUS"
+        "name": "KAB. KUDUS"
     },
     {
         "id": "3320",
         "province_id": "33",
-        "name": "KABUPATEN JEPARA"
+        "name": "KAB. JEPARA"
     },
     {
         "id": "3321",
         "province_id": "33",
-        "name": "KABUPATEN DEMAK"
+        "name": "KAB. DEMAK"
     },
     {
         "id": "3322",
         "province_id": "33",
-        "name": "KABUPATEN SEMARANG"
+        "name": "KAB. SEMARANG"
     },
     {
         "id": "3323",
         "province_id": "33",
-        "name": "KABUPATEN TEMANGGUNG"
+        "name": "KAB. TEMANGGUNG"
     },
     {
         "id": "3324",
         "province_id": "33",
-        "name": "KABUPATEN KENDAL"
+        "name": "KAB. KENDAL"
     },
     {
         "id": "3325",
         "province_id": "33",
-        "name": "KABUPATEN BATANG"
+        "name": "KAB. BATANG"
     },
     {
         "id": "3326",
         "province_id": "33",
-        "name": "KABUPATEN PEKALONGAN"
+        "name": "KAB. PEKALONGAN"
     },
     {
         "id": "3327",
         "province_id": "33",
-        "name": "KABUPATEN PEMALANG"
+        "name": "KAB. PEMALANG"
     },
     {
         "id": "3328",
         "province_id": "33",
-        "name": "KABUPATEN TEGAL"
+        "name": "KAB. TEGAL"
     },
     {
         "id": "3329",
         "province_id": "33",
-        "name": "KABUPATEN BREBES"
+        "name": "KAB. BREBES"
     },
     {
         "id": "3371",
@@ -1128,22 +1128,22 @@ class RegencieSeeder extends Seeder
     {
         "id": "3401",
         "province_id": "34",
-        "name": "KABUPATEN KULON PROGO"
+        "name": "KAB. KULON PROGO"
     },
     {
         "id": "3402",
         "province_id": "34",
-        "name": "KABUPATEN BANTUL"
+        "name": "KAB. BANTUL"
     },
     {
         "id": "3403",
         "province_id": "34",
-        "name": "KABUPATEN GUNUNGKIDUL"
+        "name": "KAB. GUNUNGKIDUL"
     },
     {
         "id": "3404",
         "province_id": "34",
-        "name": "KABUPATEN SLEMAN"
+        "name": "KAB. SLEMAN"
     },
     {
         "id": "3471",
@@ -1153,147 +1153,147 @@ class RegencieSeeder extends Seeder
     {
         "id": "3501",
         "province_id": "35",
-        "name": "KABUPATEN PACITAN"
+        "name": "KAB. PACITAN"
     },
     {
         "id": "3502",
         "province_id": "35",
-        "name": "KABUPATEN PONOROGO"
+        "name": "KAB. PONOROGO"
     },
     {
         "id": "3503",
         "province_id": "35",
-        "name": "KABUPATEN TRENGGALEK"
+        "name": "KAB. TRENGGALEK"
     },
     {
         "id": "3504",
         "province_id": "35",
-        "name": "KABUPATEN TULUNGAGUNG"
+        "name": "KAB. TULUNGAGUNG"
     },
     {
         "id": "3505",
         "province_id": "35",
-        "name": "KABUPATEN BLITAR"
+        "name": "KAB. BLITAR"
     },
     {
         "id": "3506",
         "province_id": "35",
-        "name": "KABUPATEN KEDIRI"
+        "name": "KAB. KEDIRI"
     },
     {
         "id": "3507",
         "province_id": "35",
-        "name": "KABUPATEN MALANG"
+        "name": "KAB. MALANG"
     },
     {
         "id": "3508",
         "province_id": "35",
-        "name": "KABUPATEN LUMAJANG"
+        "name": "KAB. LUMAJANG"
     },
     {
         "id": "3509",
         "province_id": "35",
-        "name": "KABUPATEN JEMBER"
+        "name": "KAB. JEMBER"
     },
     {
         "id": "3510",
         "province_id": "35",
-        "name": "KABUPATEN BANYUWANGI"
+        "name": "KAB. BANYUWANGI"
     },
     {
         "id": "3511",
         "province_id": "35",
-        "name": "KABUPATEN BONDOWOSO"
+        "name": "KAB. BONDOWOSO"
     },
     {
         "id": "3512",
         "province_id": "35",
-        "name": "KABUPATEN SITUBONDO"
+        "name": "KAB. SITUBONDO"
     },
     {
         "id": "3513",
         "province_id": "35",
-        "name": "KABUPATEN PROBOLINGGO"
+        "name": "KAB. PROBOLINGGO"
     },
     {
         "id": "3514",
         "province_id": "35",
-        "name": "KABUPATEN PASURUAN"
+        "name": "KAB. PASURUAN"
     },
     {
         "id": "3515",
         "province_id": "35",
-        "name": "KABUPATEN SIDOARJO"
+        "name": "KAB. SIDOARJO"
     },
     {
         "id": "3516",
         "province_id": "35",
-        "name": "KABUPATEN MOJOKERTO"
+        "name": "KAB. MOJOKERTO"
     },
     {
         "id": "3517",
         "province_id": "35",
-        "name": "KABUPATEN JOMBANG"
+        "name": "KAB. JOMBANG"
     },
     {
         "id": "3518",
         "province_id": "35",
-        "name": "KABUPATEN NGANJUK"
+        "name": "KAB. NGANJUK"
     },
     {
         "id": "3519",
         "province_id": "35",
-        "name": "KABUPATEN MADIUN"
+        "name": "KAB. MADIUN"
     },
     {
         "id": "3520",
         "province_id": "35",
-        "name": "KABUPATEN MAGETAN"
+        "name": "KAB. MAGETAN"
     },
     {
         "id": "3521",
         "province_id": "35",
-        "name": "KABUPATEN NGAWI"
+        "name": "KAB. NGAWI"
     },
     {
         "id": "3522",
         "province_id": "35",
-        "name": "KABUPATEN BOJONEGORO"
+        "name": "KAB. BOJONEGORO"
     },
     {
         "id": "3523",
         "province_id": "35",
-        "name": "KABUPATEN TUBAN"
+        "name": "KAB. TUBAN"
     },
     {
         "id": "3524",
         "province_id": "35",
-        "name": "KABUPATEN LAMONGAN"
+        "name": "KAB. LAMONGAN"
     },
     {
         "id": "3525",
         "province_id": "35",
-        "name": "KABUPATEN GRESIK"
+        "name": "KAB. GRESIK"
     },
     {
         "id": "3526",
         "province_id": "35",
-        "name": "KABUPATEN BANGKALAN"
+        "name": "KAB. BANGKALAN"
     },
     {
         "id": "3527",
         "province_id": "35",
-        "name": "KABUPATEN SAMPANG"
+        "name": "KAB. SAMPANG"
     },
     {
         "id": "3528",
         "province_id": "35",
-        "name": "KABUPATEN PAMEKASAN"
+        "name": "KAB. PAMEKASAN"
     },
     {
         "id": "3529",
         "province_id": "35",
-        "name": "KABUPATEN SUMENEP"
+        "name": "KAB. SUMENEP"
     },
     {
         "id": "3571",
@@ -1343,22 +1343,22 @@ class RegencieSeeder extends Seeder
     {
         "id": "3601",
         "province_id": "36",
-        "name": "KABUPATEN PANDEGLANG"
+        "name": "KAB. PANDEGLANG"
     },
     {
         "id": "3602",
         "province_id": "36",
-        "name": "KABUPATEN LEBAK"
+        "name": "KAB. LEBAK"
     },
     {
         "id": "3603",
         "province_id": "36",
-        "name": "KABUPATEN TANGERANG"
+        "name": "KAB. TANGERANG"
     },
     {
         "id": "3604",
         "province_id": "36",
-        "name": "KABUPATEN SERANG"
+        "name": "KAB. SERANG"
     },
     {
         "id": "3671",
@@ -1383,42 +1383,42 @@ class RegencieSeeder extends Seeder
     {
         "id": "5101",
         "province_id": "51",
-        "name": "KABUPATEN JEMBRANA"
+        "name": "KAB. JEMBRANA"
     },
     {
         "id": "5102",
         "province_id": "51",
-        "name": "KABUPATEN TABANAN"
+        "name": "KAB. TABANAN"
     },
     {
         "id": "5103",
         "province_id": "51",
-        "name": "KABUPATEN BADUNG"
+        "name": "KAB. BADUNG"
     },
     {
         "id": "5104",
         "province_id": "51",
-        "name": "KABUPATEN GIANYAR"
+        "name": "KAB. GIANYAR"
     },
     {
         "id": "5105",
         "province_id": "51",
-        "name": "KABUPATEN KLUNGKUNG"
+        "name": "KAB. KLUNGKUNG"
     },
     {
         "id": "5106",
         "province_id": "51",
-        "name": "KABUPATEN BANGLI"
+        "name": "KAB. BANGLI"
     },
     {
         "id": "5107",
         "province_id": "51",
-        "name": "KABUPATEN KARANGASEM"
+        "name": "KAB. KARANGASEM"
     },
     {
         "id": "5108",
         "province_id": "51",
-        "name": "KABUPATEN BULELENG"
+        "name": "KAB. BULELENG"
     },
     {
         "id": "5171",
@@ -1428,42 +1428,42 @@ class RegencieSeeder extends Seeder
     {
         "id": "5201",
         "province_id": "52",
-        "name": "KABUPATEN LOMBOK BARAT"
+        "name": "KAB. LOMBOK BARAT"
     },
     {
         "id": "5202",
         "province_id": "52",
-        "name": "KABUPATEN LOMBOK TENGAH"
+        "name": "KAB. LOMBOK TENGAH"
     },
     {
         "id": "5203",
         "province_id": "52",
-        "name": "KABUPATEN LOMBOK TIMUR"
+        "name": "KAB. LOMBOK TIMUR"
     },
     {
         "id": "5204",
         "province_id": "52",
-        "name": "KABUPATEN SUMBAWA"
+        "name": "KAB. SUMBAWA"
     },
     {
         "id": "5205",
         "province_id": "52",
-        "name": "KABUPATEN DOMPU"
+        "name": "KAB. DOMPU"
     },
     {
         "id": "5206",
         "province_id": "52",
-        "name": "KABUPATEN BIMA"
+        "name": "KAB. BIMA"
     },
     {
         "id": "5207",
         "province_id": "52",
-        "name": "KABUPATEN SUMBAWA BARAT"
+        "name": "KAB. SUMBAWA BARAT"
     },
     {
         "id": "5208",
         "province_id": "52",
-        "name": "KABUPATEN LOMBOK UTARA"
+        "name": "KAB. LOMBOK UTARA"
     },
     {
         "id": "5271",
@@ -1478,7 +1478,7 @@ class RegencieSeeder extends Seeder
     {
         "id": "5301",
         "province_id": "53",
-        "name": "KABUPATEN KUPANG"
+        "name": "KAB. KUPANG"
     },
     {
         "id": "5302",
@@ -1488,97 +1488,97 @@ class RegencieSeeder extends Seeder
     {
         "id": "5303",
         "province_id": "53",
-        "name": "KABUPATEN TIMOR TENGAH UTARA"
+        "name": "KAB. TIMOR TENGAH UTARA"
     },
     {
         "id": "5304",
         "province_id": "53",
-        "name": "KABUPATEN BELU"
+        "name": "KAB. BELU"
     },
     {
         "id": "5305",
         "province_id": "53",
-        "name": "KABUPATEN ALOR"
+        "name": "KAB. ALOR"
     },
     {
         "id": "5306",
         "province_id": "53",
-        "name": "KABUPATEN FLORES TIMUR"
+        "name": "KAB. FLORES TIMUR"
     },
     {
         "id": "5307",
         "province_id": "53",
-        "name": "KABUPATEN SIKKA"
+        "name": "KAB. SIKKA"
     },
     {
         "id": "5308",
         "province_id": "53",
-        "name": "KABUPATEN ENDE"
+        "name": "KAB. ENDE"
     },
     {
         "id": "5309",
         "province_id": "53",
-        "name": "KABUPATEN NGADA"
+        "name": "KAB. NGADA"
     },
     {
         "id": "5310",
         "province_id": "53",
-        "name": "KABUPATEN MANGGARAI"
+        "name": "KAB. MANGGARAI"
     },
     {
         "id": "5311",
         "province_id": "53",
-        "name": "KABUPATEN SUMBA TIMUR"
+        "name": "KAB. SUMBA TIMUR"
     },
     {
         "id": "5312",
         "province_id": "53",
-        "name": "KABUPATEN SUMBA BARAT"
+        "name": "KAB. SUMBA BARAT"
     },
     {
         "id": "5313",
         "province_id": "53",
-        "name": "KABUPATEN LEMBATA"
+        "name": "KAB. LEMBATA"
     },
     {
         "id": "5314",
         "province_id": "53",
-        "name": "KABUPATEN ROTE NDAO"
+        "name": "KAB. ROTE NDAO"
     },
     {
         "id": "5315",
         "province_id": "53",
-        "name": "KABUPATEN MANGGARAI BARAT"
+        "name": "KAB. MANGGARAI BARAT"
     },
     {
         "id": "5316",
         "province_id": "53",
-        "name": "KABUPATEN NAGEKEO"
+        "name": "KAB. NAGEKEO"
     },
     {
         "id": "5317",
         "province_id": "53",
-        "name": "KABUPATEN SUMBA TENGAH"
+        "name": "KAB. SUMBA TENGAH"
     },
     {
         "id": "5318",
         "province_id": "53",
-        "name": "KABUPATEN SUMBA BARAT DAYA"
+        "name": "KAB. SUMBA BARAT DAYA"
     },
     {
         "id": "5319",
         "province_id": "53",
-        "name": "KABUPATEN MANGGARAI TIMUR"
+        "name": "KAB. MANGGARAI TIMUR"
     },
     {
         "id": "5320",
         "province_id": "53",
-        "name": "KABUPATEN SABU RAIJUA"
+        "name": "KAB. SABU RAIJUA"
     },
     {
         "id": "5321",
         "province_id": "53",
-        "name": "KABUPATEN MALAKA"
+        "name": "KAB. MALAKA"
     },
     {
         "id": "5371",
@@ -1588,62 +1588,62 @@ class RegencieSeeder extends Seeder
     {
         "id": "6101",
         "province_id": "61",
-        "name": "KABUPATEN SAMBAS"
+        "name": "KAB. SAMBAS"
     },
     {
         "id": "6102",
         "province_id": "61",
-        "name": "KABUPATEN MEMPAWAH"
+        "name": "KAB. MEMPAWAH"
     },
     {
         "id": "6103",
         "province_id": "61",
-        "name": "KABUPATEN SANGGAU"
+        "name": "KAB. SANGGAU"
     },
     {
         "id": "6104",
         "province_id": "61",
-        "name": "KABUPATEN KETAPANG"
+        "name": "KAB. KETAPANG"
     },
     {
         "id": "6105",
         "province_id": "61",
-        "name": "KABUPATEN SINTANG"
+        "name": "KAB. SINTANG"
     },
     {
         "id": "6106",
         "province_id": "61",
-        "name": "KABUPATEN KAPUAS HULU"
+        "name": "KAB. KAPUAS HULU"
     },
     {
         "id": "6107",
         "province_id": "61",
-        "name": "KABUPATEN BENGKAYANG"
+        "name": "KAB. BENGKAYANG"
     },
     {
         "id": "6108",
         "province_id": "61",
-        "name": "KABUPATEN LANDAK"
+        "name": "KAB. LANDAK"
     },
     {
         "id": "6109",
         "province_id": "61",
-        "name": "KABUPATEN SEKADAU"
+        "name": "KAB. SEKADAU"
     },
     {
         "id": "6110",
         "province_id": "61",
-        "name": "KABUPATEN MELAWI"
+        "name": "KAB. MELAWI"
     },
     {
         "id": "6111",
         "province_id": "61",
-        "name": "KABUPATEN KAYONG UTARA"
+        "name": "KAB. KAYONG UTARA"
     },
     {
         "id": "6112",
         "province_id": "61",
-        "name": "KABUPATEN KUBU RAYA"
+        "name": "KAB. KUBU RAYA"
     },
     {
         "id": "6171",
@@ -1658,67 +1658,67 @@ class RegencieSeeder extends Seeder
     {
         "id": "6201",
         "province_id": "62",
-        "name": "KABUPATEN KOTAWARINGIN BARAT"
+        "name": "KAB. KOTAWARINGIN BARAT"
     },
     {
         "id": "6202",
         "province_id": "62",
-        "name": "KABUPATEN KOTAWARINGIN TIMUR"
+        "name": "KAB. KOTAWARINGIN TIMUR"
     },
     {
         "id": "6203",
         "province_id": "62",
-        "name": "KABUPATEN KAPUAS"
+        "name": "KAB. KAPUAS"
     },
     {
         "id": "6204",
         "province_id": "62",
-        "name": "KABUPATEN BARITO SELATAN"
+        "name": "KAB. BARITO SELATAN"
     },
     {
         "id": "6205",
         "province_id": "62",
-        "name": "KABUPATEN BARITO UTARA"
+        "name": "KAB. BARITO UTARA"
     },
     {
         "id": "6206",
         "province_id": "62",
-        "name": "KABUPATEN KATINGAN"
+        "name": "KAB. KATINGAN"
     },
     {
         "id": "6207",
         "province_id": "62",
-        "name": "KABUPATEN SERUYAN"
+        "name": "KAB. SERUYAN"
     },
     {
         "id": "6208",
         "province_id": "62",
-        "name": "KABUPATEN SUKAMARA"
+        "name": "KAB. SUKAMARA"
     },
     {
         "id": "6209",
         "province_id": "62",
-        "name": "KABUPATEN LAMANDAU"
+        "name": "KAB. LAMANDAU"
     },
     {
         "id": "6210",
         "province_id": "62",
-        "name": "KABUPATEN GUNUNG MAS"
+        "name": "KAB. GUNUNG MAS"
     },
     {
         "id": "6211",
         "province_id": "62",
-        "name": "KABUPATEN PULANG PISAU"
+        "name": "KAB. PULANG PISAU"
     },
     {
         "id": "6212",
         "province_id": "62",
-        "name": "KABUPATEN MURUNG RAYA"
+        "name": "KAB. MURUNG RAYA"
     },
     {
         "id": "6213",
         "province_id": "62",
-        "name": "KABUPATEN BARITO TIMUR"
+        "name": "KAB. BARITO TIMUR"
     },
     {
         "id": "6271",
@@ -1728,57 +1728,57 @@ class RegencieSeeder extends Seeder
     {
         "id": "6301",
         "province_id": "63",
-        "name": "KABUPATEN TANAH LAUT"
+        "name": "KAB. TANAH LAUT"
     },
     {
         "id": "6302",
         "province_id": "63",
-        "name": "KABUPATEN KOTABARU"
+        "name": "KAB. KOTABARU"
     },
     {
         "id": "6303",
         "province_id": "63",
-        "name": "KABUPATEN BANJAR"
+        "name": "KAB. BANJAR"
     },
     {
         "id": "6304",
         "province_id": "63",
-        "name": "KABUPATEN BARITO KUALA"
+        "name": "KAB. BARITO KUALA"
     },
     {
         "id": "6305",
         "province_id": "63",
-        "name": "KABUPATEN TAPIN"
+        "name": "KAB. TAPIN"
     },
     {
         "id": "6306",
         "province_id": "63",
-        "name": "KABUPATEN HULU SUNGAI SELATAN"
+        "name": "KAB. HULU SUNGAI SELATAN"
     },
     {
         "id": "6307",
         "province_id": "63",
-        "name": "KABUPATEN HULU SUNGAI TENGAH"
+        "name": "KAB. HULU SUNGAI TENGAH"
     },
     {
         "id": "6308",
         "province_id": "63",
-        "name": "KABUPATEN HULU SUNGAI UTARA"
+        "name": "KAB. HULU SUNGAI UTARA"
     },
     {
         "id": "6309",
         "province_id": "63",
-        "name": "KABUPATEN TABALONG"
+        "name": "KAB. TABALONG"
     },
     {
         "id": "6310",
         "province_id": "63",
-        "name": "KABUPATEN TANAH BUMBU"
+        "name": "KAB. TANAH BUMBU"
     },
     {
         "id": "6311",
         "province_id": "63",
-        "name": "KABUPATEN BALANGAN"
+        "name": "KAB. BALANGAN"
     },
     {
         "id": "6371",
@@ -1793,37 +1793,37 @@ class RegencieSeeder extends Seeder
     {
         "id": "6401",
         "province_id": "64",
-        "name": "KABUPATEN PASER"
+        "name": "KAB. PASER"
     },
     {
         "id": "6402",
         "province_id": "64",
-        "name": "KABUPATEN KUTAI KARTANEGARA"
+        "name": "KAB. KUTAI KARTANEGARA"
     },
     {
         "id": "6403",
         "province_id": "64",
-        "name": "KABUPATEN BERAU"
+        "name": "KAB. BERAU"
     },
     {
         "id": "6407",
         "province_id": "64",
-        "name": "KABUPATEN KUTAI BARAT"
+        "name": "KAB. KUTAI BARAT"
     },
     {
         "id": "6408",
         "province_id": "64",
-        "name": "KABUPATEN KUTAI TIMUR"
+        "name": "KAB. KUTAI TIMUR"
     },
     {
         "id": "6409",
         "province_id": "64",
-        "name": "KABUPATEN PENAJAM PASER UTARA"
+        "name": "KAB. PENAJAM PASER UTARA"
     },
     {
         "id": "6411",
         "province_id": "64",
-        "name": "KABUPATEN MAHAKAM ULU"
+        "name": "KAB. MAHAKAM ULU"
     },
     {
         "id": "6471",
@@ -1843,22 +1843,22 @@ class RegencieSeeder extends Seeder
     {
         "id": "6501",
         "province_id": "65",
-        "name": "KABUPATEN BULUNGAN"
+        "name": "KAB. BULUNGAN"
     },
     {
         "id": "6502",
         "province_id": "65",
-        "name": "KABUPATEN MALINAU"
+        "name": "KAB. MALINAU"
     },
     {
         "id": "6503",
         "province_id": "65",
-        "name": "KABUPATEN NUNUKAN"
+        "name": "KAB. NUNUKAN"
     },
     {
         "id": "6504",
         "province_id": "65",
-        "name": "KABUPATEN TANA TIDUNG"
+        "name": "KAB. TANA TIDUNG"
     },
     {
         "id": "6571",
@@ -1868,57 +1868,57 @@ class RegencieSeeder extends Seeder
     {
         "id": "7101",
         "province_id": "71",
-        "name": "KABUPATEN BOLAANG MONGONDOW"
+        "name": "KAB. BOLAANG MONGONDOW"
     },
     {
         "id": "7102",
         "province_id": "71",
-        "name": "KABUPATEN MINAHASA"
+        "name": "KAB. MINAHASA"
     },
     {
         "id": "7103",
         "province_id": "71",
-        "name": "KABUPATEN KEPULAUAN SANGIHE"
+        "name": "KAB. KEPULAUAN SANGIHE"
     },
     {
         "id": "7104",
         "province_id": "71",
-        "name": "KABUPATEN KEPULAUAN TALAUD"
+        "name": "KAB. KEPULAUAN TALAUD"
     },
     {
         "id": "7105",
         "province_id": "71",
-        "name": "KABUPATEN MINAHASA SELATAN"
+        "name": "KAB. MINAHASA SELATAN"
     },
     {
         "id": "7106",
         "province_id": "71",
-        "name": "KABUPATEN MINAHASA UTARA"
+        "name": "KAB. MINAHASA UTARA"
     },
     {
         "id": "7107",
         "province_id": "71",
-        "name": "KABUPATEN MINAHASA TENGGARA"
+        "name": "KAB. MINAHASA TENGGARA"
     },
     {
         "id": "7108",
         "province_id": "71",
-        "name": "KABUPATEN BOLAANG MONGONDOW UTARA"
+        "name": "KAB. BOLAANG MONGONDOW UTARA"
     },
     {
         "id": "7109",
         "province_id": "71",
-        "name": "KABUPATEN KEP. SIAU TAGULANDANG BIARO"
+        "name": "KAB. KEP. SIAU TAGULANDANG BIARO"
     },
     {
         "id": "7110",
         "province_id": "71",
-        "name": "KABUPATEN BOLAANG MONGONDOW TIMUR"
+        "name": "KAB. BOLAANG MONGONDOW TIMUR"
     },
     {
         "id": "7111",
         "province_id": "71",
-        "name": "KABUPATEN BOLAANG MONGONDOW SELATAN"
+        "name": "KAB. BOLAANG MONGONDOW SELATAN"
     },
     {
         "id": "7171",
@@ -1943,62 +1943,62 @@ class RegencieSeeder extends Seeder
     {
         "id": "7201",
         "province_id": "72",
-        "name": "KABUPATEN BANGGAI"
+        "name": "KAB. BANGGAI"
     },
     {
         "id": "7202",
         "province_id": "72",
-        "name": "KABUPATEN POSO"
+        "name": "KAB. POSO"
     },
     {
         "id": "7203",
         "province_id": "72",
-        "name": "KABUPATEN DONGGALA"
+        "name": "KAB. DONGGALA"
     },
     {
         "id": "7204",
         "province_id": "72",
-        "name": "KABUPATEN TOLI TOLI"
+        "name": "KAB. TOLI TOLI"
     },
     {
         "id": "7205",
         "province_id": "72",
-        "name": "KABUPATEN BUOL"
+        "name": "KAB. BUOL"
     },
     {
         "id": "7206",
         "province_id": "72",
-        "name": "KABUPATEN MOROWALI"
+        "name": "KAB. MOROWALI"
     },
     {
         "id": "7207",
         "province_id": "72",
-        "name": "KABUPATEN BANGGAI KEPULAUAN"
+        "name": "KAB. BANGGAI KEPULAUAN"
     },
     {
         "id": "7208",
         "province_id": "72",
-        "name": "KABUPATEN PARIGI MOUTONG"
+        "name": "KAB. PARIGI MOUTONG"
     },
     {
         "id": "7209",
         "province_id": "72",
-        "name": "KABUPATEN TOJO UNA UNA"
+        "name": "KAB. TOJO UNA UNA"
     },
     {
         "id": "7210",
         "province_id": "72",
-        "name": "KABUPATEN SIGI"
+        "name": "KAB. SIGI"
     },
     {
         "id": "7211",
         "province_id": "72",
-        "name": "KABUPATEN BANGGAI LAUT"
+        "name": "KAB. BANGGAI LAUT"
     },
     {
         "id": "7212",
         "province_id": "72",
-        "name": "KABUPATEN MOROWALI UTARA"
+        "name": "KAB. MOROWALI UTARA"
     },
     {
         "id": "7271",
@@ -2008,107 +2008,107 @@ class RegencieSeeder extends Seeder
     {
         "id": "7301",
         "province_id": "73",
-        "name": "KABUPATEN KEPULAUAN SELAYAR"
+        "name": "KAB. KEPULAUAN SELAYAR"
     },
     {
         "id": "7302",
         "province_id": "73",
-        "name": "KABUPATEN BULUKUMBA"
+        "name": "KAB. BULUKUMBA"
     },
     {
         "id": "7303",
         "province_id": "73",
-        "name": "KABUPATEN BANTAENG"
+        "name": "KAB. BANTAENG"
     },
     {
         "id": "7304",
         "province_id": "73",
-        "name": "KABUPATEN JENEPONTO"
+        "name": "KAB. JENEPONTO"
     },
     {
         "id": "7305",
         "province_id": "73",
-        "name": "KABUPATEN TAKALAR"
+        "name": "KAB. TAKALAR"
     },
     {
         "id": "7306",
         "province_id": "73",
-        "name": "KABUPATEN GOWA"
+        "name": "KAB. GOWA"
     },
     {
         "id": "7307",
         "province_id": "73",
-        "name": "KABUPATEN SINJAI"
+        "name": "KAB. SINJAI"
     },
     {
         "id": "7308",
         "province_id": "73",
-        "name": "KABUPATEN BONE"
+        "name": "KAB. BONE"
     },
     {
         "id": "7309",
         "province_id": "73",
-        "name": "KABUPATEN MAROS"
+        "name": "KAB. MAROS"
     },
     {
         "id": "7310",
         "province_id": "73",
-        "name": "KABUPATEN PANGKAJENE KEPULAUAN"
+        "name": "KAB. PANGKAJENE KEPULAUAN"
     },
     {
         "id": "7311",
         "province_id": "73",
-        "name": "KABUPATEN BARRU"
+        "name": "KAB. BARRU"
     },
     {
         "id": "7312",
         "province_id": "73",
-        "name": "KABUPATEN SOPPENG"
+        "name": "KAB. SOPPENG"
     },
     {
         "id": "7313",
         "province_id": "73",
-        "name": "KABUPATEN WAJO"
+        "name": "KAB. WAJO"
     },
     {
         "id": "7314",
         "province_id": "73",
-        "name": "KABUPATEN SIDENRENG RAPPANG"
+        "name": "KAB. SIDENRENG RAPPANG"
     },
     {
         "id": "7315",
         "province_id": "73",
-        "name": "KABUPATEN PINRANG"
+        "name": "KAB. PINRANG"
     },
     {
         "id": "7316",
         "province_id": "73",
-        "name": "KABUPATEN ENREKANG"
+        "name": "KAB. ENREKANG"
     },
     {
         "id": "7317",
         "province_id": "73",
-        "name": "KABUPATEN LUWU"
+        "name": "KAB. LUWU"
     },
     {
         "id": "7318",
         "province_id": "73",
-        "name": "KABUPATEN TANA TORAJA"
+        "name": "KAB. TANA TORAJA"
     },
     {
         "id": "7322",
         "province_id": "73",
-        "name": "KABUPATEN LUWU UTARA"
+        "name": "KAB. LUWU UTARA"
     },
     {
         "id": "7324",
         "province_id": "73",
-        "name": "KABUPATEN LUWU TIMUR"
+        "name": "KAB. LUWU TIMUR"
     },
     {
         "id": "7326",
         "province_id": "73",
-        "name": "KABUPATEN TORAJA UTARA"
+        "name": "KAB. TORAJA UTARA"
     },
     {
         "id": "7371",
@@ -2128,77 +2128,77 @@ class RegencieSeeder extends Seeder
     {
         "id": "7401",
         "province_id": "74",
-        "name": "KABUPATEN KOLAKA"
+        "name": "KAB. KOLAKA"
     },
     {
         "id": "7402",
         "province_id": "74",
-        "name": "KABUPATEN KONAWE"
+        "name": "KAB. KONAWE"
     },
     {
         "id": "7403",
         "province_id": "74",
-        "name": "KABUPATEN MUNA"
+        "name": "KAB. MUNA"
     },
     {
         "id": "7404",
         "province_id": "74",
-        "name": "KABUPATEN BUTON"
+        "name": "KAB. BUTON"
     },
     {
         "id": "7405",
         "province_id": "74",
-        "name": "KABUPATEN KONAWE SELATAN"
+        "name": "KAB. KONAWE SELATAN"
     },
     {
         "id": "7406",
         "province_id": "74",
-        "name": "KABUPATEN BOMBANA"
+        "name": "KAB. BOMBANA"
     },
     {
         "id": "7407",
         "province_id": "74",
-        "name": "KABUPATEN WAKATOBI"
+        "name": "KAB. WAKATOBI"
     },
     {
         "id": "7408",
         "province_id": "74",
-        "name": "KABUPATEN KOLAKA UTARA"
+        "name": "KAB. KOLAKA UTARA"
     },
     {
         "id": "7409",
         "province_id": "74",
-        "name": "KABUPATEN KONAWE UTARA"
+        "name": "KAB. KONAWE UTARA"
     },
     {
         "id": "7410",
         "province_id": "74",
-        "name": "KABUPATEN BUTON UTARA"
+        "name": "KAB. BUTON UTARA"
     },
     {
         "id": "7411",
         "province_id": "74",
-        "name": "KABUPATEN KOLAKA TIMUR"
+        "name": "KAB. KOLAKA TIMUR"
     },
     {
         "id": "7412",
         "province_id": "74",
-        "name": "KABUPATEN KONAWE KEPULAUAN"
+        "name": "KAB. KONAWE KEPULAUAN"
     },
     {
         "id": "7413",
         "province_id": "74",
-        "name": "KABUPATEN MUNA BARAT"
+        "name": "KAB. MUNA BARAT"
     },
     {
         "id": "7414",
         "province_id": "74",
-        "name": "KABUPATEN BUTON TENGAH"
+        "name": "KAB. BUTON TENGAH"
     },
     {
         "id": "7415",
         "province_id": "74",
-        "name": "KABUPATEN BUTON SELATAN"
+        "name": "KAB. BUTON SELATAN"
     },
     {
         "id": "7471",
@@ -2213,27 +2213,27 @@ class RegencieSeeder extends Seeder
     {
         "id": "7501",
         "province_id": "75",
-        "name": "KABUPATEN GORONTALO"
+        "name": "KAB. GORONTALO"
     },
     {
         "id": "7502",
         "province_id": "75",
-        "name": "KABUPATEN BOALEMO"
+        "name": "KAB. BOALEMO"
     },
     {
         "id": "7503",
         "province_id": "75",
-        "name": "KABUPATEN BONE BOLANGO"
+        "name": "KAB. BONE BOLANGO"
     },
     {
         "id": "7504",
         "province_id": "75",
-        "name": "KABUPATEN PAHUWATO"
+        "name": "KAB. PAHUWATO"
     },
     {
         "id": "7505",
         "province_id": "75",
-        "name": "KABUPATEN GORONTALO UTARA"
+        "name": "KAB. GORONTALO UTARA"
     },
     {
         "id": "7571",
@@ -2243,77 +2243,77 @@ class RegencieSeeder extends Seeder
     {
         "id": "7601",
         "province_id": "76",
-        "name": "KABUPATEN PASANGKAYU"
+        "name": "KAB. PASANGKAYU"
     },
     {
         "id": "7602",
         "province_id": "76",
-        "name": "KABUPATEN MAMUJU"
+        "name": "KAB. MAMUJU"
     },
     {
         "id": "7603",
         "province_id": "76",
-        "name": "KABUPATEN MAMASA"
+        "name": "KAB. MAMASA"
     },
     {
         "id": "7604",
         "province_id": "76",
-        "name": "KABUPATEN POLEWALI MANDAR"
+        "name": "KAB. POLEWALI MANDAR"
     },
     {
         "id": "7605",
         "province_id": "76",
-        "name": "KABUPATEN MAJENE"
+        "name": "KAB. MAJENE"
     },
     {
         "id": "7606",
         "province_id": "76",
-        "name": "KABUPATEN MAMUJU TENGAH"
+        "name": "KAB. MAMUJU TENGAH"
     },
     {
         "id": "8101",
         "province_id": "81",
-        "name": "KABUPATEN MALUKU TENGAH"
+        "name": "KAB. MALUKU TENGAH"
     },
     {
         "id": "8102",
         "province_id": "81",
-        "name": "KABUPATEN MALUKU TENGGARA"
+        "name": "KAB. MALUKU TENGGARA"
     },
     {
         "id": "8103",
         "province_id": "81",
-        "name": "KABUPATEN KEPULAUAN TANIMBAR"
+        "name": "KAB. KEPULAUAN TANIMBAR"
     },
     {
         "id": "8104",
         "province_id": "81",
-        "name": "KABUPATEN BURU"
+        "name": "KAB. BURU"
     },
     {
         "id": "8105",
         "province_id": "81",
-        "name": "KABUPATEN SERAM BAGIAN TIMUR"
+        "name": "KAB. SERAM BAGIAN TIMUR"
     },
     {
         "id": "8106",
         "province_id": "81",
-        "name": "KABUPATEN SERAM BAGIAN BARAT"
+        "name": "KAB. SERAM BAGIAN BARAT"
     },
     {
         "id": "8107",
         "province_id": "81",
-        "name": "KABUPATEN KEPULAUAN ARU"
+        "name": "KAB. KEPULAUAN ARU"
     },
     {
         "id": "8108",
         "province_id": "81",
-        "name": "KABUPATEN MALUKU BARAT DAYA"
+        "name": "KAB. MALUKU BARAT DAYA"
     },
     {
         "id": "8109",
         "province_id": "81",
-        "name": "KABUPATEN BURU SELATAN"
+        "name": "KAB. BURU SELATAN"
     },
     {
         "id": "8171",
@@ -2328,42 +2328,42 @@ class RegencieSeeder extends Seeder
     {
         "id": "8201",
         "province_id": "82",
-        "name": "KABUPATEN HALMAHERA BARAT"
+        "name": "KAB. HALMAHERA BARAT"
     },
     {
         "id": "8202",
         "province_id": "82",
-        "name": "KABUPATEN HALMAHERA TENGAH"
+        "name": "KAB. HALMAHERA TENGAH"
     },
     {
         "id": "8203",
         "province_id": "82",
-        "name": "KABUPATEN HALMAHERA UTARA"
+        "name": "KAB. HALMAHERA UTARA"
     },
     {
         "id": "8204",
         "province_id": "82",
-        "name": "KABUPATEN HALMAHERA SELATAN"
+        "name": "KAB. HALMAHERA SELATAN"
     },
     {
         "id": "8205",
         "province_id": "82",
-        "name": "KABUPATEN KEPULAUAN SULA"
+        "name": "KAB. KEPULAUAN SULA"
     },
     {
         "id": "8206",
         "province_id": "82",
-        "name": "KABUPATEN HALMAHERA TIMUR"
+        "name": "KAB. HALMAHERA TIMUR"
     },
     {
         "id": "8207",
         "province_id": "82",
-        "name": "KABUPATEN PULAU MOROTAI"
+        "name": "KAB. PULAU MOROTAI"
     },
     {
         "id": "8208",
         "province_id": "82",
-        "name": "KABUPATEN PULAU TALIABU"
+        "name": "KAB. PULAU TALIABU"
     },
     {
         "id": "8271",
@@ -2378,142 +2378,142 @@ class RegencieSeeder extends Seeder
     {
         "id": "9101",
         "province_id": "91",
-        "name": "KABUPATEN MERAUKE"
+        "name": "KAB. MERAUKE"
     },
     {
         "id": "9102",
         "province_id": "91",
-        "name": "KABUPATEN JAYAWIJAYA"
+        "name": "KAB. JAYAWIJAYA"
     },
     {
         "id": "9103",
         "province_id": "91",
-        "name": "KABUPATEN JAYAPURA"
+        "name": "KAB. JAYAPURA"
     },
     {
         "id": "9104",
         "province_id": "91",
-        "name": "KABUPATEN NABIRE"
+        "name": "KAB. NABIRE"
     },
     {
         "id": "9105",
         "province_id": "91",
-        "name": "KABUPATEN KEPULAUAN YAPEN"
+        "name": "KAB. KEPULAUAN YAPEN"
     },
     {
         "id": "9106",
         "province_id": "91",
-        "name": "KABUPATEN BIAK NUMFOR"
+        "name": "KAB. BIAK NUMFOR"
     },
     {
         "id": "9107",
         "province_id": "91",
-        "name": "KABUPATEN PUNCAK JAYA"
+        "name": "KAB. PUNCAK JAYA"
     },
     {
         "id": "9108",
         "province_id": "91",
-        "name": "KABUPATEN PANIAI"
+        "name": "KAB. PANIAI"
     },
     {
         "id": "9109",
         "province_id": "91",
-        "name": "KABUPATEN MIMIKA"
+        "name": "KAB. MIMIKA"
     },
     {
         "id": "9110",
         "province_id": "91",
-        "name": "KABUPATEN SARMI"
+        "name": "KAB. SARMI"
     },
     {
         "id": "9111",
         "province_id": "91",
-        "name": "KABUPATEN KEEROM"
+        "name": "KAB. KEEROM"
     },
     {
         "id": "9112",
         "province_id": "91",
-        "name": "KABUPATEN PEGUNUNGAN BINTANG"
+        "name": "KAB. PEGUNUNGAN BINTANG"
     },
     {
         "id": "9113",
         "province_id": "91",
-        "name": "KABUPATEN YAHUKIMO"
+        "name": "KAB. YAHUKIMO"
     },
     {
         "id": "9114",
         "province_id": "91",
-        "name": "KABUPATEN TOLIKARA"
+        "name": "KAB. TOLIKARA"
     },
     {
         "id": "9115",
         "province_id": "91",
-        "name": "KABUPATEN WAROPEN"
+        "name": "KAB. WAROPEN"
     },
     {
         "id": "9116",
         "province_id": "91",
-        "name": "KABUPATEN BOVEN DIGOEL"
+        "name": "KAB. BOVEN DIGOEL"
     },
     {
         "id": "9117",
         "province_id": "91",
-        "name": "KABUPATEN MAPPI"
+        "name": "KAB. MAPPI"
     },
     {
         "id": "9118",
         "province_id": "91",
-        "name": "KABUPATEN ASMAT"
+        "name": "KAB. ASMAT"
     },
     {
         "id": "9119",
         "province_id": "91",
-        "name": "KABUPATEN SUPIORI"
+        "name": "KAB. SUPIORI"
     },
     {
         "id": "9120",
         "province_id": "91",
-        "name": "KABUPATEN MAMBERAMO RAYA"
+        "name": "KAB. MAMBERAMO RAYA"
     },
     {
         "id": "9121",
         "province_id": "91",
-        "name": "KABUPATEN MAMBERAMO TENGAH"
+        "name": "KAB. MAMBERAMO TENGAH"
     },
     {
         "id": "9122",
         "province_id": "91",
-        "name": "KABUPATEN YALIMO"
+        "name": "KAB. YALIMO"
     },
     {
         "id": "9123",
         "province_id": "91",
-        "name": "KABUPATEN LANNY JAYA"
+        "name": "KAB. LANNY JAYA"
     },
     {
         "id": "9124",
         "province_id": "91",
-        "name": "KABUPATEN NDUGA"
+        "name": "KAB. NDUGA"
     },
     {
         "id": "9125",
         "province_id": "91",
-        "name": "KABUPATEN PUNCAK"
+        "name": "KAB. PUNCAK"
     },
     {
         "id": "9126",
         "province_id": "91",
-        "name": "KABUPATEN DOGIYAI"
+        "name": "KAB. DOGIYAI"
     },
     {
         "id": "9127",
         "province_id": "91",
-        "name": "KABUPATEN INTAN JAYA"
+        "name": "KAB. INTAN JAYA"
     },
     {
         "id": "9128",
         "province_id": "91",
-        "name": "KABUPATEN DEIYAI"
+        "name": "KAB. DEIYAI"
     },
     {
         "id": "9171",
@@ -2523,62 +2523,62 @@ class RegencieSeeder extends Seeder
     {
         "id": "9201",
         "province_id": "92",
-        "name": "KABUPATEN SORONG"
+        "name": "KAB. SORONG"
     },
     {
         "id": "9202",
         "province_id": "92",
-        "name": "KABUPATEN MANOKWARI"
+        "name": "KAB. MANOKWARI"
     },
     {
         "id": "9203",
         "province_id": "92",
-        "name": "KABUPATEN FAK FAK"
+        "name": "KAB. FAK FAK"
     },
     {
         "id": "9204",
         "province_id": "92",
-        "name": "KABUPATEN SORONG SELATAN"
+        "name": "KAB. SORONG SELATAN"
     },
     {
         "id": "9205",
         "province_id": "92",
-        "name": "KABUPATEN RAJA AMPAT"
+        "name": "KAB. RAJA AMPAT"
     },
     {
         "id": "9206",
         "province_id": "92",
-        "name": "KABUPATEN TELUK BINTUNI"
+        "name": "KAB. TELUK BINTUNI"
     },
     {
         "id": "9207",
         "province_id": "92",
-        "name": "KABUPATEN TELUK WONDAMA"
+        "name": "KAB. TELUK WONDAMA"
     },
     {
         "id": "9208",
         "province_id": "92",
-        "name": "KABUPATEN KAIMANA"
+        "name": "KAB. KAIMANA"
     },
     {
         "id": "9209",
         "province_id": "92",
-        "name": "KABUPATEN TAMBRAUW"
+        "name": "KAB. TAMBRAUW"
     },
     {
         "id": "9210",
         "province_id": "92",
-        "name": "KABUPATEN MAYBRAT"
+        "name": "KAB. MAYBRAT"
     },
     {
         "id": "9211",
         "province_id": "92",
-        "name": "KABUPATEN MANOKWARI SELATAN"
+        "name": "KAB. MANOKWARI SELATAN"
     },
     {
         "id": "9212",
         "province_id": "92",
-        "name": "KABUPATEN PEGUNUNGAN ARFAK"
+        "name": "KAB. PEGUNUNGAN ARFAK"
     },
     {
         "id": "9271",

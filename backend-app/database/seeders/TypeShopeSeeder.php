@@ -21,6 +21,12 @@ class TypeShopeSeeder extends Seeder
             ],
             [
                 'name' => 'Toko Official'
+            ],
+            [
+                'name' => 'Power Mirchant'
+            ],
+            [
+                'name' => 'tokopedia'
             ]
         ];
         foreach ($dataTypeShope as $item) {

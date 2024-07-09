@@ -1,5 +1,5 @@
 import React from 'react'
-import { formatCurrency } from '../utils/formatCurency'
+import { formatCurrency } from '../../utils/formatUtils'
 import { Link } from 'react-router-dom'
 
 function CardProductPromo({url, image, alt, price, diskon, priceDiscount, stock, order}) {

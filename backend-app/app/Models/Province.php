@@ -11,7 +11,7 @@ class Province extends Model
     use HasFactory;
 
     protected $table = 'provinces';
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
     public function regencie(): HasMany
     {

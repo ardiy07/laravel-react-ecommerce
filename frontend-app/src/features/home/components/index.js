@@ -6,6 +6,7 @@ const FormPaketData = lazy(() => import("./molecules/FormPaketData"));
 const FormListrik = lazy(() => import("./molecules/FormListrik"));
 const TopUp = lazy(() => import("./organisms/TopUp"));
 const PenggunaBaru = lazy(() => import("./organisms/PenggunaBaru"));
+const Kupon = lazy(() => import("./organisms/Kupon"));
 
 export { 
     Banner, 
@@ -13,5 +14,6 @@ export {
     FormPulsa,
     FormPaketData,
     FormListrik,
-    PenggunaBaru 
+    PenggunaBaru,
+    Kupon 
 }
