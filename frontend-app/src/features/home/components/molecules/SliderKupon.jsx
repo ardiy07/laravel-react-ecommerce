@@ -55,8 +55,6 @@ function SliderKupon({data}) {
                         city={item.city}
                         rating={item.rating}
                         order={formatOrder(item.order)}
-                        // order={orderPercentage(item.order, item.stocks)}
-                        // stock={getStockStatus(orderPercentage(item.order, item.stocks))}
                         url={item.slug}
                     />
                 ))}

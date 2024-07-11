@@ -19,7 +19,6 @@ function MarketHeader({ onOpen, onClose, count, auth }) {
 
     return (
         <div className='relative' onMouseEnter={marketOpen} onMouseLeave={marketClose}>
-            <IconHeader icon='icon-market' count={count} isOpen={isOpen} />
             {isOpen && (
                 <div className='mt-1 py-2 absolute z-50 w-[30rem] bg-white shadow-2xl rounded-md right-0 -mx-52 border'>
                     {auth ? (

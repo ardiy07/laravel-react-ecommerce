@@ -6,6 +6,7 @@ import LinkStoreSearch from '../atoms/LinkStoreSearch';
 import DataPopuler from '../data/SearchPopuler.json';
 import LinkResultSearch from '../atoms/LinkResultSearch';
 import {fetchSearch} from '../../services/thunks/headerThunks';
+import LoadingSearch from '../../../../components/loading/LoadingSearch';
 
 function SearchHeader({ onOpen, onClose }) {
   const [search, setSearch] = useState('');
@@ -16,7 +17,7 @@ function SearchHeader({ onOpen, onClose }) {
   const dispatch = useDispatch();
   const typingTimeout = 500;
 
-  const { dataSearch, statusSearch } = useSelector((state) => state.search);
+  const { dataSearch } = useSelector((state) => state.search);
 
   const onSearch = () => {
     setIsFocus(true);
@@ -31,6 +32,7 @@ function SearchHeader({ onOpen, onClose }) {
   const handleSearch = (e) => {
     const newSearch = e.target.value;
     setSearch(newSearch);
+    setLoadingSearch(true);
 
     if (typingTimer) {
       clearTimeout(typingTimer);
@@ -89,8 +91,7 @@ function SearchHeader({ onOpen, onClose }) {
           // Result Search
           <div className="h-auto py-3 overflow-y-auto">
             {loadingSearch ? (
-              // <LoadingSpinner />
-              <p>Loading....</p>
+            <LoadingSearch />
             ) : (
               <>
                 {dataSearch.products.length === 0 && dataSearch.shops.length === 0 ? (

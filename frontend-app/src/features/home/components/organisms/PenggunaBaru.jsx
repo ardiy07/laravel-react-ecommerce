@@ -14,10 +14,9 @@ function PenggunaBaru() {
     dispatch(fetchProductPromotion());
   }, [dispatch]);
 
-  // if (APP_DEBUG) {
-  //   console.log(data)
-  //   console.log(expiredAt)
-  // }
+  if (APP_DEBUG) {
+    console.log('Data Pengguna Baru', data);
+  }
 
   return (
     <div className='mx-16 mb-10 pb-5 border-b'>

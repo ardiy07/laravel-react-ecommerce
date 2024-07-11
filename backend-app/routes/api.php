@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\CardController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\api\ProfilController;
 use App\Http\Controllers\api\ShopController;
@@ -20,6 +21,12 @@ Route::prefix('v1')->group(function () {
         Route::controller(ProfilController::class)->group(function () {
             Route::get('/profile-user', 'profileUser')->name('profile.user');
         });
+
+        Route::controller(CardController::class)->group(function () {
+            Route::get('/card', 'index')->name('card.index');
+            Route::post('/card', 'store')->name('card.store');
+            Route::get('/card-product', 'cardProduct')->name('card.product');
+        });
     });
 
     // Logout
@@ -34,7 +41,7 @@ Route::prefix('v1')->group(function () {
     Route::controller(ProductController::class)->group(function () {
         Route::get('/product/search', 'search')->name('product.search');
         Route::get('/products', 'index')->name('product.index');
-        Route::get('/product/{slug}', 'show')->name('product.show');
+        Route::get('/product/{productSlug}', 'show')->name('product.show');
         Route::get('/product-promotion', 'promotion')->name('product.promotion');
     });
 });

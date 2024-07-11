@@ -1,13 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { fecthSearchProduct } from "../thunks/homeThunks"
+import { fetchHomeProduct } from "../thunks/homeThunks"
+
 
 const initialState = {
-    statusSearch: 'idle',
-    errorSearch: null,
-    dataSearch: {
-        products: [],
-        shops: []
-    }
+    status: 'idle',
+    error: null,
+    data: [],
+    meta: {}
 }
 
 const producHomeSlice = createSlice({
@@ -16,22 +15,21 @@ const producHomeSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(fecthSearchProduct.pending, (state) => {
-                state.statusSearch = 'pending'
-                state.errorSearch = null
-                state.dataSearch = { products: [], shops: [] };
+            .addCase(fetchHomeProduct.pending, (state) => {
+                state.status = 'pending'
+                state.error = null
+                state.data = []
             })
-            .addCase(fecthSearchProduct.fulfilled, (state, action) => {
-                state.statusSearch = 'succeeded'
-                state.dataSearch = {
-                    products: action.payload.products || [],
-                    shops: action.payload.shops || []
-                };
+            .addCase(fetchHomeProduct.fulfilled, (state, action) => {
+                state.status = 'succeeded'
+                state.error = null
+                state.data = action.payload.data
+                state.meta = action.payload.meta
             })
-            .addCase(fecthSearchProduct.rejected, (state, action) => {
-                state.statusSearch = 'failed'
-                state.dataSearch = { products: [], shops: [] };
-                state.errorSearch = action.payload
+            .addCase(fetchHomeProduct.rejected, (state, action) => {
+                state.status = 'failed';
+                state.data = [];
+                state.error = action.payload
             })
     }
 })

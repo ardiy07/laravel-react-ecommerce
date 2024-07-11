@@ -2,9 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
-import stores from './store/store'
-import './index.css'
-import './assets/style/icons.css'
+import stores from './services/store'
+import './assets/css/tailwinds.css'
+import './assets/css/icons.css'
+import './assets/css/index.css'
 import ErrorBundary from './utils/errorBundary.jsx'
 
 

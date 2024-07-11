@@ -6,10 +6,17 @@ abstract class Controller
 {
     //
 
-    public function responSuccess($data)
+    public function responSuccess($message, $code)
     {
         return response()->json([
-            'data' => $data
-        ], 200);
+            'message' => $message
+        ], $code);
+    }
+
+    public function responseFailed($message, $code)
+    {
+        return response()->json([
+            'message' => $message
+        ], $code);
     }
 }

@@ -47,11 +47,11 @@ function SliderPenggunaBaru({data}) {
                         key={index}
                         image={item.image}
                         alt={item.name}
-                        diskon={discountPercentage(item.price, item.priceSale)}
+                        diskon={discountPercentage(item.price, item.priceSalePromotion)}
                         order={orderPercentage(item.order, item.stocks)}
                         stock={getStockStatus(orderPercentage(item.order, item.stocks))}
                         price={item.price}
-                        priceDiscount={item.priceSale}
+                        priceDiscount={item.priceSalePromotion}
                         url={item.slug}
                     />
                 ))}

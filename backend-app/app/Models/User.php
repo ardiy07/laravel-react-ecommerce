@@ -20,7 +20,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    // protected $guarded = ['id'];
+    protected $guarded = ['id'];
     protected $table = 'users';
 
     /**
@@ -71,8 +71,6 @@ class User extends Authenticatable
     {
         return $this->hasOne(Shope::class, 'user_id');
     }
-
-    
 
     public function card(): HasMany
     {

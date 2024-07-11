@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class UserMembership extends Model
 {
     use HasFactory;
-    // protected $guarded = ['id'];
+    protected $guarded = ['id'];
     protected $table = 'user_memberships';
 
     public function user(): BelongsTo

@@ -5,8 +5,10 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\product\ProductCollection;
 use App\Http\Resources\product\ProductCollecton;
+use App\Http\Resources\product\ProductDetailResource;
 use App\Http\Resources\product\ProductPromotionCollection;
 use App\Http\Resources\product\ProductPromotionResource;
+use App\Http\Resources\product\ProductResource;
 use App\Http\Resources\product\ProductSearchResource;
 use App\Http\Resources\shope\ShopeSearchResource;
 use App\Models\Product;
@@ -21,28 +23,26 @@ class ProductController extends Controller
     {
         //
         $categorie = $request->categorie;
-        $limit = $request->limit ?? 15; // Nilai default limit jika tidak disediakan
+        $limit = $request->limit; // Nilai default limit jika tidak disediakan
         $page = $request->page ?? 1; // Nilai default page jika tidak disediakan
-        
+
         $query = Product::query();
-        
+
         if ($categorie) {
             $query->whereHas('categorie', function ($query) use ($categorie) {
                 $query->where('slug', $categorie);
             });
         }
-        
-        $products = $query->with([
+
+        $query->with([
             'shope',
             'categorie',
             'detailPromotions.promotion',
             'shope.addres.village.distric.regencie' // pastikan nama metode relasi benar
-        ])->paginate($limit, ['*'], 'page', $page);
-        
+        ]);
+        $products = $query->paginate($limit, ['*'], 'page', $page);
+        $products->appends(['categorie' => $categorie, 'limit' => $limit]);
         return new ProductCollection($products);
-        
-
-        return response()->json($products);
     }
 
     public function search(Request $request)
@@ -56,13 +56,13 @@ class ProductController extends Controller
         return response()->json(['products' => ProductSearchResource::collection($products), 'shops' => ShopeSearchResource::collection($shops)]);
     }
 
-    public function show($slug)
+    public function show($productSlug)
     {
-        $product = Product::where('slug', $slug)->first();
+        $product = Product::where('slug', $productSlug)->first();
         if (!$product) {
             return response()->json(['message' => 'Data tidak ditemukan'], 404);
         }
-        return response()->json($product);
+        return new ProductDetailResource($product);
     }
 
     public function promotion(Request $request)

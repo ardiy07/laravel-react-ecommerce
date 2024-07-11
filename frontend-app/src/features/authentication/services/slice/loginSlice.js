@@ -7,7 +7,8 @@ const initialState = {
     error: null,
     message: '',
     isLogin: localStorage.getItem('isLogin') === 'true',
-    token: getItemLocalStorage('authData') || null
+    token: getItemLocalStorage('authData') || null,
+    dataUser: []
 };
 
 const loginSlice = createSlice({
@@ -31,6 +32,7 @@ const loginSlice = createSlice({
                 state.message = '';
                 state.isLogin = true;
                 state.token = action.payload.data;
+                state.dataUser = action.payload.data;
                 setItemLocalStorage('isLogin', true);
                 setItemLocalStorage('authData', action.payload.data);
             })

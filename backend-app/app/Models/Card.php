@@ -10,7 +10,7 @@ class Card extends Model
 {
     use HasFactory;
 
-    // protected $guarded = ['id'];
+    protected $guarded = ['id'];
     protected $table = 'cards';
 
     public function user(): BelongsTo

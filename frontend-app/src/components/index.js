@@ -7,6 +7,9 @@ import Dropdown from "./input/Dropdown";
 import CardProductPromo from "./card/CardProductPromo";
 import CountDownTimer from "./CountDownTimer";
 import CardProduct from "./card/CardProduct";
+import PlusProduct from "./button/PlusProduct";
+import MinusProduct from "./button/MinusProduct";
+import LoadinButtonWhite from "./loading/LoadinButtonWhite";
 
 export { 
     LoadingLazzy, 
@@ -17,5 +20,8 @@ export {
     Dropdown,
     CardProductPromo,
     CountDownTimer,
-    CardProduct
+    CardProduct,
+    PlusProduct,
+    MinusProduct,
+    LoadinButtonWhite
 }

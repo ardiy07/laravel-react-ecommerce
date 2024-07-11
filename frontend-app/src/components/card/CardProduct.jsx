@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { discountPercentage, formatCurrency } from '../../utils/formatUtils'
+import { capitalize, discountPercentage, formatCurrency } from '../../utils/formatUtils'
 
 function CardProduct({ url, image, alt, name, price, priceSale, diskon, promo, city, rating, order, icon }) {
     return (
@@ -14,7 +14,7 @@ function CardProduct({ url, image, alt, name, price, priceSale, diskon, promo, c
                             <p className="text-black font-bold text-base">{formatCurrency(priceSale)}</p>
                             <div className='flex items-center gap-2'>
                                 <p className='text-xs line-through text-gray-500 font-medium'>{formatCurrency(price)}</p>
-                                <span className='text-xs text-red-500 font-bold'>{diskon || 0}%</span>
+                                <span className='text-xs text-red-500 font-bold'>{ diskon || 0}%</span>
                             </div>
                         </>
                         :
@@ -29,7 +29,7 @@ function CardProduct({ url, image, alt, name, price, priceSale, diskon, promo, c
                         {icon === 'tokopedia' ?
                             <p className='font-medium text-gray-500 text-xs capitalize'>Dilayani Tokopedia</p>
                             :
-                            <p className='font-medium text-gray-500 text-xs capitalize'>{city}</p>
+                            <p className='font-medium text-gray-500 text-xs'>{capitalize(city)}</p>
                         }
                     </div>
                     <div className='flex items-center gap-1'>

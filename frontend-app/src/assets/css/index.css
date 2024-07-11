@@ -1,0 +1,15 @@
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Untuk Firefox */
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    /* Optional: Menghapus margin bawaan */
+}
+
+input[type=number]:target {
+    border: none
+}

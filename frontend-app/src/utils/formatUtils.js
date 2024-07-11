@@ -34,21 +34,52 @@ export const getStockStatus = (orderPercentage) => {
   }
 };
 
-export const formatOrder = (order) =>{
-  if(order < 100){
-    return order
-  } else if(order > 100 && order < 1000){
+export const formatOrder = (order) => {
+  if (typeof order !== 'number' && typeof order !== 'string') {
+    return "Invalid order";
+  }
+  order = Number(order);
+
+  if (isNaN(order)) {
+    return "Invalid order";
+  }
+
+  if (order < 100) {
+    return order.toString();
+  } else if (order >= 100 && order < 1000) {
     const firstDigit = order.toString()[0];
     return firstDigit + "00+";
-  } else if(order > 1000 && order < 10000){
+  } else if (order >= 1000 && order < 10000) {
     const firstDigit = order.toString()[0];
     return firstDigit + "rb+";
-  } else if(order > 10000 && order < 100000){
+  } else if (order >= 10000 && order < 100000) {
     const firstDigit = order.toString()[0];
     const secondDigit = order.toString()[1];
     return firstDigit + secondDigit + "rb+";
-  } else{
+  } else {
     const firstDigit = order.toString()[0];
     return firstDigit + "jt+";
+  }
+};
+
+export const capitalize = (str) => {
+  return str.toLowerCase().replace(/\b\w/g, function (match) {
+    return match.toUpperCase();
+  });
+}
+
+export const formatRating = (rating) => {
+  if (rating >= 0) {
+    return 1
+  } else if (rating > 1.5) {
+    return 2
+  } else if (rating > 2.5) {
+    return 3
+  } else if (rating > 3.5) {
+    return 4
+  } else if (rating > 4.5) {
+    return 5
+  } else {
+    return 1
   }
 }

@@ -10,6 +10,7 @@ import { useEffect } from "react";
 const useAuth = () => {
     let navigate = useNavigate();
     let dispatch = useDispatch();
+    const name = useSelector((state) => state.login.dataUser);
 
 
     // Login
@@ -37,7 +38,8 @@ const useAuth = () => {
 
     return {
         isLogin,
-        handleLogout
+        handleLogout,
+        name
     }
 
 }

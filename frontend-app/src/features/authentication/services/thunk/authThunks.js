@@ -34,3 +34,22 @@ export const fetchAuthLogout = createAsyncThunk(
       }
   }
 );
+
+export const fetchAuthRegister = createAsyncThunk(
+  'auth/fetchAuthRegister',
+  async ({ name, email, password }, { rejectWithValue }) => {
+      try {
+          const response = await api.register({
+              name,
+              email,
+              password
+          });
+          return response.data;
+      } catch (error) {
+          if (error.response && error.response.data) {
+              return rejectWithValue(error.response.data);
+          }
+          return rejectWithValue(error.message);
+      }
+  }
+)

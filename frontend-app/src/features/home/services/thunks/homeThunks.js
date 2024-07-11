@@ -1,11 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../../../services/api";
 
-export const fecthSearchProduct = createAsyncThunk(
-    'product/fetchSearchProduct',
-    async (keyword, { rejectWithValue }) => {
+export const fetchHomeProduct = createAsyncThunk(
+    'home/fetchHomeProduct',
+    async ({categori, limit, page}, { rejectWithValue }) => {
         try {
-            const response = await api.getProductSearch(keyword);
+            const response = await api.getProductKupon(categori, limit, page);
             return response.data;
         } catch (error) {
             if (error.response && error.response.data) {
@@ -15,7 +15,6 @@ export const fecthSearchProduct = createAsyncThunk(
         }
     }
 )
-
 
 export const fetchProductPromotion = createAsyncThunk(
     'home/fetchProductPromotion',

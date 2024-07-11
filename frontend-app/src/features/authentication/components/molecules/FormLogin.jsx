@@ -3,12 +3,12 @@ import InputAuth from '../atoms/InputAuth'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAuthLogin } from '../../services';
 import { useNavigate } from 'react-router-dom';
-import { setItemLocalStorage } from '../../../../config/localStorageConfig';
+import { LoadinButtonWhite } from '../../../../components';
 
 function FormLogin() {
     const dispatch = useDispatch();
     let navigate = useNavigate();
-    const { error, message, status, token } = useSelector((state) => state.login);
+    const { error, message, status } = useSelector((state) => state.login);
 
     const [formLogin, setFormLogin] = useState({
         email: '',
@@ -32,8 +32,6 @@ function FormLogin() {
     };
 
     if(status === 'succeeded'){
-        setItemLocalStorage('authData', token)
-        setItemLocalStorage('isLogin', true)
         navigate('/')
     }
 
@@ -62,7 +60,11 @@ function FormLogin() {
                 {error && <span className='text-red-500 m-0 p-0 text-sm font-semibold text-start items-start'>{message}</span>}
                 <div className='w-full flex flex-col items-end gap-1 mt-1'>
                     <a href='#' className='text-green-600 text-sm'>Butuh Bantuan?</a>
-                    <button className={`w-full  py-2 rounded-lg text-white font-bold text-base ${status == 'pending' ? 'bg-gray-400' : 'bg-green-600'}`} disabled={status == 'pending' ? true : false} type='submit'>Masuk</button>
+                    <button className={`w-full  py-2 rounded-lg text-white font-bold text-base bg-green-600`} disabled={status == 'pending' ? true : false} type='submit'>
+                    {status == 'pending' ?
+                        <LoadinButtonWhite />
+                        : 'Masuk'}
+                    </button>
                 </div>
             </form>
         </div>

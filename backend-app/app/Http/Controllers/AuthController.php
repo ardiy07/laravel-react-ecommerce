@@ -54,10 +54,12 @@ class AuthController extends Controller
             }
             $user->tokens()->delete();
             DB::table('users')->where('id', $user->id)->update(['is_login' => false]);
-
-            return response()->json(['message' => 'Logout Berhasil'], 200);
+            return $this->responSuccess('Logout Berhasil', 200);
         } catch (\Exception $e) {
-            return response()->json(['message' => 'Logout Gagal'], 500);
+            if(config('app.debug')) {
+                return $this->responseFailed($e->getMessage(), 500);
+            }
+            return $this->responseFailed('Logout Gagal', 500);
         }
     }
 
@@ -74,9 +76,6 @@ class AuthController extends Controller
                 'name' => ['required', 'string', 'max:255', 'min:4'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
                 'password' => ['required', 'string', 'min:8'],
-                // 'gender' => ['required', 'in:perempuan,pria'],
-                // 'phone' => ['required', 'string', 'max:12'],
-                // 'profile' => ['image', 'mimes:jpeg,png,jpg', 'file', 'max:2048']
             ]);
 
             
@@ -84,46 +83,27 @@ class AuthController extends Controller
             $name = $request->name;
             $email = $request->email;
             $password = Hash::make($request->password);
-            // $gender = $request->gender;
-            // $phone = $request->phone;
-            // $profile = $request->file('profile');
-            
-            // Upload Gambar
-            // if ($request->file('profile')) {
-            //     $nameImg = $profile->hashName();
-            //     $request->file('profile')->storeAs('public/images/profile', $nameImg);
-            //     $pathImgProfile = Storage::url('public/images/profile/' . $nameImg);
-            //     $profile = $pathImgProfile;
-            // } else {
-            //     $profile = 'images/profile/default-user.png';
-            // }
             
             DB::beginTransaction();
 
-            $user = User::create([
+            User::create([
                 'name' => $name,
                 'email' => $email,
                 'password' => $password
             ]);
 
-            // $profile = Profile::create([
-            //     'user_id' => $user->id,
-            //     'username' => SlugHelper::slugUsername($name, $user->id),
-            //     'gender' => $gender,
-            //     'phone' => $phone,
-            //     'profile' => $profile,
-            // ]);
-
             DB::commit();
 
-            return response()->json(['message' => 'Registrasi Berhasil'], 201);
+            return $this->responSuccess('Registrasi Berhasil', 201);
+        }  catch (\Illuminate\Validation\ValidationException $e) {
+            DB::rollBack();
+            return response()->json(['errors' => $e->errors()], 422);
         } catch (\Exception $e) {
             DB::rollBack();
-            if('APP_DEBUG')
-            {
+            if (config('app.debug')) {
                 return response()->json(['message' => $e->getMessage()], 500);
             }
-            return response()->json(['message' => 'Registrasi Gagal'], 500);
+            return $this->responseFailed('Login Gagal', 500);
         }
     }
 }

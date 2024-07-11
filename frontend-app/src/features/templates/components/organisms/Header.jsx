@@ -12,6 +12,7 @@ import ModalShope from '../../../shope/components/organisms/ModalShope';
 import LinkButton from '../atoms/LinkButton';
 import { ModalProfile } from '../../../profile/components';
 import { LoadingLazzy } from '../../../../components';
+import { MarketProductHeader } from '../../../product/components';
 
 function Header(props) {
     const [style, setStyle] = useState('');
@@ -41,7 +42,7 @@ function Header(props) {
                 {/* Logo */}
                 <LogoHeader to={'/'} />
                 {/* Kategori */}
-                <div className='flex mr-3 px-2 py-2 text-sm rounded-lg hover:bg-gray-200 items-center'>Kategori</div>
+                <div className='flex mr-3 px-2 py-2 text-base font-normal tracking-tight rounded-lg hover:bg-gray-200 items-center'>Kategori</div>
                 {/* Search */}
                 <div className='w-6/12 mr-5'>
                     <SearchHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} />
@@ -50,13 +51,13 @@ function Header(props) {
                 <div className='mr-1 flex gap-1'>
                     {isLogin ? (
                         <>
-                            <MarketHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} auth={isLogin} count={0} />
+                            <MarketProductHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} auth={isLogin}/>
                             <NotifikasiHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} />
                             <MessageHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} />
                         </>
                     ) : (
                         <div className='ml-20'>
-                            <MarketHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} auth={props.auth} />
+                            <MarketProductHeader onOpen={props.onOverlayOpen} onClose={props.onOverlayClose} auth={props.auth} />
                         </div>
                     )}
                 </div>
