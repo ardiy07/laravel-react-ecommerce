@@ -6,12 +6,24 @@ const initialState = {
     error: null,
     data: [],
     count: '',
+    cardAdd: false
 }
 
 const cardGetSlice = createSlice({
     name: 'cardGet',
     initialState,
-    reducers: {},
+    reducers: {
+        addCardSuccess: (state) => {
+            state.cardAdd = true
+        },
+        resetCard: (state) => {
+            state.status = 'idle'
+            state.error = null
+            state.data = []
+            state.count = ''
+            state.cardAdd = false
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchGetCard.pending, (state) => {
@@ -33,4 +45,5 @@ const cardGetSlice = createSlice({
     }
 })
 
+export const { addCardSuccess, resetCard } = cardGetSlice.actions
 export default cardGetSlice.reducer

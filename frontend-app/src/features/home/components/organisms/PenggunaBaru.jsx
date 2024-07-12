@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import SliderPenggunaBaru from '../molecules/SliderPenggunaBaru'
@@ -23,7 +23,11 @@ function PenggunaBaru() {
       <div className='flex items-end gap-3 mb-3'>
         <h2 className='text-2xl font-bold'>Khusus Pengguna Baru</h2>
         <p className='text-gray-500 font-medium'>Berakhir dalam</p>
-        <p><CountDownTimer expirationString={expiredAt} /></p>
+        <p>
+          <Suspense fallback={<div>Loading.....</div>}>
+            <CountDownTimer expirationString={expiredAt} />
+          </Suspense>
+        </p>
         <Link to="/" className='font-bold text-green-600 text-base tracking-tight'>Lihat Semua</Link>
       </div>
       <SliderPenggunaBaru data={data} />

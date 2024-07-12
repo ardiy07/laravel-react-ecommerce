@@ -7,6 +7,7 @@ use App\Http\Resources\card\CardCollection;
 use App\Models\Card;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CardController extends Controller
 {
@@ -33,22 +34,37 @@ class CardController extends Controller
             'quantity' => ['required', 'integer', 'min:1', "max:$stock"],
         ]);
 
-
         $user = auth()->user();
-        $product = $request->productId;
+        $searchData = ['user_id' => $user->id, 'product_id' => $request->productId];
         $quantity = $request->quantity;
 
-        $searchData = [
-            'user_id' => $user->id,
-            'product_id' => $product
-        ];
+        DB::beginTransaction();
 
-        $update = [
-            'quantity' => $quantity
-        ];
+        try {
+            $card = Card::where($searchData)->first();
 
-        $card = Card::updateOrCreate($searchData, $update);
-        return response()->json($card);
+            if ($card) {
+                $quantity += $card->quantity;
+
+                if ($quantity > $stock) {
+                    return response()->json(['error' => 'Quantity exceeds stock'], 400);
+                }
+
+                $card->update(['quantity' => $quantity]);
+            } else {
+                $card = Card::create(array_merge($searchData, ['quantity' => $quantity]));
+            }
+
+            DB::commit();
+            return response()->json($card);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            if('APP_DEBUG') {
+                return response()->json(['error' => 'Failed to process the request', 'message' => $e->getMessage()], 500);
+            }
+
+            return $this->responseFailed('Gagal Menambahkan Card', 500);
+        }
     }
 
     public function cardProduct(Request $request)
@@ -59,4 +75,4 @@ class CardController extends Controller
 
         return response()->json($card);
     }
-}   
+}

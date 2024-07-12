@@ -6,6 +6,7 @@ import { fetchAuthLogin, fetchAuthLogout, setLoginState } from "../features/auth
 import { getItemLocalStorage, setItemLocalStorage } from "../config/localStorageConfig";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { resetCard } from "../features/product/services/slice/cardGetSlice";
 
 const useAuth = () => {
     let navigate = useNavigate();
@@ -29,6 +30,7 @@ const useAuth = () => {
         try {
             await dispatch(fetchAuthLogout()).unwrap();
             setItemLocalStorage('isLogin', 'false');
+            dispatch(resetCard())
             localStorage.clear();
             navigate('/')
         } catch (error) {

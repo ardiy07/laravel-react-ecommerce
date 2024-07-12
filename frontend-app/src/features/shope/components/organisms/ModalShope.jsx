@@ -27,7 +27,7 @@ function ModalShope({ onOpen, onClose }) {
             }
             {isOpen && (
                 <div className='mt-1 absolute z-10 w-72 tracking-tight bg-white shadow-2xl rounded-md right-0 border -mx-20 flex gap-4 flex-col items-center px-3 py-6'>
-                    {dataShope && dataShope !== null ? (
+                    {dataShope.status ? (
                         <>
                             <p className='text-gray-500 font-medium text-sm tracking-tight'>Anda Memiliki Toko </p>
                             <Link to='/dashboard' className='bg-green-600 text-sm text-white py-1 px-12 font-bold rounded-lg'>

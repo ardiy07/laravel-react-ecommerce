@@ -23,8 +23,8 @@ class ProductController extends Controller
     {
         //
         $categorie = $request->categorie;
-        $limit = $request->limit; // Nilai default limit jika tidak disediakan
-        $page = $request->page ?? 1; // Nilai default page jika tidak disediakan
+        $limit = $request->limit;
+        $page = $request->page ?? 1; 
 
         $query = Product::query();
 

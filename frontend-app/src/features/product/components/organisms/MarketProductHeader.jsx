@@ -10,6 +10,7 @@ function MarketProductHeader({ onOpen, onClose, auth }) {
   const dispatch = useDispatch()
   const { data, count, error } = useSelector((state) => state.cardGet)
   const [isOpen, setIsOpen] = useState(false)
+  const statusAddCard = useSelector((state) => state.addCard.status)
 
   const marketOpen = () => {
     setIsOpen(true)
@@ -22,11 +23,10 @@ function MarketProductHeader({ onOpen, onClose, auth }) {
   }
 
   useEffect(() => {
-    if(auth)
-    {
+    if(auth){
       dispatch(fetchGetCard())
     }
-  }, [dispatch, data])
+  }, [dispatch, auth])
 
   if(APP_DEBUG){
     console.log('Data Card: ', data)
@@ -37,7 +37,7 @@ function MarketProductHeader({ onOpen, onClose, auth }) {
 
   return (
     <div className='relative' onMouseEnter={marketOpen} onMouseLeave={marketClose}>
-      <IconHeader icon='icon-market' count={count} isOpen={isOpen} />
+      <IconHeader icon='icon-market' count={count} isOpen={isOpen} auth={auth}/>
       {isOpen && (
         <div className='mt-1 py-2 absolute z-50 w-[30rem] bg-white shadow-2xl rounded-lg right-0 -mx-52 border'>
           {auth ?

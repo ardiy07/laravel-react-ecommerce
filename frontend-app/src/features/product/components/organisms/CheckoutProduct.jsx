@@ -1,12 +1,10 @@
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import { formatCurrency } from '../../../../utils/formatUtils';
 import Quantity from '../atoms/Quantity';
 import AddNoted from '../../../../components/icon/AddNoted';
 import Chat from '../../../../components/icon/Chat';
 import Share from '../../../../components/icon/Share';
 import { useDispatch, useSelector } from 'react-redux';
-import useAuth from '../../../../hooks/useAuth';
-import useDataUser from '../../../../hooks/useDataUser';
 import { APP_DEBUG } from '../../../../config/env';
 import { fetchAddCard } from '../../services';
 import { ModalLogin } from '../../../authentication/components';
@@ -15,7 +13,6 @@ function CheckoutProduct({ data, auth }) {
     const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
     const [showFormLogin, setShowFormLogin] = useState(false);
-
     const { status, error } = useSelector((state) => state.addCard);
 
     const handleCard = (event) => {
@@ -31,7 +28,7 @@ function CheckoutProduct({ data, auth }) {
     }
 
     const handleCloseModal = () => {
-        setShowModal(false);
+        setShowFormLogin(false);
     };
 
     if (APP_DEBUG) {

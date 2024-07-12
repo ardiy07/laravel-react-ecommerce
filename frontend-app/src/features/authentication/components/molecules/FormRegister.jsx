@@ -3,7 +3,6 @@ import InputAuth from '../atoms/InputAuth';
 import { fetchAuthRegister } from '../../services';
 import { useDispatch, useSelector } from 'react-redux';
 import { APP_DEBUG } from '../../../../config/env';
-import './animation.css';
 import { LoadinButtonWhite } from '../../../../components';
 import { useNavigate } from 'react-router-dom';
 import { resetRegister } from '../../services/slice/registerSlice';

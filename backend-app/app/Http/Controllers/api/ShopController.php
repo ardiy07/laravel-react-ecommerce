@@ -23,7 +23,7 @@ class ShopController extends Controller
             $shop = $user->shop;
 
             if (is_null($shop)) {
-                return false;
+                return response()->json(['data' => [ 'status' => false]]);
             }
             return new ShopeHeaderResource($shop);
         } catch (\Exception $e) {

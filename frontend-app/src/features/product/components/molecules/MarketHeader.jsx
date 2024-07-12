@@ -4,14 +4,14 @@ import { getAssetImages } from '../../../../utils/pathUtils'
 import CardMarketHeader from '../atoms/CardMarketHeader'
 import { APP_DEBUG } from '../../../../config/env'
 
-function MarketHeader({ count, dataCards }) {
+function MarketHeader({ count, dataCards}) {
     if(APP_DEBUG){
         console.log('Data Cards: ', dataCards)
     }
     return (
         <div className='py-2 px-5'>
             <div className='flex justify-between border-b pb-2'>
-                <p className='font-bold'>Keranjang {count > 0 && <span className='text-gray-400 font-normal'>(1)</span>}</p>
+                <p className='font-bold'>Keranjang {count > 0 && <span className='text-gray-400 font-normal'>({count})</span>}</p>
                 <Link to='/' className="text-green-600 font-bold tracking-tight">Lihat</Link>
             </div>
             {count == 0 ? (
