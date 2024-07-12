@@ -18,6 +18,14 @@ const loginSlice = createSlice({
         setLoginState: (state, action) => {
             state.token = action.payload;
             setItemLocalStorage('authData', action.payload);
+        },
+        resetLogin: (state) => {
+            state.status = 'idle';
+            state.error = null;
+            state.message = '';
+            state.isLogin = false;
+            state.token = null;
+            state.dataUser = [];
         }
     },
     extraReducers: (builder) => {
@@ -47,5 +55,5 @@ const loginSlice = createSlice({
     },
 });
 
-export const { setLoginState } = loginSlice.actions;
+export const { setLoginState, resetLogin } = loginSlice.actions;
 export default loginSlice.reducer;

@@ -7,6 +7,13 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class CardCollection extends ResourceCollection
 {
+    protected $totalQuantity;
+
+    public function __construct($resource, $totalQuantity)
+    {
+        parent::__construct($resource);
+        $this->totalQuantity = $totalQuantity;
+    }
     /**
      * Transform the resource collection into an array.
      *
@@ -16,7 +23,7 @@ class CardCollection extends ResourceCollection
     {
         return [
             'data' => $this->collection,
-            'count' => $this->count()
+            'count' => $this->totalQuantity
         ];
     }
 }

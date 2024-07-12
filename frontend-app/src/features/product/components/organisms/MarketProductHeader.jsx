@@ -5,6 +5,7 @@ import MarketEmpetyHeader from '../molecules/MarketEmpetyHeader'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchGetCard } from '../../services'
 import { APP_DEBUG } from '../../../../config/env'
+import { resetCard } from '../../services/slice/cardGetSlice'
 
 function MarketProductHeader({ onOpen, onClose, auth }) {
   const dispatch = useDispatch()
@@ -23,10 +24,13 @@ function MarketProductHeader({ onOpen, onClose, auth }) {
   }
 
   useEffect(() => {
-    if(auth){
-      dispatch(fetchGetCard())
+    if (auth && statusAddCard === 'succeeded') {
+      dispatch(fetchGetCard());
+      dispatch(resetCard());
+    } else if (auth) {
+      dispatch(fetchGetCard());
     }
-  }, [dispatch, auth])
+  }, [dispatch, auth,statusAddCard])
 
   if(APP_DEBUG){
     console.log('Data Card: ', data)

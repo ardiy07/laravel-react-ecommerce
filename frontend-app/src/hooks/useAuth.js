@@ -1,12 +1,9 @@
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchAuthLogin, fetchAuthLogout } from '../features/authentication/services/authThunks';
-
 import { useDispatch, useSelector } from "react-redux"
-import { fetchAuthLogin, fetchAuthLogout, setLoginState } from "../features/authentication";
-import { getItemLocalStorage, setItemLocalStorage } from "../config/localStorageConfig";
+import { fetchAuthLogout } from "../features/authentication";
+import { setItemLocalStorage } from "../config/localStorageConfig";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import { resetCard } from "../features/product/services/slice/cardGetSlice";
+import { resetLogin } from "../features/authentication/services/slice/loginSlice";
 
 const useAuth = () => {
     let navigate = useNavigate();
@@ -31,8 +28,10 @@ const useAuth = () => {
             await dispatch(fetchAuthLogout()).unwrap();
             setItemLocalStorage('isLogin', 'false');
             dispatch(resetCard())
+            dispatch(resetLogin
+                ())
             localStorage.clear();
-            navigate('/')
+            navigate('./')
         } catch (error) {
             console.error('Failed to logout:', error);
         }

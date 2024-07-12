@@ -16,7 +16,7 @@ function BodyLogin() {
                                 Daftar
                             </Link>
                         </div>
-                        <FormLogin />
+                        <FormLogin navigation={'/'}/>
                         <div className='flex w-full justify-center items-center'>
                             <span className='w-[60%] bg-gray-300 h-[0.125rem]'></span>
                             <p className='w-full text-center text-sm text-gray-400'>atau masuk dengan</p>

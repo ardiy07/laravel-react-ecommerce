@@ -16,8 +16,8 @@ class CardController extends Controller
     {
         $user = auth()->user();
         $cards = Card::where('user_id', $user->id)->with(['product', 'product.detailPromotions.promotion'])->get();
-
-        return new CardCollection($cards);
+        $totalQuantity = $cards->sum('quantity');
+        return new CardCollection($cards, $totalQuantity);
     }
 
     public function store(Request $request)

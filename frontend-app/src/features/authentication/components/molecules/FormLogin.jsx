@@ -5,7 +5,7 @@ import { fetchAuthLogin } from '../../services';
 import { useNavigate } from 'react-router-dom';
 import { LoadinButtonWhite } from '../../../../components';
 
-function FormLogin() {
+function FormLogin({navigation}) {
     const dispatch = useDispatch();
     let navigate = useNavigate();
     const { error, message, status } = useSelector((state) => state.login);
@@ -32,7 +32,7 @@ function FormLogin() {
     };
 
     if(status === 'succeeded'){
-        navigate('/')
+        navigate({navigation})
     }
 
 
