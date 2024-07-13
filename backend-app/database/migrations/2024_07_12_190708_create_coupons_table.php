@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('promotions', function (Blueprint $table) {
+        Schema::create('coupons', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->string('slug');
-            $table->enum('type', ['discount', 'free_shipping', 'cashback', 'voucher']);
+            $table->string('code')->unique();
+            $table->enum('type', ['fixed', 'percent']);
             $table->integer('value');
-            $table->dateTime('start_date')->nullable();
-            $table->dateTime('end_date')->nullable();
+            $table->integer('usage_limit')->default(1);
+            $table->integer('used')->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('promotions');
+        Schema::dropIfExists('coupons');
     }
 };

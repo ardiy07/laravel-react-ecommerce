@@ -16,23 +16,24 @@ return new class extends Migration
             $table->unsignedBigInteger('shope_id');
             $table->string('name', 255);
             $table->string('slug');
+            $table->string('image');
             $table->text('deskripsi');
-            $table->integer('stocks')->default(1);
-            $table->integer('price');
-            $table->integer('price_sale')->default(0);
             $table->float('berat')->nullable();
             $table->float('panjang')->nullable();
             $table->float('lebar')->nullable();
-            $table->json('sytle')->nullable();
-            $table->json('imageUrl')->nullable();
-            $table->string('image', 255)->nullable();
+            $table->float('tinggi')->nullable();
             $table->integer('order')->default(0);
             $table->float('rating')->default(0);
-            $table->unsignedBigInteger('categorie_id');
+            $table->boolean('is_active')->default(1);
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('subcategory_id')->nullable();
+            $table->unsignedBigInteger('subsubcategory_id')->nullable();
             $table->timestamps();
 
             $table->foreign('shope_id')->references('id')->on('shopes')->onDelete('cascade');
-            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
+            $table->foreign('subsubcategory_id')->references('id')->on('sub_subcategories')->onDelete('cascade');
         });
     }
 

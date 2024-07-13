@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('promotions', function (Blueprint $table) {
+        Schema::create('coupon_users', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->string('slug');
-            $table->enum('type', ['discount', 'free_shipping', 'cashback', 'voucher']);
-            $table->integer('value');
-            $table->dateTime('start_date')->nullable();
-            $table->dateTime('end_date')->nullable();
+            $table->unsignedBigInteger('coupon_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('coupon_id')->references('id')->on('coupons')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('promotions');
+        Schema::dropIfExists('coupon_users');
     }
 };

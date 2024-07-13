@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('promotions', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->string('slug');
-            $table->enum('type', ['discount', 'free_shipping', 'cashback', 'voucher']);
-            $table->integer('value');
-            $table->dateTime('start_date')->nullable();
-            $table->dateTime('end_date')->nullable();
+            $table->unsignedBigInteger('order_id');
+            $table->decimal('amount', 10, 2);
+            $table->string('payment_method');
+            $table->string('status')->default('pending');
             $table->timestamps();
+
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('promotions');
+        Schema::dropIfExists('payments');
     }
 };
