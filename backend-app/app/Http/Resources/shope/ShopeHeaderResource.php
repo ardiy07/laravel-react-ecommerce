@@ -17,6 +17,7 @@ class ShopeHeaderResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'type' => $this->typeShope->name,
             'status' => true
         ];
     }

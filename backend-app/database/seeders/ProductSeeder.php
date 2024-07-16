@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Helpers\SlugHelper;
 use App\Models\Product;
+use App\Models\ProductVarian;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -16,35 +17,70 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         
-        $jsonFile = storage_path('app\public\data\product\products.json');
+        $jsonFile = storage_path('app\public\data\product\dataExample.json');
         $jsonString = file_get_contents($jsonFile);
         $data = json_decode($jsonString, true);
 
         // Sesuaikan dengan struktur data JSON Anda
-        foreach ($data as $item1) {
-            $id = $item1['id'];
-            $shope_id = rand(1, 10);
-            $name = $item1['name'];
-            $deskripsi = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nobis quisquam facere incidunt dolorum suscipit, harum maiores nostrum quo magni quidem ad quia, veritatis vero facilis, illo atque. Quod eius omnis voluptatum atque unde, nulla rem? Eius odio officiis in quaerat nesciunt nam incidunt similique natus, ipsa autem. Iste illo odio dignissimos sequi, eligendi nisi porro id, voluptatem voluptatibus fugiat debitis ipsa aperiam. Odio, officia ullam suscipit pariatur quo eligendi. Harum pariatur non ea rem voluptas temporibus natus animi consectetur explicabo dicta minima aperiam placeat ex delectus est, consequatur voluptate ab officia corrupti eveniet quos eos dolore magni similique. Sit.';
-            $stocks = rand(100, 250);
-            $price = $item1['price']['number'];
-            $order = rand(10, 10000);
-            $rating = !empty($item1['rating']) ? $item1['rating'] : 0;
-            $categorie_id = $item1['category']['id'];
-            $image = $item1['mediaURL']['image'];
-            Product::create([
-                'id' => $id,
-                'shope_id' => $shope_id,
-                'name' => $name,
-                'deskripsi' => $deskripsi,
-                'slug' => SlugHelper::slugNameId($name, $shope_id),
-                'stocks' => $stocks,
-                'price' => $price,
-                'order' => $order,
-                'rating' => $rating,
-                'categorie_id' => $categorie_id,
-                'image' => $image
-            ]);
+        foreach ($data as $index => $item) {
+            $price = (int) str_replace(['Rp', '.', ','], '', $item['product']['price']);
+            $priceSale = (int) str_replace(['Rp', '.', ','], '', $item['product']['campaign']['originalPrice']);
+            $promotionId = $index < 24 ? 1 : null;
+            $existingProduct = Product::find($item['product']['id']);
+
+            if ($existingProduct) {
+                // Jika produk sudah ada, update data produk tersebut
+                $existingProduct->update([
+                    'name' => $item['product']['name'],
+                    'slug' => Str::slug($item['product']['name']),
+                    'deskripsi' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, rerum.',
+                    'order' => rand(10, 100),
+                    'rating' => rand(2, 5),
+                    'review' => $item['product']['countReviewFormat'],
+                    'subSubcategory_id' => $item['product']['category']['id'],
+                    'shope_id' => rand(1, 15),
+                ]);
+
+                // Update atau buat varian produk baru
+                ProductVarian::updateOrCreate(
+                    ['product_id' => $item['product']['id']],
+                    [
+                        'price' => $item['product']['campaign']['originalPrice'] ? $priceSale : $price,
+                        'price_sale' => $item['product']['campaign']['originalPrice'] ? $price : 0,
+                        'promotion_id' => $promotionId,
+                        'stock' => rand(3, 50),
+                        'order' => rand(1, 50),
+                        'image' => $item['product']['image']['imageUrl'],
+                        'is_active' => 1,
+                        'is_default' => 1,
+                    ]
+                );
+            } else {
+                // Jika produk belum ada, buat produk baru
+                Product::create([
+                    'id' => $item['product']['id'],
+                    'name' => $item['product']['name'],
+                    'slug' => Str::slug($item['product']['name']),
+                    'deskripsi' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, rerum.',
+                    'order' => rand(10, 100),
+                    'rating' => rand(2, 5),
+                    'review' => $item['product']['countReviewFormat'],
+                    'subSubcategory_id' => $item['product']['category']['id'],
+                    'shope_id' => rand(1, 15),
+                ]);
+
+                ProductVarian::create([
+                    'product_id' => $item['product']['id'],
+                    'price' => $item['product']['campaign']['originalPrice'] ? $priceSale : $price,
+                    'price_sale' => $item['product']['campaign']['originalPrice'] ? $price : 0,
+                    'promotion_id' => $promotionId,
+                    'stock' => rand(3, 50),
+                    'order' => rand(1, 50),
+                    'image' => $item['product']['image']['imageUrl'],
+                    'is_active' => 1,
+                    'is_default' => 1,
+                ]);
+            }
         }
     }
 }

@@ -1,26 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import NavbarHome from '../molecules/NavbarHome';
 import DataNavbar from '../data/DataNavbar.json';
 import CardNavbar from '../atoms/CardNavbar';
-import { useDispatch, useSelector } from 'react-redux';
 import { CardProduct } from '../../../../components';
-import { discountPercentage, formatOrder } from '../../../../utils/formatUtils';
 import { fetchHomeProduct } from '../../services';
 import { APP_DEBUG } from '../../../../config/env';
-import useDataUser from '../../../../hooks/useDataUser';
 
 function ProductHome() {
-  const [activeIndex, setActiveIndex] = useState('');
+  const [activeIndex, setActiveIndex] = useState('pria');
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   const { data, meta, status } = useSelector((state) => state.productHome);
   const [dataProduct, setDataProduct] = useState([]);
 
-  // const { dataUser } = useDataUser();
-
   useEffect(() => {
-    dispatch(fetchHomeProduct({ categori: activeIndex, limit: 12, page: page }));
-  }, [dispatch, activeIndex, page]);
+    dispatch(fetchHomeProduct({ query: activeIndex, limit: 24, page: page }));
+  }, [dispatch, activeIndex]);
 
   useEffect(() => {
     if (data && dataProduct.length === 0) {
@@ -37,7 +33,7 @@ function ProductHome() {
   const handlePage = () => {
     setPage(page + 1);
     if (status === 'succeeded') {
-      dispatch(fetchHomeProduct({ categori: activeIndex, limit: 12, page: page + 1 })).then((response) => {
+      dispatch(fetchHomeProduct({ query: activeIndex, limit: 24, page: page + 1 })).then((response) => {
         const newData = response.payload.data;
         setDataProduct([...dataProduct, ...newData]);
       }).catch((error) => {
@@ -54,11 +50,6 @@ function ProductHome() {
   return (
     <>
       <NavbarHome>
-        {/* {dataUser ?
-          <CardNavbar key={0} title={`For ${dataUser?.data?.name}`} background={'bg-nav-product-1'} active={'' == activeIndex} onClick={() => handleClick('')} />
-          :
-          <CardNavbar key={0} title={`For You`} background={'bg-nav-product-1'} active={'' == activeIndex} onClick={() => handleClick('')} />
-        } */}
         {DataNavbar.map((item, index) => (
           <CardNavbar key={index} title={item.title} background={item.background} active={item.slug == activeIndex} onClick={() => handleClick(item.slug)} />
         ))}
@@ -67,19 +58,19 @@ function ProductHome() {
         <div className='grid grid-cols-6'>
           {dataProduct.map((item, index) => (
             <CardProduct
-              key={index}
-              image={item.image}
-              alt={item.name}
-              name={item.name}
-              price={item.price}
-              priceSale={item.priceSale}
-              diskon={discountPercentage(item.price, item.priceSale)}
-              promo={null}
-              icon={item.iconShope}
-              city={item.city}
-              rating={item.rating}
-              order={formatOrder(item.order)}
-              url={item.slug}
+            key={index}
+            image={item.image}
+            name={item.name}
+            price={item.price}
+            priceSale={item.priceSale}
+            promo={null}
+            type={item.value}
+            icon={item.iconShope}
+            city={item.city}
+            rating={item.rating}
+            order={item.order}
+            shopeSlug={item.shopeSlug}
+            productSlug={item.productSlug}
             />
           ))}
         </div>

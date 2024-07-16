@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('profile', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('username', 40)->unique();
@@ -32,7 +32,7 @@ return new class extends Migration
             $table->timestamps();
         });
         
-        Schema::create('addres', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('village_id');
@@ -88,14 +88,14 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
         Schema::dropIfExists('user_roles');
         Schema::dropIfExists('profile');
         Schema::dropIfExists('addres');
         Schema::dropIfExists('roles');
         Schema::dropIfExists('memberships');
         Schema::dropIfExists('user_memberships');
+        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('users');
     }
 };

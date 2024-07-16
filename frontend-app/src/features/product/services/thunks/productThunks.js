@@ -61,3 +61,18 @@ export const fetchGetCardProduct = createAsyncThunk(
         }
     }
 )
+
+export const fetchSearchResultProduct = createAsyncThunk(
+    'product/fetchSearchResultProduct',
+    async ({query, page}, { rejectWithValue }) => {
+        try {
+            const response = await api.getProductSearch(query, page);
+            return response.data;
+        } catch (error) {
+            if (error.response && error.response.data) {
+                return rejectWithValue(error.response.data);
+            }
+            return rejectWithValue(error.message);
+        }
+    }
+)

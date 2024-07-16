@@ -5,7 +5,7 @@ namespace App\Http\Resources\product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductResource extends JsonResource
+class ProductCardResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,19 +18,18 @@ class ProductResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'productSlug' => $this->slug,
-            'price' => $this->price,
-            'priceSale' => $this->price_sale,
             'rating' => $this->rating,
             'order' => $this->order,
-            'image' => $this->image,
-            'stock' => $this->stocks,
             'shope' => $this->shope->name,
             'shopeSlug' => $this->shope->slug,
             'iconShope' => $this->shope->typeShope->slug,
-            'categories' => $this->categorie->name,
-            'shope' => $this->shope->name,
             'city' => $this->shope->addres->village->distric->regencie->name,
-            'promotions' => $this->detailPromotions,
+            'price' => $this->productVarians->where('is_default', 1)->first()->price,
+            'value' => $this->productVarians->where('is_default', 1)->first()->value ?? '',
+            'priceSale' => $this->productVarians->where('is_default', 1)->first()->price_sale ?? 0,
+            'image' => $this->productVarians->where('is_default', 1)->first()->image,
+            'promotion' => $this->productVarians->where('is_active', 1),
+            
         ];
     }
 }

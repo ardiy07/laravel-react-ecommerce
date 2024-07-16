@@ -5,7 +5,6 @@ import LogoHeader from '../molecules/LogoHeader';
 import SearchHeader from '../molecules/SearchHeader';
 import MessageHeader from '../molecules/MessageHeader';
 import NotifikasiHeader from '../molecules/NotifikasiHeader';
-import MarketHeader from '../molecules/MarketHeader';
 import AuthHeader from '../../../authentication/pages/AuthHeader';
 import useAuth from '../../../../hooks/useAuth';
 import ModalShope from '../../../shope/components/organisms/ModalShope';

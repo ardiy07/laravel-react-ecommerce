@@ -13,8 +13,13 @@ class Category extends Model
     protected $table = 'categories';
     // protected $guarded = ['id'];
 
-    public function product(): HasMany
+    // public function product(): HasMany
+    // {
+    //     return $this->hasMany(Product::class, 'category_id');
+    // }
+
+    public function subCategories(): HasMany
     {
-        return $this->hasMany(Product::class, 'categorie_id');
+        return $this->hasMany(Subcategory::class, 'category_id');
     }
 }

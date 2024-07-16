@@ -8,8 +8,7 @@ function InputSearch(props) {
             placeholder={props.placeholder || ''}
             value={props.value || ''}
             onChange={props.onChange}
-            onFocus={props.onFocus}
-            onBlur={props.onBlur}
+            onKeyPress={props.onKeyPress}
         />
     )
 }

@@ -6,14 +6,17 @@ import { profileSlice } from "../features/profile";
 import { loginSlice, logoutSlice, registerSlice } from "../features/authentication";
 import localStorageMonitor from "../middleware/localStorageMonitor";
 import { promotionProductSlice, productHomeSlice, productKuponSlice } from "../features/home";
-import { addCardSlice, cardGetSlice, productDetailSlice } from "../features/product";
+import { addCardSlice, cardGetSlice, getSearchProductSlice, productDetailSlice } from "../features/product";
 
 
 const store = configureStore({
     reducer: {
+        // auth
         register: registerSlice,
         login: loginSlice,
         logout: logoutSlice,
+
+        // home
         productHome: productHomeSlice,
         search: searchSlice,
         shope: shopeSlice,
@@ -23,7 +26,8 @@ const store = configureStore({
         productDetail: productDetailSlice,
         cardGet: cardGetSlice,
         cardGetProduct: cardGetSlice,
-        addCard: addCardSlice
+        addCard: addCardSlice,
+        productSearchResult: getSearchProductSlice,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(localStorageMonitor),
     devTools: APP_DEBUG,

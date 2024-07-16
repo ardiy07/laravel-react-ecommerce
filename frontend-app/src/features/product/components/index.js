@@ -7,5 +7,5 @@ const MarketProductHeader = lazy(() => import('./organisms/MarketProductHeader')
 export {
     BodyDetailProduct,
     CheckoutProduct,
-    MarketProductHeader
+    MarketProductHeader,
 }

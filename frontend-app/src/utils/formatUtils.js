@@ -8,13 +8,18 @@ export const formatCurrency = (amount) => {
   }).format(amount);
 }
 
-export const discountPercentage = (originalPrice, salePrice) => {
-  if (originalPrice > 0 && salePrice > 0 && originalPrice > salePrice) {
+// Fungsi untuk menghitung persentase diskon
+export const discountPercentage = (originalPriceStr, salePriceStr) => {
+  const originalPrice = parseFloat(originalPriceStr);
+  const salePrice = parseFloat(salePriceStr);
+
+  if (!isNaN(originalPrice) && !isNaN(salePrice) && originalPrice > 0 && salePrice > 0 && originalPrice > salePrice) {
     const discountPercentage = ((originalPrice - salePrice) / originalPrice) * 100;
     return Math.round(discountPercentage);
   }
-  return 0;
+  return 0; 
 };
+
 
 export const orderPercentage = (order, stocks) => {
   if (stocks > 0) {

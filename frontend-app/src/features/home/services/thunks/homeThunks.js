@@ -3,9 +3,9 @@ import api from "../../../../services/api";
 
 export const fetchHomeProduct = createAsyncThunk(
     'home/fetchHomeProduct',
-    async ({categori, limit, page}, { rejectWithValue }) => {
+    async ({query, limit, page}, { rejectWithValue }) => {
         try {
-            const response = await api.getProductKupon(categori, limit, page);
+            const response = await api.getProductHome(query, limit, page);
             return response.data;
         } catch (error) {
             if (error.response && error.response.data) {
@@ -35,7 +35,7 @@ export const fetchProductKupon = createAsyncThunk(
     'home/fetchProductKupon',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await api.getProductKupon('', 23, 1);
+            const response = await api.getProductKupon();
             return response.data;
         } catch (error) {
             if (error.response && error.response.data) {

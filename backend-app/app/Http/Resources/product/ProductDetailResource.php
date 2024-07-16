@@ -15,22 +15,40 @@ class ProductDetailResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'slug' => $this->slug,
-            'price' => $this->price,
-            'deskripsi' => $this->deskripsi,
-            'priceSale' => $this->price_sale,
-            'rating' => $this->rating,
-            'order' => $this->order,
-            'image' => $this->image,
-            'stock' => $this->stocks,
-            'shope' => $this->shope->name,
-            'iconShope' => $this->shope->typeShope->slug,
-            'categories' => $this->categorie->name,
-            'shope' => $this->shope->name,
-            'city' => $this->shope->addres->village->distric->regencie->name,
-            'promotions' => $this->detailPromotions,
+            'data' => [
+                'product' => [
+                    'id' => $this->productVarians->where('is_default', 1)->first()->id,
+                    'name' => $this->name,
+                    'deskripsi' => $this->deskripsi,
+                    'slug' => $this->slug,
+                    'price' => $this->productVarians->where('is_default', 1)->first()->price,
+                    'priceSale' => $this->productVarians->where('is_default', 1)->first()->price_sale ?? 0,
+                    'maxOrder' => $this->productVarians->where('is_default', 1)->first()->max_order ?? 0,
+                    'order' => $this->order,
+                    'stock' => $this->productVarians->where('is_default', 1)->first()->stock,
+                    'image' => $this->productVarians->where('is_default', 1)->first()->image,
+                    'rating' => $this->rating,
+                    'review' => $this->review,
+                    'shope' => [
+                        'id' => $this->shope->id,
+                        'name' => $this->shope->name,
+                        'city' => $this->shope->addres->village->distric->regencie->name,
+                        'iconShope' => $this->shope->typeShope->slug,
+                    ],
+                    'promotion' => $this->productVarians->where('is_active', 1)
+                        ->where('promotion_id', '!=', null)
+                        ->pluck('promotion.name', 'promotion.id')
+                        ->map(function ($name, $id) {
+                            return ['id' => $id, 'name' => $name];
+                        })->values(),
+                    'type' => $this->productVarians->where('is_active', 1)
+                        ->where('type', '!=', null)
+                        ->pluck('type.name', 'type.id')
+                        ->map(function ($name, $id) {
+                            return ['id' => $id, 'name' => $name];
+                        })->values(),
+                ],
+            ]
         ];
     }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { formatOrder } from '../../../../utils/formatUtils'
 import { Link } from 'react-router-dom'
 
-function RateDetailProduct({ rating, order }) {
+function RateDetailProduct({ rating, order, review }) {
     const roundedRating = Math.round(rating);
     return (
         <div className='flex w-full mt-5 py-1 border-y px-2'>
@@ -23,6 +23,14 @@ function RateDetailProduct({ rating, order }) {
                     </p>
                 </div>
                 <span className='w-[0.1rem] h-7 bg-gray-200'></span>
+                <div className='flex items-center'>
+                    <p className='font-semibold pr-1 underline'>
+                        {review}
+                    </p>
+                    <p className='text-gray-400 font-normal tracking-tight text-base'>
+                        Review
+                    </p>
+                </div>
             </div>
             <div className=' tracking-tighter text-base font-medium text-gray-500'>
                 <Link to='/'>Laporkan</Link>

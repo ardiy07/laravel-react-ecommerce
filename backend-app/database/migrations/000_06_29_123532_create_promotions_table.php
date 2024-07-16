@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->string('slug');
-            $table->enum('type', ['discount', 'free_shipping', 'cashback', 'voucher']);
+            $table->enum('type', ['discount', 'free_shipping', 'cashback', 'voucher', 'flashsale']);
             $table->integer('value');
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();

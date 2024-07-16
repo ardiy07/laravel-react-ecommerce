@@ -4,7 +4,7 @@ import { fetchDetailProduct } from "../thunks/productThunks"
 const intialState = {
     status: 'idle',
     error: null,
-    data: [],
+    data: {},
 }
 
 const productDetailSlice = createSlice({
@@ -16,7 +16,7 @@ const productDetailSlice = createSlice({
             .addCase(fetchDetailProduct.pending, (state) => {
                 state.status = 'pending'
                 state.error = null
-                state.data = []
+                state.data = {}
             })
             .addCase(fetchDetailProduct.fulfilled, (state, action) => {
                 state.status = 'succeeded'
@@ -25,7 +25,7 @@ const productDetailSlice = createSlice({
             })
             .addCase(fetchDetailProduct.rejected, (state, action) => {
                 state.status = 'failed'
-                state.data = []
+                state.data = {}
                 state.error = action.payload
             })
     }

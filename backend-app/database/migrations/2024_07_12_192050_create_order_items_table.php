@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('product_variant_id');
-            $table->unsignedBigInteger('shope_id');
             $table->unsignedBigInteger('promotion_id')->nullable();
             $table->unsignedBigInteger('coupon_id')->nullable();
             $table->integer('quantity');
@@ -23,7 +22,6 @@ return new class extends Migration
             $table->timestamps();
             
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
-            $table->foreign('shope_id')->references('id')->on('shopes')->onDelete('cascade');
             $table->foreign('product_variant_id')->references('id')->on('product_varians')->onDelete('cascade');
             $table->foreign('coupon_id')->references('id')->on('coupons')->onDelete('set null');
         });

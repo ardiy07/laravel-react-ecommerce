@@ -1,7 +1,7 @@
 [
-    { "title": "For You", "slug": "", "background": "bg-nav-product-1" },
-    { "title": "Makanan & Minuman", "slug": "makanan-minuman", "background": "bg-nav-product-2" },
+    { "title": "For You", "slug": "pria", "background": "bg-nav-product-1" },
+    { "title": "Makanan & Minuman", "slug": "makanan", "background": "bg-nav-product-2" },
     { "title": "Olahraga", "slug": "olahraga", "background": "bg-nav-product-3" },
     { "title": "Kecantikan", "slug": "kecantikan", "background": "bg-nav-product-4" },
-    { "title": "Mirip yang kamu cek", "slug": "mirip-yang-kamu-cek", "background": "bg-nav-product-5" }
+    { "title": "Mirip yang kamu cek", "slug": "baju", "background": "bg-nav-product-5" }
 ]

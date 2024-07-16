@@ -16,6 +16,7 @@ Route::prefix('v1')->group(function () {
         });
         Route::controller(ShopController::class)->group(function () {
             Route::get('/shope-user', 'shopeUser')->name('shope.user');
+            Route::post('/shope', 'store')->name('shope.store');
         });
 
         Route::controller(ProfilController::class)->group(function () {
@@ -39,9 +40,9 @@ Route::prefix('v1')->group(function () {
 
     // Login dan Logout
     Route::controller(ProductController::class)->group(function () {
-        Route::get('/product/search', 'search')->name('product.search');
         Route::get('/products', 'index')->name('product.index');
         Route::get('/product/{productSlug}', 'show')->name('product.show');
         Route::get('/product-promotion', 'promotion')->name('product.promotion');
+        Route::get('/product-search', 'search')->name('product.search');
     });
 });

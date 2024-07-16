@@ -11,7 +11,7 @@ class Addres extends Model
     use HasFactory;
 
     // protected $guarded = ['id'];
-    protected $table = 'address';
+    protected $table = 'addresses';
 
     public function user(): BelongsTo
     {

@@ -9,7 +9,7 @@ import { APP_DEBUG } from '../../../../config/env';
 import { fetchAddCard } from '../../services';
 import { ModalLogin } from '../../../authentication/components';
 
-function CheckoutProduct({ data, auth }) {
+function CheckoutProduct({data, auth }) {
     const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
     const [showFormLogin, setShowFormLogin] = useState(false);
@@ -19,7 +19,7 @@ function CheckoutProduct({ data, auth }) {
         event.preventDefault();
         if (auth) {
             dispatch(fetchAddCard({
-                productId: data.id,
+                productId: data.product.id,
                 quantity: quantity
             }))
         } else {
@@ -32,29 +32,32 @@ function CheckoutProduct({ data, auth }) {
     };
 
     if (APP_DEBUG) {
-        console.log('Status Add Card: ', status)
-        console.log('Error Add Card: ', error)
-        console.log('Add Card: ', data.id, quantity)
+        console.log('Data Detail Cekc: ', data)
+
+    }
+
+    if (!data || !data.product) {
+        return <div>Loading...</div>;
     }
 
 
     return (
         // fixed mr-12
-        <div className='border rounded-lg py-3 px-4 shadow bg-white flex flex-col gap-2 '>
+        <div className='border rounded-lg py-3 px-4 shadow bg-white flex flex-col gap-2 h-fit'>
             {/* title */}
             <div className='flex flex-col gap-1'>
                 <h3 className='font-semibold tracking-tight'>Atur Jumlah dan Catatan</h3>
                 <div className='flex items-center gap-2 '>
-                    <img src={data.image} className='w-12' />
-                    <p className='line-clamp-1 text-sm font-semibold tracking-tight'>Mainan Boba</p>
+                    <img src={data.product.image} className='w-12' />
+                    <p className='line-clamp-1 text-sm font-semibold tracking-tight'></p>
                 </div>
-                <p className='tracking-tight line-clamp-1 pt-1 border-b capitalize'>{data.name}</p>
+                <p className='tracking-tight line-clamp-1 pt-1 border-b capitalize'>{data.product.name}</p>
             </div>
             {/* quantity */}
             <div className='flex flex-col gap-2 justify-start'>
                 <div className='flex mt-3 gap-3'>
-                    <Quantity value={quantity} onChange={setQuantity} maxOrder={data.stock} />
-                    <p>Stock: <span className='font-semibold'>{data.stock}</span></p>
+                    <Quantity value={quantity} onChange={setQuantity} maxOrder={data.product.stock} />
+                    <p>Stock: <span className='font-semibold'>{data.product.stock}</span></p>
                 </div>
                 <div>
                     <button className='text-green-500 text-sm tracking-tight'>
@@ -65,19 +68,19 @@ function CheckoutProduct({ data, auth }) {
             </div>
             {/* subtotal */}
             <div className='flex flex-col justify-end'>
-                {data.priceSale !== 0 ?
+                {data.product.priceSale != 0 ?
                     <>
-                        <p className='text-end line-through text-gray-400'>{formatCurrency(data.price)}</p>
+                        <p className='text-end line-through text-gray-400'>{formatCurrency(data.product.price)}</p>
                         <div className='flex justify-between items-end'>
                             <p className='text-gray-400  font-medium text-base tracking-tight'>Subtotal</p>
-                            <p className='text-lg font-bold'>{formatCurrency(data.priceSale * quantity)}</p>
+                            <p className='text-lg font-bold'>{formatCurrency(data.product.priceSale * quantity)}</p>
                         </div>
                     </>
                     :
                     <>
                         <div className='flex justify-between items-end'>
                             <p className='text-gray-400  font-medium text-base tracking-tight'>Subtotal</p>
-                            <p className='text-lg font-bold'>{formatCurrency(data.price * quantity)}</p>
+                            <p className='text-lg font-bold'>{formatCurrency(data.product.price * quantity)}</p>
                         </div>
                     </>
                 }

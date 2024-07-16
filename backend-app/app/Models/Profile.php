@@ -11,7 +11,7 @@ class Profile extends Model
     use HasFactory;
 
     // protected $guarded = ['id'];
-    protected $table = 'profile';
+    protected $table = 'profiles';
 
     public function user(): BelongsTo
     {

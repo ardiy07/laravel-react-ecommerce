@@ -24,9 +24,23 @@ class ProductPromotionCollection extends ResourceCollection
         // $promotion = $this->additional['promotion'];
 
         return [
-            'data' => ProductPromotionResource::collection($this->collection),
-            'startPromotion' => $this->promotions->published_at,
-            'expiredPromotion' =>  $this->promotions->expired_at
+            'promotion' => $this->promotions,
+            'products' => $this->collection->transform(function ($product) {
+                return [
+                    'id' => $product->id,
+                    'name' => $product->name,
+                    'productSlug' => $product->slug,
+                    'deskripsi' => $product->deskripsi,
+                    'rating' => $product->rating,
+                    'subsubcategory_id' => $product->subsubcategory_id,
+                    'shopeName' => $product->shope->slug,
+                    'stock' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->stock,
+                    'order' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->order,
+                    'price' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->price,
+                    'priceSale' => $this->promotions->value,
+                    'image' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->image,
+                ];
+            }),
         ];
     }
 }

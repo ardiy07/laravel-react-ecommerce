@@ -28,13 +28,12 @@ function MarketHeader({ count, dataCards}) {
                     {dataCards.map((item, index) => (
                         <CardMarketHeader 
                             key={index}
-                            image={item.image}
-                            productSlug={item.slug}
-                            name={item.name}
+                            image={item.product.image}
+                            productSlug={item.product.slug}
+                            name={item.product.name}
                             quantity={item.quantity}
-                            alt={item.alt}
-                            price={item.priceSale === 0 ? item.price : item.priceSale}
-                            priceSale={item.priceSale}
+                            price={item.product.price}
+                            priceSale={item.product.priceSale}
                         />
                     ))}
                 </>

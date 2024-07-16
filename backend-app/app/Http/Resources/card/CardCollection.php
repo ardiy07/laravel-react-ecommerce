@@ -22,7 +22,7 @@ class CardCollection extends ResourceCollection
     public function toArray(Request $request): array
     {
         return [
-            'data' => $this->collection,
+            'data' => CardResource::collection($this->collection),
             'count' => $this->totalQuantity
         ];
     }

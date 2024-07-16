@@ -4,10 +4,7 @@ import { fetchSearch } from "../thunks/headerThunks";
 const initialState = {
     statusSearch: 'idle',
     errorSearch: null,
-    dataSearch: {
-        products: [],
-        shops: []
-    }
+    dataSearch: []
 }
 
 const searchSlice = createSlice({
@@ -19,18 +16,15 @@ const searchSlice = createSlice({
             .addCase(fetchSearch.pending, (state) => {
                 state.statusSearch = 'pending'
                 state.errorSearch = null
-                state.dataSearch = { products: [], shops: [] };
+                state.dataSearch = [];
             })
             .addCase(fetchSearch.fulfilled, (state, action) => {
                 state.statusSearch = 'succeeded'
-                state.dataSearch = {
-                    products: action.payload.products || [],
-                    shops: action.payload.shops || []
-                };
+                state.dataSearch = action.payload;
             })
             .addCase(fetchSearch.rejected, (state, action) => {
                 state.statusSearch = 'failed'
-                state.dataSearch = { products: [], shops: [] };
+                state.dataSearch = [];
                 state.errorSearch = action.payload
             })
     }

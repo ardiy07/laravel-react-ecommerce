@@ -45,17 +45,17 @@ function SliderKupon({data}) {
                     <CardProduct
                         key={index}
                         image={item.image}
-                        alt={item.name}
                         name={item.name}
                         price={item.price}
                         priceSale={item.priceSale}
-                        diskon={discountPercentage(item.price, item.priceSale)}
                         promo={null}
+                        type={item.value}
                         icon={item.iconShope}
                         city={item.city}
                         rating={item.rating}
-                        order={formatOrder(item.order)}
-                        url={item.slug}
+                        order={item.order}
+                        shopeSlug={item.shopeSlug}
+                        productSlug={item.productSlug}
                     />
                 ))}
             </Slider>

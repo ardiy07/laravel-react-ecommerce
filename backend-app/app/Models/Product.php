@@ -15,9 +15,19 @@ class Product extends Model
     // protected $guarded = ['id'];
 
 
-    public function categorie(): BelongsTo
+    public function subSubCategory(): BelongsTo
     {
-        return $this->belongsTo(Categorie::class, 'categorie_id');
+        return $this->belongsTo(subSubCategory::class, 'subsubcategory_id');
+    }
+
+    public function productVarians(): HasMany
+    {
+        return $this->hasMany(ProductVarian::class);
+    }
+
+    public function getVarianByPromotion($promotionId)
+    {
+        return $this->productVarians->where('promotion_id', $promotionId)->first();
     }
 
     public function shope(): BelongsTo
@@ -25,10 +35,12 @@ class Product extends Model
         return $this->belongsTo(Shope::class, 'shope_id');
     }
 
-    public function detailPromotions(): HasMany
-    {
-        return $this->hasMany(DetailPromotion::class, 'product_id');
-    }
+    
+
+    // public function detailPromotions(): HasMany
+    // {
+    //     return $this->hasMany(DetailPromotion::class, 'product_id');
+    // }
 
     public function card(): HasMany
     {

@@ -50,7 +50,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert($seller);
 
         // Profle admin
-        DB::table('profile')->insert([
+        DB::table('profiles')->insert([
             'id' => 1, 
             'user_id' => 1,
             'username' => 'superadmin', 
@@ -58,7 +58,7 @@ class UserSeeder extends Seeder
             'phone' => '08' . str_pad(rand(1000000000, 9999999999), 10, '0', STR_PAD_LEFT), 
             'profile' => '/storage/images/profiles/default_v3-usrnophoto1.png'
         ]);
-        DB::table('profile')->insert([
+        DB::table('profiles')->insert([
             'id' => 2, 
             'user_id' => 2,
             'username' => 'admin',
@@ -69,14 +69,14 @@ class UserSeeder extends Seeder
 
 
         for ($i=3; $i <= 14; $i++) {
-            DB::table('profile')->insert(['id' => $i, 'user_id' => $i, 'username' => 'buyer' .$i,'gender' => ['pria', 'perempuan'][array_rand(['pria', 'perempuan'])], 'phone' => '08' . str_pad(rand(1000000000, 9999999999), 10, '0', STR_PAD_LEFT), 'profile' => '/storage/images/profiles/default_v3-usrnophoto1.png']);
+            DB::table('profiles')->insert(['id' => $i, 'user_id' => $i, 'username' => 'buyer' .$i,'gender' => ['pria', 'perempuan'][array_rand(['pria', 'perempuan'])], 'phone' => '08' . str_pad(rand(1000000000, 9999999999), 10, '0', STR_PAD_LEFT), 'profile' => '/storage/images/profiles/default_v3-usrnophoto1.png']);
         }
         for ($i=15; $i <= 29; $i++) {
-            DB::table('profile')->insert(['id' => $i, 'user_id' => $i, 'username' => 'seller' .$i,'gender' => ['pria', 'perempuan'][array_rand(['pria', 'perempuan'])], 'phone' => '08' . str_pad(rand(1000000000, 9999999999), 10, '0', STR_PAD_LEFT), 'profile' => '/storage/images/profiles/default_v3-usrnophoto1.png']);
+            DB::table('profiles')->insert(['id' => $i, 'user_id' => $i, 'username' => 'seller' .$i,'gender' => ['pria', 'perempuan'][array_rand(['pria', 'perempuan'])], 'phone' => '08' . str_pad(rand(1000000000, 9999999999), 10, '0', STR_PAD_LEFT), 'profile' => '/storage/images/profiles/default_v3-usrnophoto1.png']);
         }
 
         for ($i=3; $i <= 29; $i++) {
-            DB::table('addres')->insert(['id' => $i, 'user_id' => $i, 'village_id' => rand(3171041001, 3171041006), 'addres' => 'Jl. Pangeran Antasari' . $i]);
+            DB::table('addresses')->insert(['id' => $i, 'user_id' => $i, 'village_id' => rand(3171041001, 3171041006), 'addres' => 'Jl. Pangeran Antasari' . $i]);
         }
 
         DB::table('user_roles')->insert(['id' => 1, 'user_id' => 1, 'role_id' => 1], ['id' => 2, 'user_id' => 2, 'role_id' => 2]);

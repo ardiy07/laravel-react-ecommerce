@@ -17,12 +17,19 @@ class CardResource extends JsonResource
         return [
             'id' => $this->id,
             'quantity' => $this->quantity,
-            'name' => $this->product->name,
-            'slug' =>$this->product->slug,
-            'image' => $this->product->image,
-            'price' => $this->product->price,
-            'priceSale' => $this->product->price_sale,
-            'pricePromotion' => $this->product->detailPromotions->first()->price_sale ?? 0
+            'product' => [
+                'id' => $this->productVariant->product->id,
+                'name' => $this->productVariant->product->name,
+                'slug' => $this->productVariant->product->slug,
+                'price' => $this->productVariant->price,
+                'priceSale' => $this->productVariant->price_sale ?? 0,
+                'image' => $this->productVariant->image
+            ],
+            'type' => [
+                'id' => $this->productVariant->id,
+                'type' => $this->productVariant->type,
+                'name' => $this->productVariant->value
+            ],
         ];
     }
 }

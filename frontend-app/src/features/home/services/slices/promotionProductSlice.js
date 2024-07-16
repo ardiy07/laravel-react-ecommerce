@@ -6,7 +6,7 @@ const initialState = {
     error: null,
     data: [],
     message: '',
-    expiredAt: ''
+    promotion: []
 }
 
 const promotionProductSlice = createSlice({
@@ -22,8 +22,8 @@ const promotionProductSlice = createSlice({
             })
             .addCase(fetchProductPromotion.fulfilled, (state, action) => {
                 state.status = 'succeeded'
-                state.data = action.payload.data
-                state.expiredAt = action.payload.expiredPromotion
+                state.data = action.payload.data.products
+                state.promotion = action.payload.data.promotion
             })
             .addCase(fetchProductPromotion.rejected, (state, action) => {
                 state.status = 'failed'

@@ -5,11 +5,14 @@ import "slick-carousel/slick/slick-theme.css"
 import useSlider from '../../../../hooks/useSlider'
 import { BackSlider, CardProductPromo, NextSlider } from '../../../../components'
 import { getAssetImages } from '../../../../utils/pathUtils'
-import {APP_DEBUG} from '../../../../config/env'
+import { APP_DEBUG } from '../../../../config/env'
 import { discountPercentage, getStockStatus, orderPercentage } from '../../../../utils/formatUtils'
+import { useSelector } from 'react-redux'
 
-function SliderPenggunaBaru({data}) {
+function SliderPenggunaBaru() {
     const [open, setOpen] = useState(false);
+    const { data, promotion } = useSelector((state) => state.promotionProduct);
+
 
     const onOpen = () => {
         setOpen(true);
@@ -20,19 +23,19 @@ function SliderPenggunaBaru({data}) {
     };
 
     const slide = 18
-    const { shouldHideNextArrow, shouldHidePrevArrow, updateCurrentSlide,currentSlide } = useSlider(slide);
+    const { shouldHideNextArrow, shouldHidePrevArrow, updateCurrentSlide, currentSlide } = useSlider(slide);
     const settings = {
         dots: false,
         infinite: false,
         speed: 600,
         slidesToShow: 6,
         slidesToScroll: 6,
-        nextArrow: <NextSlider onOpen={open} onHidden={shouldHideNextArrow}/>,
-        prevArrow: <BackSlider onOpen={open} onHidden={shouldHidePrevArrow}/>,
+        nextArrow: <NextSlider onOpen={open} onHidden={shouldHideNextArrow} />,
+        prevArrow: <BackSlider onOpen={open} onHidden={shouldHidePrevArrow} />,
         beforeChange: (current, next) => updateCurrentSlide(next),
     };
 
-    if(APP_DEBUG){
+    if (APP_DEBUG) {
         console.log('Data Pengguna Baru', data);
     }
 
@@ -47,12 +50,12 @@ function SliderPenggunaBaru({data}) {
                         key={index}
                         image={item.image}
                         alt={item.name}
-                        diskon={discountPercentage(item.price, item.priceSalePromotion)}
-                        order={orderPercentage(item.order, item.stocks)}
-                        stock={getStockStatus(orderPercentage(item.order, item.stocks))}
+                        order={item.order}
+                        stock={item.stock}
                         price={item.price}
-                        priceDiscount={item.priceSalePromotion}
-                        url={item.slug}
+                        priceDiscount={item.priceSale}
+                        shopeSlug={item.shopeName}
+                        productSlug={item.productSlug}
                     />
                 ))}
             </Slider>
