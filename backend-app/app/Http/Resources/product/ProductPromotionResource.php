@@ -20,11 +20,6 @@ class ProductPromotionResource extends JsonResource
             'slug' => $this->slug,
             'price' => $this->productVarians->where('promotion_id', 1)->first()->price,
             'image' => $this->productVarians->where('promotion_id', 1)->first()->image,
-            // 'priceSale' => $this->price_sale,
-            // 'image' => $this->image,
-            // 'priceSalePromotion' => $this->detailPromotions->first()->price_sale ?? 0,
-            // 'stocks' => $this->detailPromotions->first()->stocks,
-            // 'order' => $this->detailPromotions->first()->order
         ];
     }
 }

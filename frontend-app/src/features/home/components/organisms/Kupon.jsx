@@ -6,7 +6,6 @@ import { fetchProductKupon } from '../../services';
 
 function Kupon() {
     const dispatch = useDispatch();
-    const { data } = useSelector((state) => state.productKupon);
 
     useEffect(() => {
         dispatch(fetchProductKupon());
@@ -19,7 +18,7 @@ function Kupon() {
                 <p className='text-gray-500 font-medium'>Ambil Produk Nyaris Gratisnya!</p>
                 <Link to="/" className='font-bold text-green-600 text-base'>Lihat Semua</Link>
             </div>
-            <SliderKupon data={data}/>
+            <SliderKupon/>
         </div>
     )
 }

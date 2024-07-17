@@ -1,7 +1,8 @@
 import promotionProductSlice from "./slices/promotionProductSlice";
 import productHomeSlice from "./slices/productHomeSlice";
 import productKuponSlice from "./slices/productKuponSlice";
-import { fetchProductPromotion, fetchHomeProduct, fetchProductKupon } from "./thunks/homeThunks";
+import productTrendingSlice from "./slices/productTrendingSlice";
+import { fetchProductPromotion, fetchHomeProduct, fetchProductKupon, fetchProductTrending } from "./thunks/homeThunks";
 
 export { 
     promotionProductSlice,
@@ -9,5 +10,7 @@ export {
     productKuponSlice,
     fetchProductPromotion,
     fetchHomeProduct,
-    fetchProductKupon
+    fetchProductKupon,
+    fetchProductTrending,
+    productTrendingSlice
 }

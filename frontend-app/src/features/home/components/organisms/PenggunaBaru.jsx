@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import SliderPenggunaBaru from '../molecules/SliderPenggunaBaru'
 import { fetchProductPromotion } from '../../services';
 import { APP_DEBUG } from '../../../../config/env';
-import { CountDownTimer } from '../../../../components';
+import { CountDownTimer, LoadinButtonWhite, LoadingLazzy } from '../../../../components';
 
 function PenggunaBaru() {
   const dispatch = useDispatch();
-  const { promotion } = useSelector((state) => state.promotionProduct);
+  const { promotion, status } = useSelector((state) => state.promotionProduct);
 
   useEffect(() => {
     dispatch(fetchProductPromotion());
@@ -20,9 +20,18 @@ function PenggunaBaru() {
         <h2 className='text-2xl font-bold'>Khusus Pengguna Baru</h2>
         <p className='text-gray-500 font-medium'>Berakhir dalam</p>
         <p>
-          <Suspense fallback={<div>Loading.....</div>}>
-            <CountDownTimer expirationString={promotion.end_date} />
-          </Suspense>
+          {status === 'pending' &&
+            <div className='flex gap-3 animate-pulse'>
+              <div className='bg-red-200 h-8 w-8 rounded-md'></div>
+              <div className='bg-red-200 h-8 w-8 rounded-md'></div>
+              <div className='bg-red-200 h-8 w-8 rounded-md'></div>
+            </div>
+          }
+          {status === 'succeeded' &&
+            <Suspense fallback={<LoadingLazzy />}>
+              <CountDownTimer expirationString={promotion.endDate} />
+            </Suspense>
+          }
         </p>
         <Link to="/" className='font-bold text-green-600 text-base tracking-tight'>Lihat Semua</Link>
       </div>

@@ -44,5 +44,6 @@ Route::prefix('v1')->group(function () {
         Route::get('/product/{productSlug}', 'show')->name('product.show');
         Route::get('/product-promotion', 'promotion')->name('product.promotion');
         Route::get('/product-search', 'search')->name('product.search');
+        Route::get('/product-trending', 'trending')->name('product.trending');
     });
 });

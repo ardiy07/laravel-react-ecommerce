@@ -29,7 +29,7 @@ function CardProduct({ type, shopeSlug, productSlug, image, name, price, priceSa
                         {icon === 'tokopedia' ?
                             <p className='font-medium text-gray-500 text-xs capitalize'>Dilayani Tokopedia</p>
                             :
-                            <p className='font-medium text-gray-500 text-xs'>{capitalize(city)}</p>
+                            <p className='font-medium text-gray-500 text-xs'>{city}</p>
                         }
                     </div>
                     <div className='flex items-center gap-1'>

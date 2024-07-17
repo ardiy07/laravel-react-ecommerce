@@ -20,6 +20,7 @@ const api = {
     getProductKupon: () => axiosInstance.get(`/products`),
     getDetailProduct: (productSlug) => axiosInstance.get(`/product/${productSlug}`),
     getProductHome: (query, limit, page) => axiosInstance.get(`/products?query=${query}&limit=${limit}&page=${page}`),
+    getProductTrending: (page) => axiosInstance.get(`/product-trending?page=${page}`),
 
     // Cart
     getCard: () => axiosInstance.get('/card'),

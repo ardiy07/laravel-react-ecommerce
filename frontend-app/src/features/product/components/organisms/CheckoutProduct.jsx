@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { APP_DEBUG } from '../../../../config/env';
 import { fetchAddCard } from '../../services';
 import { ModalLogin } from '../../../authentication/components';
+import { LoadinButtonWhite } from '../../../../components';
 
 function CheckoutProduct({data, auth }) {
     const [quantity, setQuantity] = useState(1);
@@ -89,7 +90,7 @@ function CheckoutProduct({data, auth }) {
             <div className='flex flex-col gap-2'>
                 <div className='w-full flex justify-center'>
                     <button className='bg-green-500 w-full py-[0.35rem] rounded-lg border border-green-500' onClick={handleCard}>
-                        <p className='text-white font-bold text-base tracking-tight'><b>+ </b>Keranjang</p>
+                        {status === 'pending' ? <LoadinButtonWhite /> : <p className='text-white font-bold text-base tracking-tight'><b>+ </b>Keranjang</p>}
                     </button>
                     {showFormLogin &&
                         <Suspense>

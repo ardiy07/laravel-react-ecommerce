@@ -19,7 +19,7 @@ function Header(props) {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 2450) {
+            if (window.scrollY > 2445) {
                 setStyle('');
             } else {
                 setStyle('shadow-sm border-b');

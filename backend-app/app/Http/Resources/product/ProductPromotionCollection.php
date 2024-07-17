@@ -24,7 +24,15 @@ class ProductPromotionCollection extends ResourceCollection
         // $promotion = $this->additional['promotion'];
 
         return [
-            'promotion' => $this->promotions,
+            'promotion' => [
+                'id' => $this->promotions->id,
+                'name' => $this->promotions->name,
+                'slug' => $this->promotions->slug,
+                'value' => $this->promotions->value,
+                'type' => $this->promotions->type,
+                'startDate' => $this->promotions->start_date,
+                'endDate' => $this->promotions->end_date,
+            ],
             'products' => $this->collection->transform(function ($product) {
                 return [
                     'id' => $product->id,
@@ -34,8 +42,9 @@ class ProductPromotionCollection extends ResourceCollection
                     'rating' => $product->rating,
                     'subsubcategory_id' => $product->subsubcategory_id,
                     'shopeName' => $product->shope->slug,
-                    'stock' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->stock,
-                    'order' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->order,
+                    'varian' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->value ?? '',
+                    'stock' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->stock_promotion,
+                    'order' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->order_promotion,
                     'price' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->price,
                     'priceSale' => $this->promotions->value,
                     'image' => optional($product->productVarians->where('promotion_id', $this->promotions->id)->first())->image,

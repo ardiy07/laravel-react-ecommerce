@@ -8,6 +8,7 @@ const TopUp = lazy(() => import("./organisms/TopUp"));
 const PenggunaBaru = lazy(() => import("./organisms/PenggunaBaru"));
 const Kupon = lazy(() => import("./organisms/Kupon"));
 const ProductHome = lazy(() => import("./organisms/ProductHome"));
+const TrendingHome = lazy(() => import("./organisms/TrendingHome"));
 
 export { 
     Banner, 
@@ -17,5 +18,6 @@ export {
     FormListrik,
     PenggunaBaru,
     Kupon,
-    ProductHome 
+    ProductHome,
+    TrendingHome 
 }

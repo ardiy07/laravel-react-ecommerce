@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name', 255);
             $table->string('slug');
             $table->text('deskripsi');
+            $table->text('specification')->nullable();
             $table->integer('order')->default(0);
             $table->integer('review')->default(0);
             $table->float('rating')->default(0);

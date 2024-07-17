@@ -5,7 +5,7 @@ import { shopeSlice } from "../features/shope";
 import { profileSlice } from "../features/profile";
 import { loginSlice, logoutSlice, registerSlice } from "../features/authentication";
 import localStorageMonitor from "../middleware/localStorageMonitor";
-import { promotionProductSlice, productHomeSlice, productKuponSlice } from "../features/home";
+import { promotionProductSlice, productHomeSlice, productKuponSlice, productTrendingSlice } from "../features/home";
 import { addCardSlice, cardGetSlice, getSearchProductSlice, productDetailSlice } from "../features/product";
 
 
@@ -19,14 +19,23 @@ const store = configureStore({
         // home
         productHome: productHomeSlice,
         search: searchSlice,
-        shope: shopeSlice,
-        profile: profileSlice,
         promotionProduct: promotionProductSlice,
         productKupon: productKuponSlice,
         productDetail: productDetailSlice,
-        cardGet: cardGetSlice,
+        productTrending: productTrendingSlice,
+        
+        // card
         cardGetProduct: cardGetSlice,
+        cardGet: cardGetSlice,
         addCard: addCardSlice,
+        
+        // shope
+        shope: shopeSlice,
+        
+        // profile
+        profile: profileSlice,
+        
+        // product
         productSearchResult: getSearchProductSlice,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(localStorageMonitor),

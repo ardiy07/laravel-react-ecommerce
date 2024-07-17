@@ -9,7 +9,7 @@ function ModalLogin(props) {
         <Fragment>
             {status !== 'succeeded' &&
                 <div className='fixed inset-0 bg-slate-700 bg-opacity-70 z-50 w-screen h-screen flex items-center justify-center'>
-                    <div className=' bg-white border shadow w-96 h-[30rem] rounded-xl py-3 px-5'>
+                    <div className=' bg-white border shadow w-96 h-fit rounded-xl pt-4 pb-9 px-5'>
                         <div className='flex justify-end w-full mb-1'>
                             <button onClick={props.close}>
                                 <svg

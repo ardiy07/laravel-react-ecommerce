@@ -45,3 +45,18 @@ export const fetchProductKupon = createAsyncThunk(
         }
     }
 )
+
+export const fetchProductTrending = createAsyncThunk(
+    'home/fetchProductTrending',
+    async (page, { rejectWithValue }) => {
+        try {
+            const response = await api.getProductTrending(page);
+            return response.data;
+        } catch (error) {
+            if (error.response && error.response.data) {
+                return rejectWithValue(error.response.data);
+            }
+            return rejectWithValue(error.message);
+        }
+    }
+)

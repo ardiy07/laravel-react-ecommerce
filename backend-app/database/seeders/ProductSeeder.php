@@ -16,8 +16,8 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        
-        $jsonFile = storage_path('app\public\data\product\dataExample.json');
+
+        $jsonFile = storage_path('app\public\data\product\dataExample3.json');
         $jsonString = file_get_contents($jsonFile);
         $data = json_decode($jsonString, true);
 
@@ -26,6 +26,8 @@ class ProductSeeder extends Seeder
             $price = (int) str_replace(['Rp', '.', ','], '', $item['product']['price']);
             $priceSale = (int) str_replace(['Rp', '.', ','], '', $item['product']['campaign']['originalPrice']);
             $promotionId = $index < 24 ? 1 : null;
+            $stockPro = $index < 24 ? rand(1, 15) : 0;
+            $orderPro = $index < 24 ? rand(1, $stockPro) : 0;
             $existingProduct = Product::find($item['product']['id']);
 
             if ($existingProduct) {
@@ -34,7 +36,7 @@ class ProductSeeder extends Seeder
                     'name' => $item['product']['name'],
                     'slug' => Str::slug($item['product']['name']),
                     'deskripsi' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, rerum.',
-                    'order' => rand(10, 100),
+                    'order' => rand(10, 1000),
                     'rating' => rand(2, 5),
                     'review' => $item['product']['countReviewFormat'],
                     'subSubcategory_id' => $item['product']['category']['id'],
@@ -48,8 +50,10 @@ class ProductSeeder extends Seeder
                         'price' => $item['product']['campaign']['originalPrice'] ? $priceSale : $price,
                         'price_sale' => $item['product']['campaign']['originalPrice'] ? $price : 0,
                         'promotion_id' => $promotionId,
-                        'stock' => rand(3, 50),
-                        'order' => rand(1, 50),
+                        'stock' => rand(3, 100),
+                        'order' => rand(1, 1000),
+                        'stock_promotion' => $stockPro,
+                        'order_promotion' => $orderPro,
                         'image' => $item['product']['image']['imageUrl'],
                         'is_active' => 1,
                         'is_default' => 1,
@@ -62,7 +66,7 @@ class ProductSeeder extends Seeder
                     'name' => $item['product']['name'],
                     'slug' => Str::slug($item['product']['name']),
                     'deskripsi' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, rerum.',
-                    'order' => rand(10, 100),
+                    'order' => rand(10, 1000),
                     'rating' => rand(2, 5),
                     'review' => $item['product']['countReviewFormat'],
                     'subSubcategory_id' => $item['product']['category']['id'],
@@ -74,8 +78,10 @@ class ProductSeeder extends Seeder
                     'price' => $item['product']['campaign']['originalPrice'] ? $priceSale : $price,
                     'price_sale' => $item['product']['campaign']['originalPrice'] ? $price : 0,
                     'promotion_id' => $promotionId,
-                    'stock' => rand(3, 50),
-                    'order' => rand(1, 50),
+                    'stock' => rand(3, 100),
+                    'order' => rand(1, 1000),
+                    'stock_promotion' => $stockPro,
+                    'order_promotion' => $orderPro,
                     'image' => $item['product']['image']['imageUrl'],
                     'is_active' => 1,
                     'is_default' => 1,

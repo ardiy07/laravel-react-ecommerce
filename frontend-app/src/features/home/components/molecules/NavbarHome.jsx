@@ -4,7 +4,7 @@ function NavbarHome({children}) {
     const [style, setStyle] = useState('');
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 2000) {
+            if (window.scrollY > 2445) {
                 setStyle('fixed top-[7.8rem] pt-2 shadow-md border-b pb-2');
             } else {
                 setStyle('');

@@ -36,6 +36,8 @@ return new class extends Migration
             $table->decimal('price_sale', 10, 2)->nullable();
             $table->integer('stock')->default(1);
             $table->integer('order')->default(0);
+            $table->integer('stock_promotion')->default(0);
+            $table->integer('order_promotion')->default(0);
             $table->integer('min_order')->default(1);
             $table->integer('max_order')->nullable();
             $table->boolean('is_default')->default(0);
