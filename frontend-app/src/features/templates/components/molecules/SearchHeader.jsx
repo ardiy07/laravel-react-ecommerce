@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import InputSearch from '../atoms/InputSearch';
-import { getAssetIcons } from '../../../../utils/pathUtils';
 import { useDispatch, useSelector } from 'react-redux';
 import LinkStoreSearch from '../atoms/LinkStoreSearch';
 import DataPopuler from '../data/SearchPopuler.json';
@@ -8,7 +7,8 @@ import LinkResultSearch from '../atoms/LinkResultSearch';
 import { fetchSearch } from '../../services/thunks/headerThunks';
 import LoadingSearch from '../../../../components/loading/LoadingSearch';
 import { APP_DEBUG } from '../../../../config/env';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import IconHeader from '../atoms/IconHeader';
 
 function SearchHeader({ onOpen, onClose }) {
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ function SearchHeader({ onOpen, onClose }) {
 
       setTypingTimer(timer);
     } else {
-      setLoadingSearch(false); // Set loading to false when search length is not > 1
+      setLoadingSearch(false);
     }
   };
 
@@ -103,8 +103,9 @@ function SearchHeader({ onOpen, onClose }) {
           onKeyPress={handleKeyPress}
           placeholder="Cari di Tokopedia"
         />
-        <div className='absolute inset-y-0 left-0 flex items-center pl-2'>
-          <img src={getAssetIcons('search.svg')} alt="search icon" />
+        <div className='absolute inset-y-0 left-0 flex items-center pl-3'>
+          <span className='icon-search'>
+          </span>
         </div>
       </div>
 

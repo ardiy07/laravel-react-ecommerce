@@ -28,9 +28,10 @@ class ProductController extends Controller
 
         $products = Product::with(['productVarians', 'productVarians.promotion', 'shope', 'subsubcategory'])
             ->where(function ($query) use ($key) {
-                $query->orWhereHas('subsubcategory', function ($query) use ($key) {
-                    $query->where('name', 'like', '%' . $key . '%');
-                })
+                $query->where('name', 'like', '%' . $key . '%')
+                    ->orWhereHas('subsubcategory', function ($query) use ($key) {
+                        $query->where('name', 'like', '%' . $key . '%');
+                    })
                     ->orWhereHas('subsubcategory.subcategory', function ($query) use ($key) {
                         $query->where('name', 'like', '%' . $key . '%');
                     })
@@ -63,7 +64,7 @@ class ProductController extends Controller
 
     public function show($productSlug)
     {
-        $product = Product::with(['productVarians', 'shope'])->where('slug', $productSlug)->first();
+        $product = Product::with(['productVarians', 'shope', 'subsubcategory'])->where('slug', $productSlug)->first();
         if (!$product) {
             return response()->json(['message' => 'Data tidak ditemukan'], 404);
         }
@@ -103,5 +104,20 @@ class ProductController extends Controller
         });
 
         return new ProductTrendingCollection($productTrending);
+    }
+
+    public function productByShope(Request $request)
+    {
+        $shopeSlug = $request->shope;
+        $limit = $request->input('limit', 12);
+        $shope = Shope::where('slug', $shopeSlug)->first();
+        if (!$shope) {
+            return response()->json(['message' => 'Shope Tidak Ditemukan'], 404);
+        }   
+        $products = Product::where('shope_id', $shope->id)
+        ->paginate($limit)
+        ->appends(['shope' => $shopeSlug]);
+
+        return new ProductCardCollection($products);
     }
 }

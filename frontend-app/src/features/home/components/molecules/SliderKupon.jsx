@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -6,7 +6,6 @@ import { BackSlider, CardProduct, NextSlider } from '../../../../components';
 import useSlider from '../../../../hooks/useSlider';
 import { APP_DEBUG } from '../../../../config/env';
 import { getAssetImages } from '../../../../utils/pathUtils';
-import { discountPercentage, formatOrder } from '../../../../utils/formatUtils';
 import LoadingCard from '../../../../components/loading/LoadingCard';
 import { useSelector } from 'react-redux';
 
@@ -72,7 +71,7 @@ function SliderKupon() {
                                 order={item.product.order}
                                 rating={item.product.rating}
                                 promo={null}
-                                icon={item.product.shope.iconShope}
+                                icon={item.product.shope.icon}
                                 city={item.product.shope.city}
                                 shopeSlug={item.product.shope.slug}
                             />

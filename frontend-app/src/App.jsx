@@ -4,7 +4,7 @@ import { LoginPage, RegisterPage } from "./features/authentication"
 import { HomePage } from "./features/home"
 import { NotFoundPage } from "./features/error"
 import LoadingPage from "./components/loading/LoadingPage"
-import { Product, ProductDetail } from "./features/product"
+import { ProductPage, ProductDetailPage, ProductRekomenPage } from "./features/product"
 
 
 function App() {
@@ -12,11 +12,12 @@ function App() {
     <Router>
       <Suspense fallback={<LoadingPage />}>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} exact/>
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/search" element={<Product />} />
-          <Route exact path="/:shopeSlug/:productSlug" element={<ProductDetail />} />
+          <Route path="/search" element={<ProductPage />} />
+          <Route path="/:shopeSlug/:productSlug" element={<ProductDetailPage />} />
+          <Route path="/rekomendasi" element={<ProductRekomenPage />} />
           <Route  path="/*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

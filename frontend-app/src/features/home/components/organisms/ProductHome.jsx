@@ -82,7 +82,7 @@ function ProductHome() {
                   order={item.product.order}
                   rating={item.product.rating}
                   promo={null}
-                  icon={item.product.shope.iconShope}
+                  icon={item.product.shope.icon}
                   city={item.product.shope.city}
                   shopeSlug={item.product.shope.slug}
                 />

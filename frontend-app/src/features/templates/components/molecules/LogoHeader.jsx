@@ -6,7 +6,7 @@ function LogoHeader(props) {
     return (
         <div className="hidden md:block mr-5">
             <LinkHeader to={props.to}>
-                <img src={getAssetImages("e5b8438b.svg")} alt="Logo" className=' w-38' />
+                <img src={getAssetImages('default/e5b8438b.svg')} alt="Logo" className=' w-38' />
             </LinkHeader>
         </div>
     )

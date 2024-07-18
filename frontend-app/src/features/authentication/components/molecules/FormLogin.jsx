@@ -32,7 +32,7 @@ function FormLogin({navigation}) {
     };
 
     if(status === 'succeeded'){
-        navigate({navigation})
+        navigate(navigation)
     }
 
 

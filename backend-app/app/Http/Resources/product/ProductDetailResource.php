@@ -29,11 +29,20 @@ class ProductDetailResource extends JsonResource
                     'image' => $this->productVarians->where('is_default', 1)->first()->image,
                     'rating' => $this->rating,
                     'review' => $this->review,
+                    'category' => [
+                        'id' => $this->subsubcategory->id,
+                        'name' => $this->subsubcategory->name,
+                        'slug' => $this->subsubcategory->slug,
+                        'parent' => [
+                            'name' => $this->subsubcategory->subcategory->category->name,
+                            'slug' => $this->subsubcategory->subcategory->category->slug,
+                        ],
+                    ],
                     'shope' => [
                         'id' => $this->shope->id,
                         'name' => $this->shope->name,
                         'city' => $this->shope->addres->village->distric->regencie->name,
-                        'iconShope' => $this->shope->typeShope->slug,
+                        'icon' => $this->shope->typeShope->slug,
                     ],
                     'promotion' => $this->productVarians->where('is_active', 1)
                         ->where('promotion_id', '!=', null)

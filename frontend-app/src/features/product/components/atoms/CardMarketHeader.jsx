@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { formatCurrency } from '../../../../utils/formatUtils'
 
-function CardMarketHeader({ image, productSlug, name, quantity, price, priceSale }) {
+function CardMarketHeader({ image, shopeSlug, productSlug, name, quantity, price, priceSale }) {
     return (
         <div className='pt-2 max-h-80 overflow-y-auto'>
             <div className='px-5 flex gap-2 mb-1'>
@@ -10,7 +10,7 @@ function CardMarketHeader({ image, productSlug, name, quantity, price, priceSale
                     <img src={image} alt={name} width="70" />
                 </div>
                 <div className=' w-52'>
-                    <Link to={`/${productSlug}`} className='line-clamp-1 tracking-tight'>
+                    <Link to={`/${shopeSlug}/${productSlug}`} className='line-clamp-1 tracking-tight'>
                         {name}
                     </Link>
                 </div>

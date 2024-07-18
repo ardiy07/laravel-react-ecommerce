@@ -49,7 +49,7 @@ export const fetchAddCard = createAsyncThunk(
 
 export const fetchGetCardProduct = createAsyncThunk(
     'product/fetchGetCardProduct',
-    async ({userId, productId}, { rejectWithValue }) => {
+    async ({ userId, productId }, { rejectWithValue }) => {
         try {
             const response = await api.getCardProduct(productId, userId);
             return response.data;
@@ -64,9 +64,24 @@ export const fetchGetCardProduct = createAsyncThunk(
 
 export const fetchSearchResultProduct = createAsyncThunk(
     'product/fetchSearchResultProduct',
-    async ({query, page}, { rejectWithValue }) => {
+    async ({ query, page }, { rejectWithValue }) => {
         try {
             const response = await api.getProductSearch(query, page);
+            return response.data;
+        } catch (error) {
+            if (error.response && error.response.data) {
+                return rejectWithValue(error.response.data);
+            }
+            return rejectWithValue(error.message);
+        }
+    }
+)
+
+export const fetchProductByShope = createAsyncThunk(
+    'product/fetchProductByShope',
+    async ({ shope, limit }, { rejectWithValue }) => {
+        try {
+            const response = await api.getProductByShope(shope, limit);
             return response.data;
         } catch (error) {
             if (error.response && error.response.data) {

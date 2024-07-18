@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { MainTamplate } from '../../templates';
 import { useLocation } from 'react-router-dom'
-import SearchResultProduct from '../components/organisms/SearchResultProduct';
+import { SearchResultProduct } from '../components';
 
-function Product() {
+function ProductPage() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const [query, setQuery] = useState(queryParams.get('query'));
@@ -32,4 +32,4 @@ function Product() {
   )
 }
 
-export default Product
+export default ProductPage

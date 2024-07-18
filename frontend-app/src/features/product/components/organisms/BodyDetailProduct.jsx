@@ -15,7 +15,7 @@ function BodyDetailProduct({ data }) {
             </div>
             <div className='w-full flex flex-col'>
                 {/* Title */}
-                <TitleDetailProduct iconShope={data.product.shope.iconShope} name={data.product.name} />
+                <TitleDetailProduct icon={data.product.shope.icon} name={data.product.name} />
                 {/* Rat, Order */}
                 <RateDetailProduct rating={data.product.rating} order={data.product.order} review={data.product.review}/>
                 {/* Price */}

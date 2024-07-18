@@ -6,7 +6,7 @@ import { profileSlice } from "../features/profile";
 import { loginSlice, logoutSlice, registerSlice } from "../features/authentication";
 import localStorageMonitor from "../middleware/localStorageMonitor";
 import { promotionProductSlice, productHomeSlice, productKuponSlice, productTrendingSlice } from "../features/home";
-import { addCardSlice, cardGetSlice, getSearchProductSlice, productDetailSlice } from "../features/product";
+import { addCardSlice, cardGetSlice, getSearchProductSlice, productByShopeSlice, productDetailSlice } from "../features/product";
 
 
 const store = configureStore({
@@ -37,6 +37,7 @@ const store = configureStore({
         
         // product
         productSearchResult: getSearchProductSlice,
+        productShope: productByShopeSlice,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(localStorageMonitor),
     devTools: APP_DEBUG,

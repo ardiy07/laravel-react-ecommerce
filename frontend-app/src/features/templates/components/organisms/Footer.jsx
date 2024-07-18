@@ -2,6 +2,7 @@ import React from 'react'
 import data1 from '../data/Footer1.json'
 import data2 from '../data/Footer2.json'
 import { getAssetIcons, getAssetImages } from '../../../../utils/pathUtils'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
@@ -11,9 +12,9 @@ function Footer() {
                 <ul className=' tracking-tight'>
                     {data1.map((item, index) => (
                         <li key={index} className='my-1'>
-                            <a href={item.href} className='text-gray-500 text-base hover:text-green-600'>
+                            <Link to={item.href} className='text-gray-500 text-base hover:text-green-600'>
                                 {item.title}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -25,9 +26,9 @@ function Footer() {
                         <ul className=' tracking-tight'>
                             {item.children.map((child, index) => (
                                 <li key={index} className='my-1'>
-                                    <a href={child.href} className='text-gray-500 text-base hover:text-green-600'>
+                                    <Link to={child.href} className='text-gray-500 text-base hover:text-green-600'>
                                         {child.title}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -39,21 +40,21 @@ function Footer() {
                     <p className='font-bold text-lg'>Keamanan & Privasi</p>
                     <ul className='flex gap-5'>
                         <li className='max-w-fit'>
-                            <a href="#">
+                            <Link to="#">
                                 <img src={getAssetImages('footer/icon_pci_license.webp')} className='w-16' />
-                            </a>
+                            </Link>
                         </li>
                         <li className='border rounded max-w-fit p-1'>
-                            <a href="#" className='text-gray-500 text-base hover:text-green-600'>
+                            <Link to="#" className='text-gray-500 text-base hover:text-green-600'>
                                 <img src={getAssetImages('footer/icon_bsi_license_hd.png')} className='w-16' />
 
-                            </a>
+                            </Link>
                         </li>
                         <li className='border rounded max-w-fit p-1'>
-                            <a href="#" className='text-gray-500 text-base hover:text-green-600'>
+                            <Link to="#" className='text-gray-500 text-base hover:text-green-600'>
                                 <img src={getAssetImages('footer/icon_bsi_license_hd_2.png')} className='w-16' />
 
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
@@ -61,24 +62,24 @@ function Footer() {
                     <p className='font-bold text-lg'>Ikuti Kami</p>
                     <ul className='flex gap-3 pt-2'>
                         <li className='max-w-fit'>
-                            <a href="#" className='flex items-center'>
+                            <Link to="#" className='flex items-center'>
                                 <img src={getAssetIcons('facebook.svg')} />
-                            </a>
+                            </Link>
                         </li>
                         <li className='max-w-fit'>
-                            <a href="#" className='flex items-center'>
+                            <Link to="#" className='flex items-center'>
                                 <img src={getAssetIcons('twitter.svg')} />
-                            </a>
+                            </Link>
                         </li>
                         <li className='max-w-fit'>
-                            <a href="#" className='flex items-center'>
+                            <Link to="#" className='flex items-center'>
                                 <img src={getAssetIcons('pinterest.svg')} />
-                            </a>
+                            </Link>
                         </li>
                         <li className='max-w-fit'>
-                            <a href="#" className=' flex items-center'>
+                            <Link to="#" className=' flex items-center'>
                                 <img src={getAssetIcons('instagram.svg')} />
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
@@ -88,15 +89,15 @@ function Footer() {
                     <img src={getAssetImages('footer/il_footer_hd_v2.png')} className='' />
                 </div>
                 <div className='flex my-5 items-center justify-center gap-5'>
-                    <a href=''>
+                    <Link to=''>
                         <img src={getAssetIcons('icon-download-android.svg')} />
-                    </a>
-                    <a href=''>
+                    </Link>
+                    <Link to=''>
                         <img src={getAssetIcons('icon-download-ios.svg')} />
-                    </a>
-                    <a href=''>
+                    </Link>
+                    <Link to=''>
                         <img src={getAssetIcons('icon-download-huawei.svg')} />
-                    </a>
+                    </Link>
                 </div>
                 <p className='text-gray-500 font-semibold'>© 2009 - 2024, PT. Tokopedia.</p>
                 <div className='mt-5'>

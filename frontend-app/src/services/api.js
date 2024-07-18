@@ -21,6 +21,7 @@ const api = {
     getDetailProduct: (productSlug) => axiosInstance.get(`/product/${productSlug}`),
     getProductHome: (query, limit, page) => axiosInstance.get(`/products?query=${query}&limit=${limit}&page=${page}`),
     getProductTrending: (page) => axiosInstance.get(`/product-trending?page=${page}`),
+    getProductByShope: (shope, limit) => axiosInstance.get(`/product-shope/${shope}?limit=${limit}`),
 
     // Cart
     getCard: () => axiosInstance.get('/card'),

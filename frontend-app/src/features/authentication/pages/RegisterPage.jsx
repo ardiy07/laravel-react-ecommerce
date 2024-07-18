@@ -10,7 +10,7 @@ function RegisterPage() {
     <div className='flex flex-col py-5 mx-32'>
       <div className='mb-6 flex justify-center'>
         <Link to={'/'}>
-          <img src={getAssetImages("e5b8438b.svg")} alt="Logo" className=' w-38' />
+          <img src={getAssetImages("default/e5b8438b.svg")} alt="Logo" className=' w-38' />
         </Link>
       </div>
       <div className='flex justify-center gap-20 mb-20'>

@@ -20,7 +20,7 @@
 .header-icon {
     width: 24px;
     height: 24px;
-    background-image: url('../../../assets/icons/icons.svg');
+    background-image: url('./icons/icons.svg');
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: 60% 60%;

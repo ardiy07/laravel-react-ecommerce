@@ -1,9 +1,11 @@
 import { lazy } from "react";
 
-const ProductDetail = lazy(() => import("./ProductDetail"));
-const Product = lazy(() => import("./Product")); 
+const ProductDetailPage = lazy(() => import("./ProductDetailPage"));
+const ProductPage = lazy(() => import("./ProductPage")); 
+const ProductRekomenPage = lazy(() => import("./ProductRekomenPage"));
 
 export {
-    ProductDetail,
-    Product
+    ProductDetailPage,
+    ProductPage,
+    ProductRekomenPage
 }

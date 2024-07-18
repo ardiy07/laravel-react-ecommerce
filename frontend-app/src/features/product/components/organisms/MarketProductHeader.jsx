@@ -45,7 +45,9 @@ function MarketProductHeader({ onOpen, onClose, auth }) {
       {isOpen && (
         <div className='mt-1 py-2 absolute z-50 w-[30rem] bg-white shadow-2xl rounded-lg right-0 -mx-52 border'>
           {auth ?
-            (<MarketHeader dataCards={data} count={count} auth={auth}/>) : (<MarketEmpetyHeader />)
+            (<MarketHeader dataCards={data} count={count} auth={auth}/>) 
+            : 
+            (<MarketEmpetyHeader />)
           }
         </div>
       )}
