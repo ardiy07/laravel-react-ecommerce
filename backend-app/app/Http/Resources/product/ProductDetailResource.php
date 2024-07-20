@@ -43,6 +43,7 @@ class ProductDetailResource extends JsonResource
                         'name' => $this->shope->name,
                         'city' => $this->shope->addres->village->distric->regencie->name,
                         'icon' => $this->shope->typeShope->slug,
+                        'active' => $this->shope->user->updated_at->locale('id')->diffForHumans(),
                     ],
                     'promotion' => $this->productVarians->where('is_active', 1)
                         ->where('promotion_id', '!=', null)

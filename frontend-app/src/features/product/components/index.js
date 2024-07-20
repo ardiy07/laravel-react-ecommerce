@@ -7,6 +7,9 @@ const ProductShope = lazy(() => import('./organisms/ProductShope'));
 const SearchResultProduct = lazy(() => import('./organisms/SearchResultProduct'));
 const ProductDetailLainnya = lazy(() => import('./organisms/ProductDetailLainnya'));
 const ProductRekomendasi = lazy(() => import('./organisms/ProductRekomendasi'));
+const BodyInfoProduct = lazy(() => import('./organisms/BodyInfoProduct'));
+
+
 export {
     BodyDetailProduct,
     CheckoutProduct,
@@ -15,4 +18,5 @@ export {
     SearchResultProduct,
     ProductDetailLainnya,
     ProductRekomendasi,
+    BodyInfoProduct
 }

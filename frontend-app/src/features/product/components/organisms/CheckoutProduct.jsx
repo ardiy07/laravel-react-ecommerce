@@ -10,7 +10,7 @@ import { fetchAddCard } from '../../services';
 import { ModalLogin } from '../../../authentication/components';
 import { LoadinButtonWhite } from '../../../../components';
 
-function CheckoutProduct({data, auth }) {
+function CheckoutProduct({ data, auth }) {
     const [quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
     const [showFormLogin, setShowFormLogin] = useState(false);
@@ -43,80 +43,81 @@ function CheckoutProduct({data, auth }) {
 
 
     return (
-        // fixed mr-12
-        <div className='border rounded-lg py-3 px-4 shadow bg-white flex flex-col gap-2 h-fit'>
-            {/* title */}
-            <div className='flex flex-col gap-1'>
-                <h3 className='font-semibold tracking-tight'>Atur Jumlah dan Catatan</h3>
-                <div className='flex items-center gap-2 '>
-                    <img src={data.product.image} className='w-12' />
-                    <p className='line-clamp-1 text-sm font-semibold tracking-tight'></p>
+        <>
+            <div className='border rounded-lg py-3 px-4 shadow bg-white flex flex-col gap-2 h-fit sticky top-36'>
+                {/* title */}
+                <div className='flex flex-col gap-1'>
+                    <h3 className='font-semibold tracking-tight'>Atur Jumlah dan Catatan</h3>
+                    <div className='flex items-center gap-2 '>
+                        <img src={data.product.image} className='w-12' />
+                        <p className='line-clamp-1 text-sm font-semibold tracking-tight'></p>
+                    </div>
+                    <p className='tracking-tight line-clamp-1 pt-1 border-b capitalize'>{data.product.name}</p>
                 </div>
-                <p className='tracking-tight line-clamp-1 pt-1 border-b capitalize'>{data.product.name}</p>
-            </div>
-            {/* quantity */}
-            <div className='flex flex-col gap-2 justify-start'>
-                <div className='flex mt-3 gap-3'>
-                    <Quantity value={quantity} onChange={setQuantity} maxOrder={data.product.stock} />
-                    <p>Stock: <span className='font-semibold'>{data.product.stock}</span></p>
+                {/* quantity */}
+                <div className='flex flex-col gap-2 justify-start'>
+                    <div className='flex mt-3 gap-3'>
+                        <Quantity value={quantity} onChange={setQuantity} maxOrder={data.product.stock} />
+                        <p>Stock: <span className='font-semibold'>{data.product.stock}</span></p>
+                    </div>
+                    <div>
+                        <button className='text-green-500 text-sm tracking-tight'>
+                            <AddNoted />
+                            <b>Tambah Catatan</b>
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <button className='text-green-500 text-sm tracking-tight'>
-                        <AddNoted />
-                        <b>Tambah Catatan</b>
-                    </button>
-                </div>
-            </div>
-            {/* subtotal */}
-            <div className='flex flex-col justify-end'>
-                {data.product.priceSale != 0 ?
-                    <>
-                        <p className='text-end line-through text-gray-400'>{formatCurrency(data.product.price)}</p>
-                        <div className='flex justify-between items-end'>
-                            <p className='text-gray-400  font-medium text-base tracking-tight'>Subtotal</p>
-                            <p className='text-lg font-bold'>{formatCurrency(data.product.priceSale * quantity)}</p>
-                        </div>
-                    </>
-                    :
-                    <>
-                        <div className='flex justify-between items-end'>
-                            <p className='text-gray-400  font-medium text-base tracking-tight'>Subtotal</p>
-                            <p className='text-lg font-bold'>{formatCurrency(data.product.price * quantity)}</p>
-                        </div>
-                    </>
-                }
-            </div>
-            {/* Button */}
-            <div className='flex flex-col gap-2'>
-                <div className='w-full flex justify-center'>
-                    <button className='bg-green-500 w-full py-[0.35rem] rounded-lg border border-green-500' onClick={handleCard}>
-                        {status === 'pending' ? <LoadinButtonWhite /> : <p className='text-white font-bold text-base tracking-tight'><b>+ </b>Keranjang</p>}
-                    </button>
-                    {showFormLogin &&
-                        <Suspense>
-                            <ModalLogin close={handleCloseModal} />
-                        </Suspense >
+                {/* subtotal */}
+                <div className='flex flex-col justify-end'>
+                    {data.product.priceSale != 0 ?
+                        <>
+                            <p className='text-end line-through text-gray-400'>{formatCurrency(data.product.price)}</p>
+                            <div className='flex justify-between items-end'>
+                                <p className='text-gray-400  font-medium text-base tracking-tight'>Subtotal</p>
+                                <p className='text-lg font-bold'>{formatCurrency(data.product.priceSale * quantity)}</p>
+                            </div>
+                        </>
+                        :
+                        <>
+                            <div className='flex justify-between items-end'>
+                                <p className='text-gray-400  font-medium text-base tracking-tight'>Subtotal</p>
+                                <p className='text-lg font-bold'>{formatCurrency(data.product.price * quantity)}</p>
+                            </div>
+                        </>
                     }
                 </div>
-                <div className='w-full flex justify-center'>
-                    <button className='bg-white w-full py-[0.35rem] rounded-lg border border-green-500'>
-                        <p className='text-green-500 font-bold text-base tracking-tight'>Beli Langsung</p>
-                    </button>
+                {/* Button */}
+                <div className='flex flex-col gap-2'>
+                    <div className='w-full flex justify-center'>
+                        <button className='bg-green-500 w-full py-[0.35rem] rounded-lg border border-green-500' onClick={handleCard}>
+                            {status === 'pending' ? <LoadinButtonWhite /> : <p className='text-white font-bold text-base tracking-tight'><b>+ </b>Keranjang</p>}
+                        </button>
+                    </div>
+                    <div className='w-full flex justify-center'>
+                        <button className='bg-white w-full py-[0.35rem] rounded-lg border border-green-500'>
+                            <p className='text-green-500 font-bold text-base tracking-tight'>Beli Langsung</p>
+                        </button>
+                    </div>
+                </div>
+                {/* other */}
+                <div className='flex items-center justify-center gap-2 my-1'>
+                    <div className='flex items-center'>
+                        <Chat />
+                        <p className='text-sm font-bold text-gray-600 tracking-tight'>Chat</p>
+                    </div>
+                    <span className='w-[0.05rem] h-5 bg-black'></span>
+                    <div className='flex items-center'>
+                        <Share />
+                        <p className='text-sm text-gray-600 font-bold tracking-tight'>Share</p>
+                    </div>
                 </div>
             </div>
-            {/* other */}
-            <div className='flex items-center justify-center gap-2 my-1'>
-                <div className='flex items-center'>
-                    <Chat />
-                    <p className='text-sm font-bold text-gray-600 tracking-tight'>Chat</p>
-                </div>
-                <span className='w-[0.05rem] h-5 bg-black'></span>
-                <div className='flex items-center'>
-                    <Share />
-                    <p className='text-sm text-gray-600 font-bold tracking-tight'>Share</p>
-                </div>
-            </div>
-        </div>
+            {showFormLogin &&
+                <Suspense>
+                    <ModalLogin close={handleCloseModal} />
+                </Suspense >
+            }
+        </>
     )
 }
 

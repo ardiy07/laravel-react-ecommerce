@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { MainTamplate } from '../../templates';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDetailProduct } from '../services';
-import { BodyDetailProduct, CheckoutProduct, ProductDetailLainnya, ProductShope } from '../components';
+import { BodyDetailProduct, BodyInfoProduct, CheckoutProduct, ProductDetailLainnya, ProductShope } from '../components';
 import useAuth from '../../../hooks/useAuth';
 import { APP_DEBUG } from '../../../config/env';
 
@@ -30,10 +30,14 @@ function ProductDetailPage() {
     <MainTamplate >
       <div className='bg-gray-50'>
         {status !== 'idle' &&
-          <div className='flex max-w-screen px-14 gap-3 py-6'>
+          <div className='flex w-fit px-14 gap-3 py-6'>
+            <div className='w-fit'>
             <Suspense fallback={<div>Loading.....</div>}>
               <BodyDetailProduct data={data} />
+              <BodyInfoProduct />
             </Suspense>
+            </div>
+
             <div className='w-96'>
               <Suspense fallback={<div>Loading.....</div>}>
                 <CheckoutProduct data={data} auth={isLogin} />

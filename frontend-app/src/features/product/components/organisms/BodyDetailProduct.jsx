@@ -9,7 +9,7 @@ function BodyDetailProduct({ data }) {
         return <div>Loading...</div>;
     }
     return (
-        <div className='flex w-full bg-white px-4 py-5 gap-5 shadow-md rounded-lg border'>
+        <div className='flex h-fit bg-white px-4 py-5 gap-5 shadow-md rounded-lg border'>
             <div className='pr-5'>
                 <GaleriProduct image={data.product.image} />
             </div>
@@ -31,8 +31,8 @@ function BodyDetailProduct({ data }) {
                     }
                 </div>
                 {/* Description */}
-                <div>
-                    <p>
+                <div className='mt-2'>
+                    <p className='text-justify leading-tight tracking-tight'>
                         {data.product.deskripsi}
                     </p>
                 </div>

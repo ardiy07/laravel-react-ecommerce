@@ -32,10 +32,10 @@ function CardProduct({ type, shopeSlug, productSlug, image, name, price, priceSa
                             <p className='font-medium text-gray-500 text-sm capitalize'>Dilayani Tokopedia</p>
                             :
                             <div className='h-4 overflow-y-hidden'>
-                                <p className={`font-medium text-gray-500 text-sm duration-700 ${hover ? '-translate-y-full' : 'translate-y-0'}`}>
+                                <p className={`font-medium text-gray-500 text-sm duration-200 ${hover ? '-translate-y-full' : 'translate-y-0'}`}>
                                     {capitalize(city)}
                                 </p>
-                                <p className={`font-medium text-gray-500 text-sm duration-500 ${hover ? '-translate-y-full' : 'translate-y-0'}`}>
+                                <p className={`font-medium text-gray-500 text-sm duration-200 line-clamp-1 ${hover ? '-translate-y-full' : 'translate-y-0'}`}>
                                     {capitalize(shopeSlug.replace(/-/g, ' '))}
                                 </p>    
                             </div>

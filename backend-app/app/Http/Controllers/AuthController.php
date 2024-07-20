@@ -31,7 +31,8 @@ class AuthController extends Controller
             ]);
         }
 
-        DB::table('users')->where('id', $user->id)->update(['is_login' => true]);
+        $user->is_login = true;
+        $user->save();
 
         $token = $user->createToken('my-app')->plainTextToken;
 
