@@ -14,7 +14,7 @@ function ProductDetailPage() {
 
   const dispatch = useDispatch();
   const { isLogin } = useAuth();
-  const { data, status } = useSelector((state) => state.productDetail);
+  const { data, status, error } = useSelector((state) => state.productDetail);
   const category = useSelector((state) => state.productDetail.data.product?.category?.name);
   const categorySlug = useSelector((state) => state.productDetail.data.product?.category?.slug);
 
@@ -22,8 +22,10 @@ function ProductDetailPage() {
     dispatch(fetchDetailProduct(productSlug));
   }, [dispatch, productSlug])
 
+  
   if (APP_DEBUG) {
     console.log('Id Data Produk :', productSlug);
+    console.log('Error Data Produk :', error);
   }
 
   return (
@@ -34,7 +36,7 @@ function ProductDetailPage() {
             <div className='w-fit'>
             <Suspense fallback={<div>Loading.....</div>}>
               <BodyDetailProduct data={data} />
-              <BodyInfoProduct />
+              <BodyInfoProduct productSlug={productSlug} />
             </Suspense>
             </div>
 

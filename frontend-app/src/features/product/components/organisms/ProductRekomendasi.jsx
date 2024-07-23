@@ -4,6 +4,7 @@ import { fetchProductByShope } from '../../services';
 import { fetchHomeProduct } from '../../../home/services';
 import LoadingCard from '../../../../components/loading/LoadingCard';
 import { CardProduct } from '../../../../components';
+import { APP_DEBUG } from '../../../../config/env';
 
 function ProductRekomendasi({ exat, prod, shope }) {
     const dispatch = useDispatch();
@@ -28,11 +29,11 @@ function ProductRekomendasi({ exat, prod, shope }) {
 
     const fetchData = () => {
         dispatch(exat === 'rekom_1' ?
-            fetchProductByShope({ shope, limit: 12, page: page + 1 }) :
+            fetchProductByShope({ shope, page: page + 1 }) :
             fetchHomeProduct({ query: prod.replace(/-/g, ' '), limit: 12, page: page + 1 })
         ).then(response => {
             const newData = response.payload.data;
-            setDataProduct(prevData => [...prevData, ...newData]);
+            setDataProduct([...dataProduct, ...newData]);
         }).catch(error => {
             console.error('Error fetching more data:', error);
         });
@@ -44,6 +45,12 @@ function ProductRekomendasi({ exat, prod, shope }) {
             fetchData();
         }
     };
+
+    if(APP_DEBUG){
+        console.log('page :', page);
+        console.log('meta :', meta);
+        console.log('data :', dataProduct);
+    }
 
     return (
         <div className='mb-5'>

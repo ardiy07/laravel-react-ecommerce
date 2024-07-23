@@ -29,8 +29,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('promotion_id')->nullable();
-            $table->string('type', 30)->nullable();
-            $table->string('value', 30)->nullable();
+            $table->string('type_first', 30)->nullable();
+            $table->string('value_first', 30)->nullable();
+            $table->string('type_second', 30)->nullable();
+            $table->string('value_second', 30)->nullable();
+            $table->string('slug');
             $table->string('image')->nullable();
             $table->decimal('price', 10, 2);
             $table->decimal('price_sale', 10, 2)->nullable();
@@ -43,7 +46,7 @@ return new class extends Migration
             $table->boolean('is_default')->default(0);
             $table->boolean('is_active')->default(1);
             $table->timestamps();
-            $table->unique(['product_id', 'type', 'value']);
+            $table->unique(['product_id']);
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('cascade');
         });

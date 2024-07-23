@@ -15,18 +15,21 @@ const api = {
 
 
     // Product
-    getProductPromotion: (promotion) => axiosInstance.get(`/product-promotion?promotion=${promotion}`),
-    getProductSearch: (query, page) => axiosInstance.get(`/products?query=${query}&limit=25&page=${page}`),
-    getProductKupon: () => axiosInstance.get(`/products`),
-    getDetailProduct: (productSlug) => axiosInstance.get(`/product/${productSlug}`),
-    getProductHome: (query, limit, page) => axiosInstance.get(`/products?query=${query}&limit=${limit}&page=${page}`),
-    getProductTrending: (page) => axiosInstance.get(`/product-trending?page=${page}`),
-    getProductByShope: (shope, limit) => axiosInstance.get(`/product-shope/${shope}?limit=${limit}`),
+    getProductPromotion: (promotion) => axiosInstance.get('/product-promotion?promotion=' + promotion),
+    getProductSearch: (query, page) => axiosInstance.get('/products?query=' + query + '&limit=25&page=' + page),
+    getProductKupon: () => axiosInstance.get('/products'),
+    getDetailProduct: (productSlug) => axiosInstance.get('/product/' + productSlug),
+    getProductHome: (query, limit, page) => axiosInstance.get('/products?query=' + query + '&limit=' + limit + '&page=' + page),
+    getProductTrending: (page) => axiosInstance.get('/product-trending?page=' + page),
+    getProductByShope: (shope, page) => axiosInstance.get('/product-shope/' + shope + '?limit=12&page=' + page),
 
     // Cart
     getCard: () => axiosInstance.get('/card'),
     addCard: (data) => axiosInstance.post('/card', data),
-    getCardProduct: (productId, userId) => axiosInstance.get(`/card-product?productId=${productId}&userId=${userId}`),
+    getCardProduct: (productId, userId) => axiosInstance.get('/card-product?productId=' + productId + '&userId=' + userId ),
+
+    // Review
+    getReview: (slug) => axiosInstance.get('/reviews?slug=' + slug),
 
 }
 

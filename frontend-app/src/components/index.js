@@ -12,6 +12,7 @@ import CardProduct from "./card/CardProduct";
 import PlusProduct from "./button/PlusProduct";
 import MinusProduct from "./button/MinusProduct";
 import LoadinButtonWhite from "./loading/LoadinButtonWhite";
+import LoadingUlasan from "./loading/LoadingUlasan";
 
 export { 
     LoadingLazzy, 
@@ -25,5 +26,6 @@ export {
     CardProduct,
     PlusProduct,
     MinusProduct,
-    LoadinButtonWhite
+    LoadinButtonWhite,
+    LoadingUlasan
 }

@@ -79,9 +79,9 @@ export const fetchSearchResultProduct = createAsyncThunk(
 
 export const fetchProductByShope = createAsyncThunk(
     'product/fetchProductByShope',
-    async ({ shope, limit }, { rejectWithValue }) => {
+    async ({ shope, page }, { rejectWithValue }) => {
         try {
-            const response = await api.getProductByShope(shope, limit);
+            const response = await api.getProductByShope(shope, page);
             return response.data;
         } catch (error) {
             if (error.response && error.response.data) {

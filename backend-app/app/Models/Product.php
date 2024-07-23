@@ -35,12 +35,11 @@ class Product extends Model
         return $this->belongsTo(Shope::class, 'shope_id');
     }
 
-    
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
 
-    // public function detailPromotions(): HasMany
-    // {
-    //     return $this->hasMany(DetailPromotion::class, 'product_id');
-    // }
 
     public function card(): HasMany
     {

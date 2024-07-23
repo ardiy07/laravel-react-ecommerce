@@ -3,6 +3,7 @@
 use App\Http\Controllers\api\CardController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\api\ProfilController;
+use App\Http\Controllers\api\ReviewController;
 use App\Http\Controllers\api\ShopController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -40,11 +41,17 @@ Route::prefix('v1')->group(function () {
 
     // Login dan Logout
     Route::controller(ProductController::class)->group(function () {
+        // Product
         Route::get('/products', 'index')->name('product.index');
         Route::get('/product/{productSlug}', 'show')->name('product.show');
         Route::get('/product-promotion', 'promotion')->name('product.promotion');
         Route::get('/product-search', 'search')->name('product.search');
         Route::get('/product-trending', 'trending')->name('product.trending');
         Route::get('/product-shope/{shope}', 'productByShope')->name('product.shope');
+    });
+
+    Route::controller(ReviewController::class)->group(function () {
+         // Review
+         Route::get('/reviews', 'index')->name('review.index');
     });
 });

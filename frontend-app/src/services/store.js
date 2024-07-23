@@ -7,6 +7,7 @@ import { loginSlice, logoutSlice, registerSlice } from "../features/authenticati
 import localStorageMonitor from "../middleware/localStorageMonitor";
 import { promotionProductSlice, productHomeSlice, productKuponSlice, productTrendingSlice } from "../features/home";
 import { addCardSlice, cardGetSlice, getSearchProductSlice, productByShopeSlice, productDetailSlice } from "../features/product";
+import { reviewsDetailSlice } from "../features/review";
 
 
 const store = configureStore({
@@ -38,6 +39,9 @@ const store = configureStore({
         // product
         productSearchResult: getSearchProductSlice,
         productShope: productByShopeSlice,
+
+        // review
+        reviewsDetail: reviewsDetailSlice
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(localStorageMonitor),
     devTools: APP_DEBUG,

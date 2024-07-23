@@ -17,46 +17,50 @@ class ProductDetailResource extends JsonResource
         return [
             'data' => [
                 'product' => [
-                    'id' => $this->productVarians->where('is_default', 1)->first()->id,
-                    'name' => $this->name,
-                    'deskripsi' => $this->deskripsi,
+                    'id' => $this->id,
+                    'name' => $this->product->name,
+                    'deskripsi' => $this->product->deskripsi,
+                    'spesifikasi' => $this->product->specification,
                     'slug' => $this->slug,
-                    'price' => $this->productVarians->where('is_default', 1)->first()->price,
-                    'priceSale' => $this->productVarians->where('is_default', 1)->first()->price_sale ?? 0,
-                    'maxOrder' => $this->productVarians->where('is_default', 1)->first()->max_order ?? 0,
-                    'order' => $this->order,
-                    'stock' => $this->productVarians->where('is_default', 1)->first()->stock,
-                    'image' => $this->productVarians->where('is_default', 1)->first()->image,
-                    'rating' => $this->rating,
-                    'review' => $this->review,
+                    'price' => $this->price,
+                    'priceSale' => $this->price_sale ?? 0,
+                    'maxOrder' => $this->max_order ?? 0,
+                    'order' => $this->product->order,
+                    'stock' => $this->stock,
+                    'image' => $this->image,
+                    'rating' => round($this->product->rating, 1),
+                    'review' => $this->product->review,
                     'category' => [
-                        'id' => $this->subsubcategory->id,
-                        'name' => $this->subsubcategory->name,
-                        'slug' => $this->subsubcategory->slug,
+                        'id' => $this->product->subsubcategory->id,
+                        'name' => $this->product->subsubcategory->name,
+                        'slug' => $this->product->subsubcategory->slug,
                         'parent' => [
-                            'name' => $this->subsubcategory->subcategory->category->name,
-                            'slug' => $this->subsubcategory->subcategory->category->slug,
+                            'name' => $this->product->subsubcategory->subcategory->category->name,
+                            'slug' => $this->product->subsubcategory->subcategory->category->slug,
                         ],
                     ],
                     'shope' => [
-                        'id' => $this->shope->id,
-                        'name' => $this->shope->name,
-                        'city' => $this->shope->addres->village->distric->regencie->name,
-                        'icon' => $this->shope->typeShope->slug,
-                        'active' => $this->shope->user->updated_at->locale('id')->diffForHumans(),
+                        'id' => $this->product->shope->id,
+                        'name' => $this->product->shope->name,
+                        'city' => $this->product->shope->addres->village->distric->regencie->name,
+                        'icon' => $this->product->shope->typeShope->slug,
+                        'image' => $this->product->shope->image,
+                        'active' => $this->product->shope->is_active,
+                        'lastActive' => $this->product->shope->user->is_login == 0 ? $this->product->shope->user->updated_at->locale('id')->diffForHumans() : 'online',
                     ],
-                    'promotion' => $this->productVarians->where('is_active', 1)
-                        ->where('promotion_id', '!=', null)
-                        ->pluck('promotion.name', 'promotion.id')
-                        ->map(function ($name, $id) {
-                            return ['id' => $id, 'name' => $name];
-                        })->values(),
-                    'type' => $this->productVarians->where('is_active', 1)
-                        ->where('type', '!=', null)
-                        ->pluck('type.name', 'type.id')
-                        ->map(function ($name, $id) {
-                            return ['id' => $id, 'name' => $name];
-                        })->values(),
+                //     'promotion' => $this->productVarians->where('is_active', 1)
+                //         ->where('promotion_id', '!=', null)
+                //         ->pluck('promotion.name', 'promotion.id')
+                //         ->map(function ($name, $id) {
+                //             return ['id' => $id, 'name' => $name];
+                //         })->values(),
+                //     'type' => $this->productVarians->where('is_active', 1)
+                //         ->where('type', '!=', null)
+                //         ->pluck('type.name', 'type.id')
+                //         ->map(function ($name, $id) {
+                //             return ['id' => $id, 'name' => $name];
+                //         })->values(),
+                // ],
                 ],
             ]
         ];

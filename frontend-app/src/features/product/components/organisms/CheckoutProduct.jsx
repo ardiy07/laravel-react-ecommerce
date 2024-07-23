@@ -9,6 +9,7 @@ import { APP_DEBUG } from '../../../../config/env';
 import { fetchAddCard } from '../../services';
 import { ModalLogin } from '../../../authentication/components';
 import { LoadinButtonWhite } from '../../../../components';
+import LoadingCheckout from '../molecules/LoadingCheckout';
 
 function CheckoutProduct({ data, auth }) {
     const [quantity, setQuantity] = useState(1);
@@ -31,15 +32,16 @@ function CheckoutProduct({ data, auth }) {
     const handleCloseModal = () => {
         setShowFormLogin(false);
     };
+    
+    if (!data || !data.product) {
+        return <LoadingCheckout />;
+    }
 
     if (APP_DEBUG) {
         console.log('Data Detail Cekc: ', data)
 
     }
 
-    if (!data || !data.product) {
-        return <div>Loading...</div>;
-    }
 
 
     return (

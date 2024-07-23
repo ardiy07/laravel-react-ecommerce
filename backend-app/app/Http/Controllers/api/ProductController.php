@@ -64,11 +64,12 @@ class ProductController extends Controller
 
     public function show($productSlug)
     {
-        $product = Product::with(['productVarians', 'shope', 'subsubcategory'])->where('slug', $productSlug)->first();
+        $product = ProductVarian::with(['product', 'product.shope', 'product.subsubcategory', 'promotion'])->where('slug', $productSlug)->first();
         if (!$product) {
             return response()->json(['message' => 'Data tidak ditemukan'], 404);
         }
         return new ProductDetailResource($product);
+        // return response()->json($product);
     }
 
     public function promotion(Request $request)
@@ -114,9 +115,8 @@ class ProductController extends Controller
         if (!$shope) {
             return response()->json(['message' => 'Shope Tidak Ditemukan'], 404);
         }   
-        $products = Product::where('shope_id', $shope->id)
-        ->paginate($limit)
-        ->appends(['shope' => $shopeSlug]);
+        $products = Product::where('shope_id', $shope->id)->paginate($limit);
+        // ->paginate($limit);
 
         return new ProductCardCollection($products);
     }

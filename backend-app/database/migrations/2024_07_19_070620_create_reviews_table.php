@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('product_variant_id')->nullable();
             $table->integer('rating');
             $table->text('comment');
+            $table->boolean('is_reply')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -77,4 +77,9 @@ class User extends Authenticatable
         return $this->hasMany(Card::class);
     }
 
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
+
 }

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('image', 255)->nullable();
             $table->string('slug');
             $table->unsignedBigInteger('type_shope_id');
+            $table->boolean('is_active')->default(1);
             $table->float('ratings')->default(0);
             $table->integer('followers')->default(0);
             $table->timestamps();

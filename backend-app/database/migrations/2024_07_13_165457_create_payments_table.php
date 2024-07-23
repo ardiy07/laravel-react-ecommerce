@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('order_id');
             $table->decimal('amount', 10, 2);
             $table->string('payment_method');
-            $table->string('status')->default('pending');
+            $table->enum('status', ['pending', 'success', 'failed'])->default('pending');
             $table->timestamps();
 
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
