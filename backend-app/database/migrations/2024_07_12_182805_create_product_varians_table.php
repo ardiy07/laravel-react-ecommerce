@@ -11,34 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('variant_firsts', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('name', 30);
-        //     $table->string('slug', 50);
-        //     $table->timestamps();
-        // });
-
-        // Schema::create('variant_seconds', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('name', 30);
-        //     $table->string('slug', 50);
-        //     $table->timestamps();
-        // });
-
         Schema::create('product_varians', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('promotion_id')->nullable();
-            $table->string('type_first', 30)->nullable();
-            $table->string('value_first', 30)->nullable();
-            $table->string('type_second', 30)->nullable();
-            $table->string('value_second', 30)->nullable();
-            $table->string('slug');
+            $table->unsignedBigInteger('option_first_id')->nullable();
+            $table->unsignedBigInteger('option_second_id')->nullable();
             $table->string('image')->nullable();
             $table->decimal('price', 10, 2);
             $table->decimal('price_sale', 10, 2)->nullable();
             $table->integer('stock')->default(1);
             $table->integer('order')->default(0);
+            $table->integer('berat')->default(0);
             $table->integer('stock_promotion')->default(0);
             $table->integer('order_promotion')->default(0);
             $table->integer('min_order')->default(1);
@@ -46,9 +30,10 @@ return new class extends Migration
             $table->boolean('is_default')->default(0);
             $table->boolean('is_active')->default(1);
             $table->timestamps();
-            $table->unique(['product_id']);
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('promotion_id')->references('id')->on('promotions')->onDelete('cascade');
+            $table->foreign('option_first_id')->references('id')->on('varians')->onDelete('cascade');
+            $table->foreign('option_second_id')->references('id')->on('varians')->onDelete('cascade');
         });
     }
 
@@ -57,13 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('product_varians', function (Blueprint $table) {
-            $table->dropForeign(['var_first_id']);
-            $table->dropForeign(['var_second_id']);
-        });
-
         Schema::dropIfExists('product_varians');
-        Schema::dropIfExists('variant_firsts');
-        Schema::dropIfExists('variant_seconds');
     }
 };

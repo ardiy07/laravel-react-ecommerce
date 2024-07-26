@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import '../../assets/css/icons.css'
 import { capitalize, discountPercentage, formatCurrency, formatOrder } from '../../utils/formatUtils'
 
-function CardProduct({ type, shopeSlug, productSlug, image, name, price, priceSale, promo, city, rating, order, icon }) {
+function CardProduct({ shopeSlug, productSlug, image, name, price, priceSale, promo, city, rating, order, icon }) {
     const [hover, setHover] = useState(false);
     return (
         <div className="max-w-48 rounded-lg bg-white overflow-hidden shadow border h-[21rem] my-4" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} >
-            <Link to={`/${shopeSlug}/${productSlug}${type && `-v-${type}`}`}>
+            <Link to={'/' + shopeSlug + '/' + productSlug}>
                 <img className="w-52 h-44" src={image} alt={name} />
                 <div className="px-3 py-1 mb-5 flex flex-col gap-[0.2rem]">
                     <p className="text-sm font-normal line-clamp-2 capitalize">{name}</p>

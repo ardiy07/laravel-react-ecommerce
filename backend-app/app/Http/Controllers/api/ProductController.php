@@ -21,26 +21,31 @@ class ProductController extends Controller
     //
     public function index(Request $request)
     {
-        $search = $request->input('query');
-        $key = '%' . $search . '%';
+        $query = $request->input('query');
+        $key = '%' . $query . '%';
         $limit = $request->input('limit', 23);
         $page = $request->input('page', 1);
 
-        $products = Product::with(['productVarians', 'productVarians.promotion', 'shope', 'subsubcategory'])
+        $products = Product::with(['productVarians' => function ($query) {
+            $query->where('is_default', 1);
+        }, 'productVarians.promotion', 'shope', 'subsubcategory'])
+            ->whereHas('productVarians', function ($query) {
+                $query->where('is_default', 1);
+            })
             ->where(function ($query) use ($key) {
-                $query->where('name', 'like', '%' . $key . '%')
+                $query->where('name', 'like', $key)
                     ->orWhereHas('subsubcategory', function ($query) use ($key) {
-                        $query->where('name', 'like', '%' . $key . '%');
+                        $query->where('name', 'like', $key);
                     })
                     ->orWhereHas('subsubcategory.subcategory', function ($query) use ($key) {
-                        $query->where('name', 'like', '%' . $key . '%');
+                        $query->where('name', 'like', $key);
                     })
                     ->orWhereHas('subsubcategory.subcategory.category', function ($query) use ($key) {
-                        $query->where('name', 'like', '%' . $key . '%');
+                        $query->where('name', 'like', $key);
                     });
             })
             ->paginate($limit)
-            ->appends(['query' => $search, 'limit' => $limit]);
+            ->appends(['query' => $query, 'limit' => $limit, 'page' => $page]);
 
         return new ProductCardCollection($products);
     }
@@ -64,7 +69,11 @@ class ProductController extends Controller
 
     public function show($productSlug)
     {
-        $product = ProductVarian::with(['product', 'product.shope', 'product.subsubcategory', 'promotion'])->where('slug', $productSlug)->first();
+        // $product = ProductVarian::with(['product', 'product.shope', 'product.subsubcategory', 'promotion'])->where('slug', $productSlug)->first();
+        // if (!$product) {
+        //     return response()->json(['message' => 'Data tidak ditemukan'], 404);
+        // }
+        $product = Product::with(['shope', 'optionVariants', 'productVarians', 'subsubcategory', 'productVarians.promotion'])->where('slug', $productSlug)->first();
         if (!$product) {
             return response()->json(['message' => 'Data tidak ditemukan'], 404);
         }
@@ -114,10 +123,8 @@ class ProductController extends Controller
         $shope = Shope::where('slug', $shopeSlug)->first();
         if (!$shope) {
             return response()->json(['message' => 'Shope Tidak Ditemukan'], 404);
-        }   
+        }
         $products = Product::where('shope_id', $shope->id)->paginate($limit);
-        // ->paginate($limit);
-
         return new ProductCardCollection($products);
     }
 }

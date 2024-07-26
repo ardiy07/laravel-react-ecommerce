@@ -14,17 +14,19 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            CategorieSeeder::class,
-            TypeShopeSeeder::class,
-            ProvinceSeeder::class,
-            RegencieSeeder::class,
-            DistrictSeeder::class,
-            VillageSeeder::class,
-            UserSeeder::class,
-            ShopSeeder::class,
-            PromotionSeeder::class,
-            ProductSeeder::class,
-            // DetailPromotionSeeder::class
+            // CategorieSeeder::class,
+            // TypeShopeSeeder::class,
+            // ProvinceSeeder::class,
+            // RegencieSeeder::class,
+            // DistrictSeeder::class,
+            // VillageSeeder::class,
+            // UserSeeder::class,
+            // ShopSeeder::class,
+            ProductSeeder::class
+
+            // PromotionSeeder::class,
+            // DetailPromotionSeeder::class,
+            // OptionVariansSeeder::class
         ]);
 
 

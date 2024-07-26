@@ -8,11 +8,17 @@ import { CountDownTimer, LoadinButtonWhite, LoadingLazzy } from '../../../../com
 
 function PenggunaBaru() {
   const dispatch = useDispatch();
-  const { promotion, status } = useSelector((state) => state.promotionProduct);
+  const { promotion, status, data } = useSelector((state) => state.promotionProduct);
 
   useEffect(() => {
     dispatch(fetchProductPromotion());
   }, [dispatch]);
+
+  if(APP_DEBUG){
+    console.log('Pengguna Baru:', promotion);
+    console.log('Product Pengguna Baru:', data);
+    console.log('Status: ', status);
+  }
 
   return (
     <div className='mx-16 mb-10 pb-5 border-b'>
@@ -29,7 +35,7 @@ function PenggunaBaru() {
           }
           {status === 'succeeded' &&
             <Suspense fallback={<LoadingLazzy />}>
-              <CountDownTimer expirationString={promotion.endDate} />
+              <CountDownTimer expirationString={promotion.endPromo} />
             </Suspense>
           }
         </p>

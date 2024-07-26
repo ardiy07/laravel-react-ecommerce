@@ -5,12 +5,21 @@ const intialState = {
     status: 'idle',
     error: null,
     data: {},
+    productSelected: {},
+    loading: false
 }
 
 const productDetailSlice = createSlice({
     name: 'productDetail',
     initialState: intialState,
-    reducers: {},
+    reducers: {
+        setProductSelected: (state, action) => {
+            state.productSelected = action.payload
+        },
+        setLoading: (state, action) => {
+            state.loading = action.payload
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchDetailProduct.pending, (state) => {
@@ -31,4 +40,5 @@ const productDetailSlice = createSlice({
     }
 })
 
+export const { setProductSelected, setLoading } = productDetailSlice.actions;
 export default productDetailSlice.reducer

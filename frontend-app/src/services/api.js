@@ -15,7 +15,7 @@ const api = {
 
 
     // Product
-    getProductPromotion: (promotion) => axiosInstance.get('/product-promotion?promotion=' + promotion),
+    getProductPromotion: (promotion) => axiosInstance.get('/promotion?promotion=' + promotion),
     getProductSearch: (query, page) => axiosInstance.get('/products?query=' + query + '&limit=25&page=' + page),
     getProductKupon: () => axiosInstance.get('/products'),
     getDetailProduct: (productSlug) => axiosInstance.get('/product/' + productSlug),

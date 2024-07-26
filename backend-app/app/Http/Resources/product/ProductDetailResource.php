@@ -16,39 +16,97 @@ class ProductDetailResource extends JsonResource
     {
         return [
             'data' => [
-                'product' => [
+                'productBase' => [
                     'id' => $this->id,
-                    'name' => $this->product->name,
-                    'deskripsi' => $this->product->deskripsi,
-                    'spesifikasi' => $this->product->specification,
                     'slug' => $this->slug,
-                    'price' => $this->price,
-                    'priceSale' => $this->price_sale ?? 0,
-                    'maxOrder' => $this->max_order ?? 0,
-                    'order' => $this->product->order,
-                    'stock' => $this->stock,
-                    'image' => $this->image,
-                    'rating' => round($this->product->rating, 1),
-                    'review' => $this->product->review,
-                    'category' => [
-                        'id' => $this->product->subsubcategory->id,
-                        'name' => $this->product->subsubcategory->name,
-                        'slug' => $this->product->subsubcategory->slug,
-                        'parent' => [
-                            'name' => $this->product->subsubcategory->subcategory->category->name,
-                            'slug' => $this->product->subsubcategory->subcategory->category->slug,
+                    'name' => $this->name,
+                    'deskripsi' => $this->deskripsi,
+                    'spesifikasi' => $this->specification,
+                    'rating' => round($this->rating, 1),
+                    'review' => $this->review,
+                    'order' => $this->order,
+                    'prtice' => $this->productVarians->where('is_default', 1)->first()->price,
+                ],
+                'variants' => $this->optionVariants->map(function ($item) {
+                    return [
+                        'id' => $item->id,
+                        'name' => $item->name,
+                        'varians' => $item->varians->map(function ($item) {
+                            return [
+                                'id' => $item->id,
+                                'name' => $item->name,
+                                'image' => $item->image,
+                            ];
+                        })
+                    ];
+                }),
+                'shope' => [
+                    'id' => $this->shope->id,
+                    'name' => $this->shope->name,
+                    'city' => $this->shope->addres->village->distric->regencie->name,
+                    'icon' => $this->shope->typeShope->slug,
+                    'image' => $this->shope->image,
+                    'active' => $this->shope->is_active,
+                    'lastActive' => $this->shope->user->is_login == 0 ? $this->shope->user->updated_at->locale('id')->diffForHumans() : 'online',
+                ],
+                'category' => [
+                    'id' => $this->subsubcategory->id,
+                    'name' => $this->subsubcategory->name,
+                    'detail' => [
+                        [
+                            'id' => $this->subsubcategory->subcategory->category->id,
+                            'name' => $this->subsubcategory->subcategory->category->name,
                         ],
+                        [
+                            'id' => $this->subsubcategory->subcategory->id,
+                            'name' => $this->subsubcategory->subcategory->name,
+                        ],
+                        [
+                            'id' => $this->subsubcategory->id,
+                            'name' => $this->subsubcategory->name,
+                        ]
                     ],
-                    'shope' => [
-                        'id' => $this->product->shope->id,
-                        'name' => $this->product->shope->name,
-                        'city' => $this->product->shope->addres->village->distric->regencie->name,
-                        'icon' => $this->product->shope->typeShope->slug,
-                        'image' => $this->product->shope->image,
-                        'active' => $this->product->shope->is_active,
-                        'lastActive' => $this->product->shope->user->is_login == 0 ? $this->product->shope->user->updated_at->locale('id')->diffForHumans() : 'online',
-                    ],
-                //     'promotion' => $this->productVarians->where('is_active', 1)
+                ],
+                'children' => $this->productVarians->map(function ($product) {
+                    $productData = [
+                        'id' => $product->id,
+                        'name' => $product->product->name,
+                        'slug' => $product->product->slug,
+                        'image' => $product->image,
+                        'price' => $product->price,
+                        'priceSale' => $product->price_sale,
+                        'promotion' => [
+                            'id' => $product->promotion->id ?? 0,
+                            'name' => $product->promotion->name ?? '',
+                            'originalPrice' => $product->price,
+                            'originalSalePrice' => $product->price_sale,
+                            'minOrder' => $product->min_order,
+                            'maxOrder' => $product->max_order,
+                            'stock' => $product->stock,
+                            'startPromo' => $product->promotion->start_date ?? '',
+                            'endPromo' => $product->promotion->end_date ?? '',
+                        ]
+                    ];
+
+                    if ($product->firstVariant || $product->secondVariant) {
+                        $productData['variantID'] = array_filter([
+                            $product->firstVariant?->id,
+                            $product->secondVariant?->id
+                        ]);
+
+                        $productData['variantName'] = array_filter([
+                            $product->firstVariant?->name,
+                            $product->secondVariant?->name
+                        ]);
+                    }
+                    return $productData;
+                })
+            ]
+        ];
+    }
+}
+
+//     'promotion' => $this->productVarians->where('is_active', 1)
                 //         ->where('promotion_id', '!=', null)
                 //         ->pluck('promotion.name', 'promotion.id')
                 //         ->map(function ($name, $id) {
@@ -61,8 +119,3 @@ class ProductDetailResource extends JsonResource
                 //             return ['id' => $id, 'name' => $name];
                 //         })->values(),
                 // ],
-                ],
-            ]
-        ];
-    }
-}

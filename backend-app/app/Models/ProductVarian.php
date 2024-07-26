@@ -23,4 +23,19 @@ class ProductVarian extends Model
     {
         return $this->belongsTo(Promotion::class, 'promotion_id');
     }
+
+    public function review(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function firstVariant(): BelongsTo
+    {
+        return $this->belongsTo(Variant::class, 'option_first_id');
+    }
+    
+    public function secondVariant(): BelongsTo
+    {
+        return $this->belongsTo(Variant::class, 'option_second_id');
+    }
 }

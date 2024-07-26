@@ -13,7 +13,7 @@ class Promotion extends Model
     // protected $guarded = ['id'];
     protected $table = 'promotions';
 
-    public function productVarian(): HasMany
+    public function productVariants(): HasMany
     {
         return $this->hasMany(ProductVarian::class);
     }

@@ -16,10 +16,9 @@ class CardController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $cards = Card::with(['productVariant.product', 'productVariant.product.shope'])->where('user_id', $user->id)->get();
+        $cards = Card::with(['productVariant.product', 'productVariant.product.shope',  'productVariant.firstVariant', 'productVariant.secondVariant'])->where('user_id', $user->id)->get();
         $totalQuantity = $cards->sum('quantity');
         return new CardCollection($cards, $totalQuantity);
-        // return response()->json([$cards, $totalQuantity]);
     }
 
     public function store(Request $request)

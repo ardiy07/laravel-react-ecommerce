@@ -33,16 +33,16 @@ class UserSeeder extends Seeder
         $buyer = [];
         $seller = [];
         $users = [
-            ['id' => 1, 'name' => 'super admin',  'email' => 'superadmin@example.com', 'email_verified_at' => now(),  'password' => Hash::make('password')],
-            ['id' => 2, 'name' => 'admin', 'email' => 'admin@example.com', 'email_verified_at' => now(),  'password' => Hash::make('password')],
+            ['id' => 1, 'name' => 'super admin',  'email' => 'superadmin@example.com', 'email_verified_at' => now(),  'password' => Hash::make('password'), 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 2, 'name' => 'admin', 'email' => 'admin@example.com', 'email_verified_at' => now(),  'password' => Hash::make('password'), 'created_at' => now(), 'updated_at' => now()],
         ];
 
         for ($i=3; $i <= 14; $i++) {
-            $buyer[] = ['id' => $i, 'name' => 'buyer'.$i, 'email' => 'buyer'.$i.'@example.com', 'email_verified_at' => now(),  'password' => Hash::make('password')];
+            $buyer[] = ['id' => $i, 'name' => 'buyer'.$i, 'email' => 'buyer'.$i.'@example.com', 'email_verified_at' => now(),  'password' => Hash::make('password'), 'created_at' => now(), 'updated_at' => now()];
         }
 
         for ($i=15; $i <= 29; $i++) {
-            $seller[] = ['id' => $i, 'name' => 'seller'.$i,  'email' => 'seller'.$i.'@example.com', 'email_verified_at' => now(),  'password' => Hash::make('password')];
+            $seller[] = ['id' => $i, 'name' => 'seller'.$i,  'email' => 'seller'.$i.'@example.com', 'email_verified_at' => now(),  'password' => Hash::make('password'), 'created_at' => now(), 'updated_at' => now()];
         }
 
         DB::table('users')->insert($users);

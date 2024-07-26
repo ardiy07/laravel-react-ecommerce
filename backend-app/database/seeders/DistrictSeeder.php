@@ -18,12 +18,11 @@ class DistrictSeeder extends Seeder
         $jsonString = file_get_contents($jsonFile);
         $data = json_decode($jsonString, true);
 
-        // Sesuaikan dengan struktur data JSON Anda
         foreach ($data as $item) {
             District::create([
                 'id' => $item['id'],
                 'regencie_id' => $item['regencie_id'],
-                'name' => $item['name'],
+                'name' => ucwords(strtolower($item['name'])),
             ]);
         }
     }

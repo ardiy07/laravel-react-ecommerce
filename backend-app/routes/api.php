@@ -3,6 +3,7 @@
 use App\Http\Controllers\api\CardController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\api\ProfilController;
+use App\Http\Controllers\api\PromotionController;
 use App\Http\Controllers\api\ReviewController;
 use App\Http\Controllers\api\ShopController;
 use App\Http\Controllers\AuthController;
@@ -41,7 +42,6 @@ Route::prefix('v1')->group(function () {
 
     // Login dan Logout
     Route::controller(ProductController::class)->group(function () {
-        // Product
         Route::get('/products', 'index')->name('product.index');
         Route::get('/product/{productSlug}', 'show')->name('product.show');
         Route::get('/product-promotion', 'promotion')->name('product.promotion');
@@ -53,5 +53,10 @@ Route::prefix('v1')->group(function () {
     Route::controller(ReviewController::class)->group(function () {
          // Review
          Route::get('/reviews', 'index')->name('review.index');
+    });
+
+    Route::controller(PromotionController::class)->group(function () {
+        // Promotion Pengguna Baru
+         Route::get('/promotion', 'getPromotion')->name('promotion');
     });
 });

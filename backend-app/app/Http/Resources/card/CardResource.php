@@ -25,11 +25,7 @@ class CardResource extends JsonResource
                 'priceSale' => $this->productVariant->price_sale ?? 0,
                 'image' => $this->productVariant->image
             ],
-            'shope' => [
-                'id' => $this->productVariant->product->shope->id,
-                'name' => $this->productVariant->product->shope->name,
-                'slug' => $this->productVariant->product->shope->slug,
-            ],
+
             'type' => [
                 'id' => $this->productVariant->id,
                 'name' => $this->productVariant->value,

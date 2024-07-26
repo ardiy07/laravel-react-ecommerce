@@ -1,7 +1,7 @@
 import React from 'react'
 import { MinusProduct, PlusProduct } from '../../../../components'
 
-function Quantity({ value,onChange, maxOrder }) {
+function Quantity({ value,onChange, maxOrder, minOrder }) {
     const handleIncrement = () => {
         onChange(value + 1);
     };
@@ -19,6 +19,7 @@ function Quantity({ value,onChange, maxOrder }) {
                 value={value}
                 onChange={(e) => onChange(parseInt(e.target.value) || 1)}
                 max={maxOrder}
+                min={minOrder}
             />
             <PlusProduct onClick={handleIncrement} disabled={value >= maxOrder}/>
         </div>

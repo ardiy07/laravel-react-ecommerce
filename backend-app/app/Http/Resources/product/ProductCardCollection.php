@@ -15,30 +15,30 @@ class ProductCardCollection extends ResourceCollection
     public function toArray(Request $request): array
     {
         return [
-           'data' => $this->collection->transform(function ($products) {
+           'data' => $this->collection->transform(function ($product) {
                 return [
                     'product' => [
-                        'id' => $products->id,
-                        'name' => $products->name,
-                        'productSlug' => $products->slug,
-                        'deskripsi' => $products->deskripsi,
-                        'rating' => $products->rating,
-                        'stock' => $products->productVarians->where('is_default', 1)->first()->stock ?? 0,
-                        'order' => $products->productVarians->where('is_default', 1)->first()->order ?? 0,
-                        'price' => $products->productVarians->where('is_default', 1)->first()->price ?? 0,
-                        'priceSale' => $products->productVarians->where('is_default', 1)->first()->price_sale ?? 0,
-                        'image' => $products->productVarians->where('is_default', 1)->first()->image,
-                        'varian' => $products->productVarians->where('is_default', 1)->first()->value ?? '',
+                        'id' => $product->id,
+                        'name' => $product->name,
+                        'productSlug' => $product->slug,
+                        'deskripsi' => $product->deskripsi,
+                        'rating' => $product->rating,
+                        'stock' => $product->productVarians->where('is_default', 1)->first()->stock ?? 0,
+                        'order' => $product->productVarians->where('is_default', 1)->first()->order ?? 0,
+                        'price' => $product->productVarians->where('is_default', 1)->first()->price ?? 0,
+                        'priceSale' => $product->productVarians->where('is_default', 1)->first()->price_sale ?? 0,
+                        'image' => $product->productVarians->where('is_default', 1)->first()->image,
+                        'varian' => $product->productVarians->where('is_default', 1)->first()->value ?? '',
                         'category' => [
-                            'id' => $products->subsubcategory_id,
-                            'name' => $products->subsubcategory->name,
+                            'id' => $product->subsubcategory_id,
+                            'name' => $product->subsubcategory->name,
                         ],
                         'shope' => [
-                            'id' => $products->shope_id,
-                            'name' => $products->shope->name,
-                            'slug' => $products->shope->slug,
-                            'icon' => $products->shope->typeShope->slug,
-                            'city' => $products->shope->addres->village->distric->regencie->name,
+                            'id' => $product->shope_id,
+                            'name' => $product->shope->name,
+                            'slug' => $product->shope->slug,
+                            'icon' => $product->shope->typeShope->slug,
+                            'city' => $product->shope->addres->village->distric->regencie->name,
                         ]
                     ]
                 ];

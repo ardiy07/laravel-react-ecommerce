@@ -20,7 +20,7 @@ export const fetchProductPromotion = createAsyncThunk(
     'home/fetchProductPromotion',
     async (promotion, { rejectWithValue }) => {
         try {
-            const response = await api.getProductPromotion('pengguna-baru');
+            const response = await api.getProductPromotion('khusus-pengguna-baru');
             return response.data;
         } catch (error) {
             if (error.response && error.response.data) {

@@ -15,7 +15,7 @@ function BodyInfoProduct({ productSlug }) {
         dispatch(fetchReviewsDetail(productSlug));
     }, [dispatch, productSlug]);
 
-    const deskripsi = useSelector((state) => state.productDetail.data.product?.deskripsi);
+    const deskripsi = useSelector((state) => state.productDetail.data.productBase?.deskripsi);
     const spesifikasi = useSelector((state) => state.productDetail.data.product?.spesifikasi);
     const [currentPage, setCurrentPage] = useState("Deskripsi");
 
@@ -23,6 +23,7 @@ function BodyInfoProduct({ productSlug }) {
         console.log('status review: ', status)
         console.log('data review: ', data)
     }
+    const formattedDescription = deskripsi?.replace(/\n/g, '<br/>');
 
     return (
         <div className='mt-5 flex gap-2 w-full'>
@@ -74,9 +75,7 @@ function BodyInfoProduct({ productSlug }) {
                 <div className='px-7 py-3'>
                     {currentPage === "Deskripsi" &&
                         <div className='min-h-52'>
-                            <p className='text-justify tracking-tight leading-tight'>
-                                {deskripsi}
-                            </p>
+                             <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />
                         </div>
                     }
                     {currentPage === "Spesifikasi" &&
@@ -89,10 +88,10 @@ function BodyInfoProduct({ productSlug }) {
                     {currentPage === "Ulasan" &&
                         <div className='flex flex-col gap-2'>
                             {status === 'pending' && <LoadingUlasan />}
-                            {status === 'succeeded' && 
+                            {status === 'succeeded' &&
                                 <>
-                                    {data.reviews.map ((item, index) => (
-                                        <ReviewDetail key={index} comment={item.review.comment} created={item.review.created} image={item.review.user.image} name={item.review.user.name} stars={item.review.rating}/>
+                                    {data.reviews.map((item, index) => (
+                                        <ReviewDetail key={index} comment={item.review.comment} created={item.review.created} image={item.review.user.image} name={item.review.user.name} stars={item.review.rating} />
                                     ))}
                                 </>
                             }

@@ -6,6 +6,8 @@ import { fetchDetailProduct } from '../services';
 import { BodyDetailProduct, BodyInfoProduct, CheckoutProduct, ProductDetailLainnya, ProductShope } from '../components';
 import useAuth from '../../../hooks/useAuth';
 import { APP_DEBUG } from '../../../config/env';
+import LoadingCheckout from '../components/molecules/LoadingCheckout';
+import LoadingBodyDetail from '../components/molecules/LoadingBodyDetail';
 
 function ProductDetailPage() {
   const { productSlug, shopeSlug } = useParams();
@@ -26,6 +28,7 @@ function ProductDetailPage() {
   if (APP_DEBUG) {
     console.log('Id Data Produk :', productSlug);
     console.log('Error Data Produk :', error);
+    console.log('Data Produk :', data);
   }
 
   return (
@@ -33,16 +36,16 @@ function ProductDetailPage() {
       <div className='bg-gray-50'>
         {status !== 'idle' &&
           <div className='flex w-fit px-14 gap-3 py-6'>
-            <div className='w-fit'>
-            <Suspense fallback={<div>Loading.....</div>}>
+            <div className='w-full'>
+            <Suspense fallback={<LoadingBodyDetail />}>
               <BodyDetailProduct data={data} />
               <BodyInfoProduct productSlug={productSlug} />
             </Suspense>
             </div>
 
             <div className='w-96'>
-              <Suspense fallback={<div>Loading.....</div>}>
-                <CheckoutProduct data={data} auth={isLogin} />
+              <Suspense fallback={<LoadingCheckout />}>
+                <CheckoutProduct auth={isLogin} />
               </Suspense>
             </div>
           </div>

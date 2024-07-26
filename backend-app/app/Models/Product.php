@@ -40,6 +40,11 @@ class Product extends Model
         return $this->hasMany(Review::class);
     }
 
+    public function optionVariants(): HasMany
+    {
+        return $this->hasMany(OptionVarians::class);
+    }
+
 
     public function card(): HasMany
     {

@@ -5,6 +5,7 @@ const initialState = {
     status: 'idle',
     error: null,
     data: [],
+    meta: [],
     message: ''
 }
 
@@ -22,6 +23,7 @@ const productKuponSlice = createSlice({
             .addCase(fetchProductKupon.fulfilled, (state, action) => {
                 state.status = 'succeeded'
                 state.data = action.payload.data
+                state.meta = action.payload.meta
             })
             .addCase(fetchProductKupon.rejected, (state, action) => {
                 state.status = 'failed'

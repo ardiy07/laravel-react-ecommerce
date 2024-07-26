@@ -87,9 +87,10 @@ Aplikasi cloning [Tokopedia](https://www.tokopedia.com/) dengan beberapa modifik
 - Buka browser Anda dan navigasikan ke `http://localhost:8000` untuk mengakses backend Laravel.
 - Buka browser Anda dan navigasikan ke `http://localhost:5173` untuk mengakses frontend React.
 
-## Fitur yang Tersedia
+## Fitur yang Masih Tersedia
 
 - **Autentikasi Pengguna:** Fungsi register, login, dan logout.
-- **Daftar Produk:** Melihat daftar produk dengan paginasi.
+- **Daftar Produk:** Melihat daftar produk, paginasi, search produk, variant produk.
 - **Detail Produk:** Melihat informasi detail tentang produk tertentu.
-- **Manajemen Keranjang:** Menambah dan menghapus produk dari keranjang belanja.
+- **Review Produk:** Melihat review product.
+- **Manajemen Keranjang:** Menambah dan melihat produk dari keranjang belanja.

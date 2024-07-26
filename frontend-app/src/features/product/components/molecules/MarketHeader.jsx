@@ -36,6 +36,7 @@ function MarketHeader({ count, dataCards }) {
                                 quantity={item.quantity}
                                 price={item.product.price}
                                 priceSale={item.product.priceSale}
+                                variants={item.type.variantName}
                             />
                         ))}
                     </>

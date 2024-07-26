@@ -11,7 +11,7 @@ import LoadingCardPromotion from '../../../../components/loading/LoadingCardProm
 
 function SliderPenggunaBaru() {
     const [open, setOpen] = useState(false);
-    const { data, promotion, status } = useSelector((state) => state.promotionProduct);
+    const { products, promotion, status } = useSelector((state) => state.promotionProduct);
 
 
     const onOpen = () => {
@@ -22,7 +22,7 @@ function SliderPenggunaBaru() {
         setOpen(false);
     };
 
-    const slide = 18
+    const slide = promotion.countProduct;
     const { shouldHideNextArrow, shouldHidePrevArrow, updateCurrentSlide, currentSlide } = useSlider(slide);
     const settings = {
         dots: false,
@@ -34,9 +34,9 @@ function SliderPenggunaBaru() {
         prevArrow: <BackSlider onOpen={open} onHidden={shouldHidePrevArrow} />,
         beforeChange: (current, next) => updateCurrentSlide(next),
     };
-
+    
     if (APP_DEBUG) {
-        console.log('Data Pengguna Baru', data);
+        console.log('Data Pengguna Baru', products);
         console.log('status Pengguna Baru', status);
     }
 
@@ -62,7 +62,7 @@ function SliderPenggunaBaru() {
                         <div className={`bg-[#FFE0A2] max-w-[16rem] h-full absolute -z-10 rounded-xl transform duration-1000 ${currentSlide == 0 ? "translate-x-0 opacity-100 ml-0" : "translate-x-full opacity-0 -ml-96"}`}>
                             <img src={getAssetImages('promo/3a3ab6ad-b137-48cd-91e8-b25fe43464f7.png.webp')} className='w-[7.5rem] ml-10' alt='slider' />
                         </div>
-                        {data.map((item, index) => (
+                        {products.map((item, index) => (
                             <CardProductPromo
                                 key={index}
                                 image={item.image}
@@ -72,8 +72,8 @@ function SliderPenggunaBaru() {
                                 price={item.price}
                                 type={item.varian}
                                 priceDiscount={item.priceSale}
-                                shopeSlug={item.shopeName}
-                                productSlug={item.productSlug}
+                                shopeSlug={item.shope.slug}
+                                productSlug={item.slug}
                             />
                         ))}
                     </Slider>

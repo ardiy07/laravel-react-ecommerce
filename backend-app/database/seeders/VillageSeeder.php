@@ -20,12 +20,11 @@ class VillageSeeder extends Seeder
         $jsonString = file_get_contents($jsonFile);
         $data = json_decode($jsonString, true);
 
-        // Sesuaikan dengan struktur data JSON Anda
         foreach ($data as $item) {
             Village::create([
                 'id' => $item['id'],
                 'district_id' => $item['district_id'],
-                'name' => $item['name'],
+                'name' => ucwords(strtolower($item['name']))
             ]);
         }
     }

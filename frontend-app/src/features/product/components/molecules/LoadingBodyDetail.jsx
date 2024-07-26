@@ -2,7 +2,7 @@ import React from 'react'
 
 function LoadingBodyDetail() {
     return (
-        <div className='flex h-fit bg-white px-4 py-5 gap-5 shadow rounded-lg border'>
+        <div className='flex h-fit bg-white px-4 py-5 gap-5 shadow rounded-lg border w-[59rem]'>
             <div className="pr-5">
                 <div className='bg-gray-200 w-[23rem] h-72 rounded-md animate-pulse'></div>
             </div>

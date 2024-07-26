@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 
 function SliderKupon() {
     const [open, setOpen] = useState(false);
-    const { data, status } = useSelector((state) => state.productKupon);
+    const { data, status, meta } = useSelector((state) => state.productKupon);
 
     const onOpen = () => {
         setOpen(true);
@@ -21,7 +21,7 @@ function SliderKupon() {
         setOpen(false);
     };
 
-    const slide = 18
+    const slide = meta.per_page;
     const { shouldHideNextArrow, shouldHidePrevArrow, updateCurrentSlide, currentSlide } = useSlider(slide);
     const settings = {
         dots: false,
@@ -36,6 +36,7 @@ function SliderKupon() {
 
     if (APP_DEBUG) {
         console.log('Data Kupon', data)
+        console.log('data meta kupon: ', meta.per_page)
     }
 
     return (
