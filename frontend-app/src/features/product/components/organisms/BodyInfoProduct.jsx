@@ -64,7 +64,7 @@ function BodyInfoProduct({ productSlug }) {
                     </div>
                 </div>
             </div>
-            <div className='w-full bg-white shadow border rounded-md h-fit'>
+            <div className='w-[42rem] bg-white shadow border rounded-md h-fit'>
                 <div className='text-center'>
                     <ul className='grid grid-flow-col grid-cols-3 w-full cursor-pointer'>
                         <LinkPageInfo page={currentPage} onClick={() => setCurrentPage("Deskripsi")} title="Deskripsi" />
@@ -74,7 +74,7 @@ function BodyInfoProduct({ productSlug }) {
                 </div>
                 <div className='px-7 py-3'>
                     {currentPage === "Deskripsi" &&
-                        <div className='min-h-52'>
+                        <div className='min-h-52 break-words whitespace-pre-line'>
                              <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />
                         </div>
                     }

@@ -24,7 +24,7 @@ function ProductDetailPage() {
     dispatch(fetchDetailProduct(productSlug));
   }, [dispatch, productSlug])
 
-  
+
   if (APP_DEBUG) {
     console.log('Id Data Produk :', productSlug);
     console.log('Error Data Produk :', error);
@@ -35,15 +35,20 @@ function ProductDetailPage() {
     <MainTamplate >
       <div className='bg-gray-50'>
         {status !== 'idle' &&
-          <div className='flex w-fit px-14 gap-3 py-6'>
-            <div className='w-full'>
-            <Suspense fallback={<LoadingBodyDetail />}>
-              <BodyDetailProduct data={data} />
-              <BodyInfoProduct productSlug={productSlug} />
-            </Suspense>
+          <div className='flex w-full px-14 gap-3 py-6'>
+            <div className='flex flex-col w-[70rem]'>
+              <Suspense fallback={<LoadingBodyDetail />}>
+                <div>
+                  <BodyDetailProduct data={data} />
+                </div>
+                <div className=''>
+                  <BodyInfoProduct productSlug={productSlug} />
+                </div>
+              </Suspense>
             </div>
 
-            <div className='w-96'>
+
+            <div className=' w-96'>
               <Suspense fallback={<LoadingCheckout />}>
                 <CheckoutProduct auth={isLogin} />
               </Suspense>
@@ -51,7 +56,7 @@ function ProductDetailPage() {
           </div>
         }
         <div className='px-14'>
-          <ProductShope shope={shopeSlug}/>
+          <ProductShope shope={shopeSlug} />
           <ProductDetailLainnya category={category} categorySlug={categorySlug} />
         </div>
       </div>

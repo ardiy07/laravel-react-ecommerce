@@ -25,8 +25,15 @@ class ProductDetailResource extends JsonResource
                     'rating' => round($this->rating, 1),
                     'review' => $this->review,
                     'order' => $this->order,
-                    'prtice' => $this->productVarians->where('is_default', 1)->first()->price,
+                    'children' => $this->productVarians->where('is_default', 1)->first()->id,
+                    
                 ],
+                'media' => $this->productVarians->map(function ($item) {
+                    return [
+                        'name' => 'image',
+                        'image' => $item->image,
+                    ];
+                }),
                 'variants' => $this->optionVariants->map(function ($item) {
                     return [
                         'id' => $item->id,

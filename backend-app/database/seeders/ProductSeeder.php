@@ -20,7 +20,8 @@ class ProductSeeder extends Seeder
     {
         $jsonFiles = [
             storage_path('app/public/data/product/a.json'),
-            storage_path('app/public/data/product/b.json')
+            storage_path('app/public/data/product/b.json'),
+            storage_path('app/public/data/product/c.json'),
         ];
 
         foreach ($jsonFiles as $jsonFile) {

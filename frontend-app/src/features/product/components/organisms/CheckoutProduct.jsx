@@ -47,7 +47,7 @@ function CheckoutProduct({ auth }) {
 
     return (
         <>
-            <div className='border rounded-lg py-3 px-4 shadow bg-white flex flex-col gap-2 h-fit sticky top-36'>
+            <div className='border rounded-lg py-3 px-4 shadow bg-white flex flex-col gap-2 sticky top-36'>
                 {/* title */}
                 <div className='flex flex-col gap-1'>
                     <h3 className='font-semibold tracking-tight'>Atur Jumlah dan Catatan</h3>
