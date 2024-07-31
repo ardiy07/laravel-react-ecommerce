@@ -13,9 +13,12 @@ class ShopSeeder extends Seeder
      */
     public function run(): void
     {
-        //
         $shopes = [];
-        $user_id = 15; // Mulai dari user_id 5
+        $addresses = [];
+        $locationShope = [];
+        $user_id = 15;
+
+        $regencies = [3578, 3171, 3172, 5171];
 
         for ($i = 1; $i <= 15; $i++) {
             $shopes[] = [
@@ -32,19 +35,44 @@ class ShopSeeder extends Seeder
             ];
         }
 
-        $addres = [];
         for ($i = 1; $i <= 15; $i++) {
-            $addres[] = [
-                'id' => $i,
-                'shope_id' => $i,
-                'village_id' => rand(3171041001, 3171041006),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ];
+            $randomRegency = $regencies[array_rand($regencies)];
+
+            $district = DB::table('districts')
+                ->where('regencie_id', $randomRegency)
+                ->inRandomOrder()
+                ->first(['id']);
+
+            $postal = DB::table('postals')
+                ->where('district_id', $district->id)
+                ->inRandomOrder()
+                ->first(['code', 'lat', 'long']);
+
+            if ($district) {
+                $addresses[] = [
+                    'id' => $i,
+                    'shope_id' => $i,
+                    'district_id' => $district->id,
+                    'postal' => $postal->code,
+                    'address' => 'Jl. Raya Cibaduyut No. ' . $i,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ];
+                $locationShope[] = [
+                    'id' => $i,
+                    'addres_shope_id' => $i,
+                    'lat' => $postal->lat,
+                    'long' => $postal->long,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ];
+            } else {
+                break;
+            }
         }
 
-        // Masukkan data ke dalam tabel shopes
         DB::table('shopes')->insert($shopes);
-        DB::table('addres_shope')->insert($addres);
+        DB::table('address_shope')->insert($addresses);
+        DB::table('location_shope')->insert($locationShope);
     }
 }

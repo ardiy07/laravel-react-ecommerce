@@ -31,6 +31,9 @@ const api = {
     // Review
     getReview: (slug) => axiosInstance.get('/reviews?slug=' + slug),
 
+    // Address
+    getSearchAddres: (query) => axiosInstance.get('/search-address?search=' + query),
+
 }
 
 export default api

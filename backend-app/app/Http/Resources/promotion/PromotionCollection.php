@@ -36,7 +36,7 @@ class PromotionCollection extends ResourceCollection
                                     'id' => $product->product->shope->id,
                                     'name' => $product->product->shope->name,
                                     'slug' => $product->product->shope->slug,
-                                    'city' => $product->product->shope->addres->village->distric->regencie->name
+                                    'city' => $product->product->shope->addres->district->regencie->name
                                 ]
                             ];
 

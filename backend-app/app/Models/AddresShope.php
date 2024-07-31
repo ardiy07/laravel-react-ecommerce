@@ -10,7 +10,7 @@ class AddresShope extends Model
 {
     use HasFactory;
 
-    protected $table = 'addres_shope';
+    protected $table = 'address_shope';
     // protected $guarded = ['id'];
 
     public function shope(): BelongsTo
@@ -18,8 +18,13 @@ class AddresShope extends Model
         return $this->belongsTo(Shope::class);
     }
 
-    public function village(): BelongsTo
+    public function district(): BelongsTo
     {
-        return $this->belongsTo(Village::class);
+        return $this->belongsTo(District::class, 'district_id');
     }
+
+    // public function postal(): BelongsTo
+    // {
+    //     return $this->belongsTo(Postal::class, 'postal_id', 'code');
+    // }
 }

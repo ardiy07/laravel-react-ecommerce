@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\AddresController;
 use App\Http\Controllers\api\CardController;
 use App\Http\Controllers\api\ProductController;
 use App\Http\Controllers\api\ProfilController;
@@ -58,5 +59,9 @@ Route::prefix('v1')->group(function () {
     Route::controller(PromotionController::class)->group(function () {
         // Promotion Pengguna Baru
          Route::get('/promotion', 'getPromotion')->name('promotion');
+    });
+
+    Route::controller(AddresController::class)->group(function () {
+        Route::get('/search-address', 'searchAddress')->name('search.address');
     });
 });

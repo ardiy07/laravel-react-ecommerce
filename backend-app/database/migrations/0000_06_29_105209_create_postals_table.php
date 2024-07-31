@@ -11,13 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('villages', function (Blueprint $table) {
+        Schema::create('postals', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('district_id');
-            $table->string('name');
+            $table->string('code', 5);
+            $table->decimal('lat', 10, 7);
+            $table->decimal('long', 10, 7);
             $table->timestamps();
-
             $table->foreign('district_id')->references('id')->on('districts');
+
+            $table->index('code');
+            $table->index('district_id');
+            $table->index(['district_id', 'code']);
         });
     }
 
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('villages');
+        Schema::dropIfExists('postals');
     }
 };

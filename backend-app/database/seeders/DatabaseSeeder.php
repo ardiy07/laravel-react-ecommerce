@@ -19,8 +19,10 @@ class DatabaseSeeder extends Seeder
             ProvinceSeeder::class,
             RegencieSeeder::class,
             DistrictSeeder::class,
-            VillageSeeder::class,
+            PostalSeeder::class,
             UserSeeder::class,
+            AddressSeeder::class,
+            VillageSeeder::class,
             ShopSeeder::class,
             ProductSeeder::class
 

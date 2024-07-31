@@ -73,7 +73,7 @@ class ProductController extends Controller
         // if (!$product) {
         //     return response()->json(['message' => 'Data tidak ditemukan'], 404);
         // }
-        $product = Product::with(['shope', 'optionVariants', 'productVarians', 'subsubcategory', 'productVarians.promotion'])->where('slug', $productSlug)->first();
+        $product = Product::with(['shope', 'shope.addres', 'optionVariants', 'productVarians', 'subsubcategory', 'productVarians.promotion'])->where('slug', $productSlug)->first();
         if (!$product) {
             return response()->json(['message' => 'Data tidak ditemukan'], 404);
         }

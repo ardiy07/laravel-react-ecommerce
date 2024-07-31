@@ -61,7 +61,7 @@ function ProductHome() {
         {status === 'pending' &&
           <div className='grid grid-cols-6'>
             {Array.from({ length: 24 }).map((_, index) => (
-              <LoadingCard />
+              <LoadingCard key={index}/>
             ))}
           </div>
         }

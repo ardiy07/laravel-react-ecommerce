@@ -47,7 +47,7 @@ function SliderKupon() {
                     <Slider {...settings} className='flex items-center h-96'>
                         <div className='h-full absolute max-w-[16rem] bg-gray-300 -z-10 rounded-lg animate-pulse'></div>
                         {Array.from({ length: 24 }).map((_, index) => (
-                            <LoadingCard />
+                            <LoadingCard key={index}/>
                         ))}
                     </Slider>
                 </>

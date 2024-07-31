@@ -29,7 +29,7 @@ class ProductResource extends JsonResource
             'iconShope' => $this->shope->typeShope->slug,
             'categories' => $this->categorie->name,
             'shope' => $this->shope->name,
-            'city' => $this->shope->addres->village->distric->regencie->name,
+            'city' => $this->shope->addres->district->regencie->name,
             'promotions' => $this->detailPromotions,
         ];
     }

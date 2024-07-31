@@ -38,7 +38,7 @@ class ProductCardCollection extends ResourceCollection
                             'name' => $product->shope->name,
                             'slug' => $product->shope->slug,
                             'icon' => $product->shope->typeShope->slug,
-                            'city' => $product->shope->addres->village->distric->regencie->name,
+                            'city' => $product->shope->addres->district->regencie->name,
                         ]
                     ]
                 ];

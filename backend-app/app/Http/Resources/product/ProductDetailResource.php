@@ -50,7 +50,7 @@ class ProductDetailResource extends JsonResource
                 'shope' => [
                     'id' => $this->shope->id,
                     'name' => $this->shope->name,
-                    'city' => $this->shope->addres->village->distric->regencie->name,
+                    'city' => $this->shope->addres->district->regencie->name,
                     'icon' => $this->shope->typeShope->slug,
                     'image' => $this->shope->image,
                     'active' => $this->shope->is_active,
@@ -112,17 +112,3 @@ class ProductDetailResource extends JsonResource
         ];
     }
 }
-
-//     'promotion' => $this->productVarians->where('is_active', 1)
-                //         ->where('promotion_id', '!=', null)
-                //         ->pluck('promotion.name', 'promotion.id')
-                //         ->map(function ($name, $id) {
-                //             return ['id' => $id, 'name' => $name];
-                //         })->values(),
-                //     'type' => $this->productVarians->where('is_active', 1)
-                //         ->where('type', '!=', null)
-                //         ->pluck('type.name', 'type.id')
-                //         ->map(function ($name, $id) {
-                //             return ['id' => $id, 'name' => $name];
-                //         })->values(),
-                // ],

@@ -10,14 +10,28 @@ import { setProductSelected } from '../../services/slice/productDetailSlice'
 import { getAssetImageApi } from '../../../../utils/pathUtils'
 import Location from '../../../../components/icon/Location'
 import Ekspedisi from '../../../../components/icon/Ekspedisi'
-import AddCircle from '../../../../components/icon/AddCircle'
-import SearchHeader from '../../../templates/components/molecules/SearchHeader'
-import InputSearch from '../../../templates/components/atoms/InputSearch'
+import ModalDetailAddres from '../../../addres/page/ModalDetailAddres'
+import { ModalAddAddress } from '../../../addres/page'
 
 function BodyDetailProduct({ data }) {
     const [selectedVariant, setSelectedVariant] = useState({});
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const [formAddres, setFormAddres] = useState(false);
+    const [showModalAddAddress, setShowModalAddAddress] = useState(false);
     const dispatch = useDispatch();
+
+    const handleCloseFormAddres = () => {
+        setFormAddres(false);
+    }
+
+    const handleCloseFormAddAddres = () => {
+        setShowModalAddAddress(false);
+    }
+
+    const handleShowFormAddAddres = () => {
+        setFormAddres(false);
+        setShowModalAddAddress(true);
+    }
 
     useEffect(() => {
         if (data && data.productBase && data.children) {
@@ -158,7 +172,7 @@ function BodyDetailProduct({ data }) {
                             <div className=''>
                                 <Ekspedisi />
                             </div>
-                            <button className='text-start tracking-tight leading-tight text-gray-900 font-[400]'>
+                            <button className='text-start tracking-tight leading-tight text-gray-900 font-[400]' onClick={() => setFormAddres(true)}>
                                 Lengkapi pinpoint alamatmu supaya pengiriman barang ini bisa lebih akurat. <span className='text-green-500 font-bold'>Lengkapi Alamat </span>
                             </button>
                         </div>
@@ -168,71 +182,13 @@ function BodyDetailProduct({ data }) {
 
 
             {/* Modal Add Alamat */}
-            <div className='fixed inset-0 bg-slate-700 bg-opacity-70 z-50 w-screen h-screen flex items-center justify-center'>
-                <div className=' bg-white border shadow w-[60rem] h-fit rounded-xl pt-4 pb-6'>
-                    <div className='flex justify-end w-full mb-1 px-5'>
-                        <button>
-                            <svg
-                                className="unf-icon"
-                                viewBox="0 0 24 24"
-                                width="20"
-                                height="20"
-                                fill="var(--color-icon-enabled, #2E3137)"
-                                style={{ display: 'inline-block', verticalAlign: 'middle' }}
-                            >
-                                <path d="m13.06 12 7.47-7.47a.75.75 0 1 0-1.06-1.06L12 10.94 4.53 3.47a.75.75 0 1 0-1.06 1.06L10.94 12l-7.47 7.47a.75.75 0 0 0 1.06 1.06L12 13.06l7.47 7.47a.75.75 0 0 0 1.06-1.06L13.06 12Z"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    {/* Body */}
-                    <div className='flex flex-col gap-5'>
-                        <div className='tracking-tight leading-tight mx-5'>
-                            <h3 className='font-bold text-gray-800 text-xl'>Mau kirim belanjaan kemana?</h3>
-                            <p className='font-semibold text-gray-600'>Biar pengalaman belanjamu lebih baik, pilih alamat dulu.</p>
-                        </div>
-                        <div className='bg-white border rounded-md mx-5'>
-                            <buton className='w-full flex flex-col items-center justify-center py-3 leading-tight tracking-tight'>
-                                <div className='w-6'>
-                                    <AddCircle />
-                                </div>
-                                <div className='font-bold text-gray-800 mt-3'>
-                                    Tambah Alamat Pengirimanmu
-                                </div>
-                                <div>
-                                    Kamu belum memiliki alamat
-                                </div>
-                            </buton>
-                        </div>
-                        <div className='w-full border-t'>
-                            <div className='flex mx-5 pt-5 gap-7'>
-                                <div className='w-full'>
-                                    <div className='relative'>
-                                        <InputSearch
-                                            // value={search}
-                                            // onChange={handleSearch}
-                                            // onKeyPress={handleKeyPress}
-                                            placeholder="Pilih Kota atau Kecamatan"
-                                        />
-                                        <div className='absolute inset-y-0 left-0 flex items-center pl-3'>
-                                            <span className='icon-search'>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div className='w-full h-auto border-2 mt-1 rounded-md'>
-                                        <p className='border-b py-2 px-4'><span className="font-bold">Ambulu </span>Kab. Jember, Jawa Timur</p>
-                                        <p className='border-b py-2 px-4'><span className="font-bold">Ambulu </span>Kab. Jember, Jawa Timur</p>
-                                        <p className='border-b py-2 px-4'><span className="font-bold">Ambulu </span>Kab. Jember, Jawa Timur</p>
-                                        <p className='border-b py-2 px-4'><span className="font-bold">Ambulu </span>Kab. Jember, Jawa Timur</p>
-                                    </div>
-                                </div>
-                                <div className=''>
-                                    <button className='bg-green-500 text-white font-bold rounded-md px-14 py-2'>Gunakan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {formAddres &&
+                <ModalDetailAddres close={handleCloseFormAddres} addAddress={handleShowFormAddAddres}  />
+            }
+
+            {showModalAddAddress && (
+                <ModalAddAddress close={handleCloseFormAddAddres}/>
+            )}
         </>
     )
 }

@@ -10,16 +10,17 @@ class Addres extends Model
 {
     use HasFactory;
 
-    // protected $guarded = ['id'];
-    protected $table = 'addresses';
+    protected $guarded = ['id'];
+    protected $table = 'address';
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function village(): BelongsTo
+    public function postal(): BelongsTo
     {
-        return $this->belongsTo(Village::class, 'village_id');
+        return $this->belongsTo(Postal::class, 'postal_id');
     }
+    
 }

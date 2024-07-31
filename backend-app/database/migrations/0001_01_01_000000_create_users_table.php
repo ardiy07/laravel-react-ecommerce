@@ -20,6 +20,8 @@ return new class extends Migration
             $table->boolean('is_login')->default(false);
             $table->rememberToken();
             $table->timestamps();
+
+            $table->index('name');
         });
 
         Schema::create('profiles', function (Blueprint $table) {
@@ -32,13 +34,33 @@ return new class extends Migration
             $table->timestamps();
         });
         
-        Schema::create('addresses', function (Blueprint $table) {
+        Schema::create('address', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('village_id');
-            $table->string('addres', 255)->nullable();
+            $table->unsignedBigInteger('district_id');
+            $table->string('postal', 5);
+            $table->boolean('is_primary')->default(false);
             $table->timestamps();
-            $table->foreign('village_id')->references('id')->on('villages')->onDelete('cascade');
+            $table->foreign('district_id')->references('id')->on('districts')->onDelete('cascade');
+        });
+
+        Schema::create('location_user', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('address_id')->references('id')->on('address')->onDelete('cascade');
+            $table->decimal('lat', 10, 7);
+            $table->decimal('long', 10, 7);
+            $table->timestamps();
+        });
+
+        Schema::create('detail_address', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('address_id')->references('id')->on('address')->onDelete('cascade');
+            $table->string('name', 50);
+            $table->string('phone', 15);
+            $table->string('tipe', 30);
+            $table->string('address', 255);
+            $table->string('catatan', 50)->nullable();
+            $table->timestamps();
         });
 
         Schema::create('roles', function (Blueprint $table) {
@@ -89,13 +111,17 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('user_roles');
-        Schema::dropIfExists('profile');
-        Schema::dropIfExists('addres');
+        Schema::dropIfExists('detail_address');
+        Schema::dropIfExists('locations');
+        Schema::dropIfExists('address');
+        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('address');
         Schema::dropIfExists('roles');
         Schema::dropIfExists('memberships');
         Schema::dropIfExists('user_memberships');
         Schema::dropIfExists('sessions');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('users');
+
     }
 };

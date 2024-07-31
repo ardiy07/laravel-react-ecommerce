@@ -27,13 +27,24 @@ return new class extends Migration
             $table->foreign('type_shope_id')->references('id')->on('type_shopes')->onDelete('cascade');
         });
 
-        Schema::create('addres_shope', function (Blueprint $table) {
+        Schema::create('address_shope', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('shope_id');
-            $table->unsignedBigInteger('village_id');
+            $table->unsignedBigInteger('district_id');
+            $table->string('postal', 5);
+            $table->string('address', 255);
+            $table->string('catatan', 50)->nullable();
             $table->timestamps();
             $table->foreign('shope_id')->references('id')->on('shopes')->onDelete('cascade');
-            $table->foreign('village_id')->references('id')->on('villages')->onDelete('cascade'); 
+        });
+
+        Schema::create('location_shope', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('addres_shope_id');
+            $table->decimal('lat', 10, 7);
+            $table->decimal('long', 10, 7);
+            $table->timestamps();
+            $table->foreign('addres_shope_id')->references('id')->on('address_shope')->onDelete('cascade');
         });
     }
 
@@ -43,6 +54,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('shops');
-        Schema::dropIfExists('addres_shope');
+        Schema::dropIfExists('address_shope');
+        Schema::dropIfExists('locations');
     }
 };

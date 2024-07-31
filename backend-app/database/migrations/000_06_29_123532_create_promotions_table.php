@@ -20,6 +20,8 @@ return new class extends Migration
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
             $table->timestamps();
+
+            $table->index('slug');
         });
     }
 

@@ -18,6 +18,9 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('regencie_id')->references('id')->on('regencies');
+            $table->index('name');
+            $table->index('regencie_id');
+            $table->index(['regencie_id', 'name']);
         });
     }
 

@@ -53,7 +53,7 @@ function TrendingHome() {
                 {status === 'pending' &&
                     <>
                         {Array.from({ length: 8 }).map((_, index) => (
-                            <LoadingTrending />
+                            <LoadingTrending key={index}/>
                         ))}
                     </>
                 }
