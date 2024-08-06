@@ -53,7 +53,7 @@ function PinpointLokasi({ lat, long, village, district, regencie, province, onPo
                     <MapContainer
                         center={position}
                         zoomControl={false}
-                        zoom={17}
+                        zoom={15}
                         style={{ height: "40vh", width: "100%" }}
                         whenCreated={map => mapRef.current = map}
                     >

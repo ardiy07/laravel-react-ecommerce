@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\addres\AddresSearchCollection;
+use App\Models\Addres;
 use App\Models\District;
 use App\Models\Village;
 use Illuminate\Http\Request;
@@ -50,10 +51,34 @@ class AddresController extends Controller
     public function addAddress(Request $request)
     {
         $request->validate([
-            'province_id' => 'required|exists:provinces,id',
-            'regencie_id' => 'required|exists:regencies,id',
             'district_id' => 'required|exists:districts,id',
-            'village' => 'required',
+            'postal' => 'required|string|max:5',
+            'lat' => 'required|numeric',
+            'long' => 'required|numeric',
+            'name' => 'required|string|max:50',
+            'phone' => 'required|string|max:15',
+            'tipe' => 'required|string|max:30',
+            'address' => 'required|string|max:255',
+            'catatan' => 'nullable|string|max:50',
+        ]);
+
+        $address = Addres::create([
+            'user_id' => $request->user()->id,
+            'district_id' => $request->input('district_id'),
+            'postal' => $request->input('postal'),
+        ]);
+
+        $address->location()->create([
+            'lat' => $request->input('lat'),
+            'long' => $request->input('long'),
+        ]);
+
+        $address->detail()->create([
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone'),
+            'tipe' => $request->input('tipe'),
+            'address' => $request->input('address'),
+            'catatan' => $request->input('catatan'),
         ]);
     }    
     

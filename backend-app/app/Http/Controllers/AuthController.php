@@ -2,20 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\SlugHelper;
-use App\Models\Profile;
 use App\Models\User;
-use App\Models\UserMembership;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
-    //
-
     public function login(Request $request)
     {
         $request->validate([
@@ -79,8 +73,6 @@ class AuthController extends Controller
                 'password' => ['required', 'string', 'min:8'],
             ]);
 
-            
-            // Ambil Request
             $name = $request->name;
             $email = $request->email;
             $password = Hash::make($request->password);
